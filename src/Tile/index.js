@@ -26,8 +26,8 @@ export const Tile = ({ poster, title, year, genres, mark, votesNumber }) => {
         </ImagePlaceholder>
       )}
       <Decsription>
-        <Title>{title}</Title>
-        <Year>{year}</Year>
+        {title && <Title>{title}</Title>}
+        {year && <Year>{year}</Year>}
         {genres && (
           <Genres>
             {genres.map((genre) => (
