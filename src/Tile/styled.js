@@ -3,6 +3,7 @@ import { ReactComponent as StarIcon } from "../assets/starIcon.svg";
 
 export const StyledTile = styled.div`
   display: grid;
+  margin: 24px;
   max-width: 324px;
   min-height: 650px;
   border-radius: 5px;
@@ -15,7 +16,7 @@ export const StyledTile = styled.div`
     min-height: 201px;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    margin: 0 auto;
+    margin: 24px auto;
   }
 `;
 
@@ -46,6 +47,9 @@ export const ImagePlaceholder = styled.div`
 `;
 
 export const Decsription = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     display: flex;
     padding: 0;
@@ -114,11 +118,14 @@ export const Genre = styled.li`
 export const VotesContainer = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
+  bottom: 16px;
+
   margin-top: 39px;
   gap: 12px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    margin-top: 12px;
+    position: static;
   }
 `;
 
