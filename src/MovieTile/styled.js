@@ -62,9 +62,9 @@ export const Decsription = styled.div`
 
 export const Title = styled.h3`
   margin-top: 16px;
-  font-weight: 500px;
-  font-size: 22px;
-  line-height: 28.6px;
+  font-weight: ${({ theme }) => theme.fontWeights.titleDesktop}px;
+  font-size: ${({ theme }) => theme.fontSizes.titleDesktop}px;
+  line-height: ${({ theme }) => theme.lineHeights.titleDesktop}px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 16px;
@@ -120,7 +120,6 @@ export const VotesContainer = styled.div`
   align-items: center;
   position: relative;
   bottom: 16px;
-
   margin-top: 39px;
   gap: 12px;
 
@@ -139,6 +138,7 @@ export const StyledStarIcon = styled(StarIcon)`
 export const Mark = styled.em`
   font-weight: bold;
   line-height: 24px;
+  font-size: 16px;
   text-decoration: none;
   font-style: normal;
 

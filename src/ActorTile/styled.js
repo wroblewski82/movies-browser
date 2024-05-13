@@ -27,8 +27,8 @@ export const Image = styled.img`
 `;
 
 export const ActorName = styled.h3`
-  line-height: 28.6px;
-  font-size: 22px;
+  line-height: ${({ theme }) => theme.lineHeights.titleDesktop}px;
+  font-size: ${({ theme }) => theme.fontSizes.titleDesktop}px;
   font-weight: 500px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
