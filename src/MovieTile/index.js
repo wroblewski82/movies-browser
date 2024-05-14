@@ -1,9 +1,9 @@
-import { ReactComponent as PlaceholderIcon } from "../assets/placeholderIcon.svg";
+import { ReactComponent as PlaceholderIcon } from "../assets/placeholderMovieIcon.svg";
 
+import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
   StyledMovieTile,
   Image,
-  ImagePlaceholder,
   Decsription,
   Title,
   Year,
