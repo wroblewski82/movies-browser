@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../assets/starIcon.svg";
 
-export const StyledMovieTile = styled.div`
+export const StyledMovieTile = styled.section`
   display: grid;
   margin: 24px;
   max-width: 324px;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledActorTile = styled.div`
+export const StyledActorTile = styled.section`
   max-width: 208px;
   min-height: 339px;
   margin: 24px;
