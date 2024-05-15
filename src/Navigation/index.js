@@ -1,3 +1,4 @@
+import { Search } from "./Search";
 import {
   Container,
   LogoLink,
@@ -28,6 +29,7 @@ export const Navigation = () => {
             </NavigationItem>
           </NavigationList>
         </Container>
+        <Search />
       </Wrapper>
     </NavigationBar>
   );
