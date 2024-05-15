@@ -1,9 +1,12 @@
 import {
   Container,
+  LogoLink,
+  LogoTyp,
   NavigationBar,
   NavigationItem,
   NavigationList,
   StyledNavLink,
+  Sygnet,
   Wrapper,
 } from "./styled";
 
@@ -12,6 +15,10 @@ export const Navigation = () => {
     <NavigationBar>
       <Wrapper>
         <Container>
+          <LogoLink to="/movies">
+            <Sygnet />
+            <LogoTyp>Movies&nbsp;Browser</LogoTyp>
+          </LogoLink>
           <NavigationList>
             <NavigationItem>
               <StyledNavLink to="/movies">Movies</StyledNavLink>

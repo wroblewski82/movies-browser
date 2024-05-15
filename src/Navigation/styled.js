@@ -1,5 +1,6 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { ReactComponent as Logo } from "../assets/Logo.svg";
 
 const activeClassName = "active";
 
@@ -80,5 +81,37 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
 
   &:hover {
     border-bottom: 2px solid ${({ theme }) => theme.colors.white};
+  }
+`;
+
+export const LogoLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 80px;
+  text-decoration: none;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    gap: 8px;
+  }
+`;
+
+export const Sygnet = styled(Logo)`
+  height: auto;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    width: 17px;
+  }
+`;
+
+export const LogoTyp = styled.span`
+  font-weight: 500;
+  font-size: 24px;
+  color: ${({ theme }) => theme.colors.white};
+  line-height: 40px;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    font-size: 13px;
+    line-height: 1.3;
   }
 `;
