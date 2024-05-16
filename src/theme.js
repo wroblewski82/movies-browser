@@ -8,6 +8,7 @@ export const theme = {
     whisper: "#F5F5FA",
     waterloo: "#7E839A",
     silver: "#C4C4C4",
+    cornflowerBlue: "#0044CC",
     mystic: "#E4E6F0",
     black: "#18181B",
   },
