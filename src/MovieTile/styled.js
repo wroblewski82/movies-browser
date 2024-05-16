@@ -31,21 +31,6 @@ export const Image = styled.img`
   }
 `;
 
-export const ImagePlaceholder = styled.div`
-  display: flex;
-  width: 292px;
-  height: 434px;
-  border-radius: 5px;
-  align-items: center;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.silver};
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    width: 114px;
-    height: 169px;
-  }
-`;
-
 export const Decsription = styled.div`
   display: grid;
   grid-template-columns: 1fr;
