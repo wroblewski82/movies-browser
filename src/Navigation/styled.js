@@ -2,8 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as Logo } from "../assets/Logo.svg";
 
-const activeClassName = "active";
-
 export const NavigationBar = styled.nav`
   width: 100%;
   height: 94px;
@@ -56,9 +54,7 @@ export const NavigationList = styled.ul`
 
 export const NavigationItem = styled.li``;
 
-export const StyledNavLink = styled(NavLink).attrs(() => ({
-  activeClassName,
-}))`
+export const StyledNavLink = styled(NavLink)`
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.white};
   font-weight: 600;
@@ -75,7 +71,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     border-radius: 29px;
   }
 
-  &.${activeClassName} {
+  &.active {
     border: 1px solid ${({ theme }) => theme.colors.white};
   }
 
