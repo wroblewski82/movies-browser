@@ -1,10 +1,8 @@
-import { Container, StyledParagraph, IconContainer, Icon } from "./styled";
+import { Container, Header, IconContainer, Icon } from "./styled";
 
 export const LoadingPage = ({ title }) => (
   <Container>
-    <StyledParagraph>
-      {title ? <>Search results for "{title}"</> : ""}
-    </StyledParagraph>
+    <Header>{title && <>Search results for "{title}"</>}</Header>
     <IconContainer>
       <Icon />
     </IconContainer>
