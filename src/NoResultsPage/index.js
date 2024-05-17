@@ -1,10 +1,8 @@
-import { Container, StyledParagraph, IconContainer, Image } from "./styled";
+import { Container, Header, IconContainer, Image } from "./styled";
 
 export const NoResultsPage = ({ title }) => (
   <Container>
-    <StyledParagraph>
-      {title ? <>Sorry, there are no results for "{title}"</> : ""}
-    </StyledParagraph>
+    <Header>{title && <>Sorry, there are no results for "{title}"</>}</Header>
     <IconContainer>
       <Image />
     </IconContainer>

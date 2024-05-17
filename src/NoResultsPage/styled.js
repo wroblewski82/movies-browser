@@ -5,8 +5,7 @@ export const Container = styled.div`
   padding: 16px;
 `;
 
-export const StyledParagraph = styled.p`
-  font-weight: 600;
+export const Header = styled.h1`
   font-size: 36px;
   line-height: 43.2px;
   margin: 0 0 40px;
