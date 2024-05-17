@@ -7,7 +7,7 @@ export const NavigationBar = styled.nav`
   height: 94px;
   background-color: ${({ theme }) => theme.colors.black};
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     height: 142px;
   }
 `;
@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     flex-direction: column;
     justify-content: center;
     gap: 24px;
@@ -33,7 +33,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 100%;
     justify-content: space-between;
   }
@@ -47,7 +47,7 @@ export const NavigationList = styled.ul`
   gap: 16px;
   align-items: center;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     gap: 12px;
   }
 `;
@@ -65,7 +65,7 @@ export const StyledNavLink = styled(NavLink)`
   padding: 8px 24px 8px 24px;
   border-radius: 24px;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 12px;
     padding: 8px 12px 8px 12px;
     border-radius: 29px;
@@ -87,7 +87,7 @@ export const LogoLink = styled(Link)`
   margin-right: 80px;
   text-decoration: none;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     gap: 8px;
   }
 `;
@@ -95,7 +95,7 @@ export const LogoLink = styled(Link)`
 export const Sygnet = styled(Logo)`
   height: auto;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 17px;
   }
 `;
@@ -106,7 +106,7 @@ export const LogoTyp = styled.span`
   color: ${({ theme }) => theme.colors.white};
   line-height: 40px;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
     line-height: 1.3;
   }

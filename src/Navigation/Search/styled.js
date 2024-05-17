@@ -11,7 +11,7 @@ export const SearchBox = styled.div`
   align-items: center;
   cursor: text;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 100%;
   }
 `;
@@ -26,7 +26,7 @@ export const SearchForm = styled.input`
   outline: none;
   line-height: 1.5;
 
-  @media (max-width: ${({ theme }) => theme.media.mobileMini}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
     line-height: 1.3;
     padding: 8px 13px;
@@ -37,7 +37,7 @@ export const SearchIcon = styled(Search)`
   margin-left: 24px;
   height: auto;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 16px;
     margin-left: 16px;
   }
