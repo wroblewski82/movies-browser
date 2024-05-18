@@ -1,0 +1,37 @@
+import styled from "styled-components";
+
+export const Container = styled.div`
+  padding: 180px 16px 32px;
+  text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    margin: auto;
+  }
+`;
+
+export const StyledHeader = styled.h1`
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43.2px;
+`;
+
+export const StyledParagraph = styled.p`
+  max-width: 426.53px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28.6px;
+  margin: 0 auto 40px;
+`;
+
+export const StyledLink = styled.a`
+  background-color: ${({ theme }) => theme.colors.cornflowerBlue};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: 5px;
+  padding: 16px 24px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  line-height: 19px;
+  cursor: pointer;
+`;
