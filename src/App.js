@@ -1,3 +1,5 @@
-const App = () => <p>Hello world!</p>;
+import { MovieList } from "./features/MovieList";
+
+const App = () => <MovieList />;
 
 export default App;
