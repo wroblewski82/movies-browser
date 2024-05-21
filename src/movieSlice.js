@@ -1,17 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 
 const movieSlice = createSlice({
   name: "movies",
-  initialState: { movies: [], fetchMoviesStatus: "" },
+  initialState: { movies: [], fetchMoviesStatus: undefined },
   reducers: {
-    fetchMovies: () => {},
+    fetchMovies: (state) => {
+      state.fetchMoviesStatus = "loading";
+    },
 
     fetchMoviesSuccess: (state, action) => {
       state.movies = action.payload;
       state.fetchMoviesStatus = "success";
     },
 
-    fetchMoviesError: (state) => (state.fetchMoviesStatus = "error"),
+    fetchMoviesError: (state) => {
+      state.fetchMoviesStatus = "error";
+    },
   },
 });
 
