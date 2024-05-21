@@ -19,6 +19,11 @@ const movieSlice = createSlice({
   },
 });
 
+export const selectMoviesState = (state) => state.movies;
+
+export const selectFetchMoviesStatus = (state) =>
+  selectMoviesState(state).fetchMoviesStatus;
+
 export const { fetchMovies, fetchMoviesSuccess, fetchMoviesError } =
   movieSlice.actions;
 
