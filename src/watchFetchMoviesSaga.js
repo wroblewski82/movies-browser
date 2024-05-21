@@ -8,7 +8,7 @@ import {
 } from "./movieSlice";
 
 function* fetchMoviesHandler() {
-  const fetchedMovies = yield call(getMoviesApi, "/moviesPopular.json");
+  const fetchedMovies = yield call(getMoviesApi, "/movies-browser/moviesPopular.json");
 
   if (fetchedMovies) {
     yield delay(3000);
@@ -17,6 +17,6 @@ function* fetchMoviesHandler() {
   } else yield put(fetchMoviesError());
 }
 
-export function* watchFetchMovies() {
+export function* watchFetchMoviesSaga() {
   yield takeEvery(fetchMovies.type, fetchMoviesHandler);
 }
