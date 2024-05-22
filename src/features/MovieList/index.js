@@ -2,16 +2,17 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchMovieList,
-  selectMovies,
+  selectMoviesList,
   selectLoadingStatus,
   selectErrorStatus,
 } from "./moviesSlice";
 import { LoadingPage } from "../../LoadingPage";
 import { ErrorPage } from "../../ErrorPage";
+import { MovieTile } from "../../MovieTile";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
-  const movieList = useSelector(selectMovies);
+  const moviesList = useSelector(selectMoviesList);
   const loadingState = useSelector(selectLoadingStatus);
   const errorState = useSelector(selectErrorStatus);
 
@@ -27,5 +28,13 @@ export const MovieList = () => {
     return <ErrorPage />;
   }
 
-  console.log(movieList);
+  return (
+    <ul>
+      {moviesList?.map((movie) => (
+        <li key={movie.id}>
+          <MovieTile {...movie} />
+        </li>
+      ))}
+    </ul>
+  );
 };

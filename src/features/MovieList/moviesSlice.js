@@ -26,7 +26,8 @@ export const { fetchMovieList, fetchMovieListSuccess, fetchMovieListError } =
   moviesSlice.actions;
 
 export const selectMoviesState = (state) => state.movies;
-export const selectMovies = (state) => selectMoviesState(state).movies;
+export const selectMoviesObject = (state) => selectMoviesState(state).movies;
+export const selectMoviesList = (state) => selectMoviesObject(state).results;
 export const selectLoadingStatus = (state) => selectMoviesState(state).loading;
 export const selectErrorStatus = (state) => selectMoviesState(state).error;
 

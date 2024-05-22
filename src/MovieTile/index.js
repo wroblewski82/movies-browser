@@ -1,5 +1,5 @@
+import { nanoid } from "@reduxjs/toolkit";
 import { ReactComponent as PlaceholderIcon } from "../assets/placeholderMovieIcon.svg";
-
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
   StyledMovieTile,
@@ -16,17 +16,22 @@ import {
 } from "./styled";
 
 export const MovieTile = ({
-  poster,
+  poster_path,
   title,
-  year,
-  genres,
-  mark,
-  votesNumber,
+  release_date,
+  genre_ids,
+  vote_average,
+  vote_count,
 }) => {
+  const year = release_date?.split("-")[0];
+
   return (
     <StyledMovieTile>
-      {poster ? (
-        <Image src={poster} alt="Movie Poster" />
+      {poster_path ? (
+        <Image
+          src={`https://image.tmdb.org/t/p/w342/${poster_path}`}
+          alt="Movie Poster"
+        />
       ) : (
         <ImagePlaceholder>
           <PlaceholderIcon />
@@ -34,18 +39,18 @@ export const MovieTile = ({
       )}
       <Decsription>
         {title && <Title>{title}</Title>}
-        {year && <Year>{year}</Year>}
-        {genres && (
+        {release_date && <Year>{year}</Year>}
+        {genre_ids && (
           <Genres>
-            {genres.map((genre) => (
-              <Genre key={genre}>{genre}</Genre>
+            {genre_ids.map((genre) => (
+              <Genre key={nanoid()}>{genre}</Genre>
             ))}
           </Genres>
         )}
         <VotesContainer>
           <StyledStarIcon />
-          <Mark>{mark}</Mark>
-          <VotesNumber>{votesNumber} votes</VotesNumber>
+          <Mark>{vote_average}</Mark>
+          <VotesNumber>{vote_count} votes</VotesNumber>
         </VotesContainer>
       </Decsription>
     </StyledMovieTile>
