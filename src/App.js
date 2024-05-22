@@ -1,24 +1,18 @@
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Navigation } from "./Navigation";
-import Movies from "./Pages/Movies";
-import People from "./Pages/People";
+import MovieList from "./features/MovieList";
+import PeopleList from "./features/PeopleList";
 
 const App = () => {
   return (
     <>
       <HashRouter>
         <Navigation />
-        <Switch>
-          <Route path="/movies">
-            <Movies />
-          </Route>
-          <Route path="/people">
-            <People />
-          </Route>
-          <Route path="/">
-            <Redirect to="/movies" />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/movies" Component={MovieList} />
+          <Route path="/people" Component={PeopleList} />
+          <Route exact path="/" render={() => "/movies"} />
+        </Routes>
       </HashRouter>
     </>
   );

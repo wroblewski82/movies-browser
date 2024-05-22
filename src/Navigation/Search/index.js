@@ -1,10 +1,10 @@
 import { SearchBox, SearchForm, SearchIcon } from "./styled";
 
-export const Search = () => {
+export const Search = ({ placeholder }) => {
   return (
     <SearchBox>
       <SearchIcon />
-      <SearchForm />
+      <SearchForm placeholder={placeholder} />
     </SearchBox>
   );
 };
