@@ -9,7 +9,7 @@ const movieSlice = createSlice({
     },
 
     fetchMoviesSuccess: (state, action) => {
-      state.movies = action.payload;
+      state.movies.push(action.payload);
       state.fetchMoviesStatus = "success";
     },
 
@@ -20,6 +20,8 @@ const movieSlice = createSlice({
 });
 
 export const selectMoviesState = (state) => state.movies;
+
+export const selectMovies = (state) => selectMoviesState(state).movies;
 
 export const selectFetchMoviesStatus = (state) =>
   selectMoviesState(state).fetchMoviesStatus;
