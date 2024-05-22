@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as StarIcon } from "../assets/starIcon.svg";
+import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
 export const StyledMovieTile = styled.section`
   display: grid;
