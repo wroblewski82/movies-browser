@@ -8,7 +8,10 @@ import {
 } from "./movieSlice";
 
 function* fetchMoviesHandler() {
-  const fetchedMovies = yield call(getMoviesApi, "/movies-browser/moviesPopular.json");
+  const fetchedMovies = yield call(
+    getMoviesApi,
+    "https://api.themoviedb.org/3/movie/popular?api_key=ac5371c0e378529d6face3e2fab3b7c1"
+  );
 
   if (fetchedMovies) {
     yield delay(3000);
