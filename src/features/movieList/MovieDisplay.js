@@ -13,7 +13,7 @@ export const MovieDisplay = () => {
           return (
             <MovieTile
               key={result.id}
-              poster={""}
+              poster={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
               title={result.title}
               year={result.release_date.split("-")[0]}
               genres={""}
