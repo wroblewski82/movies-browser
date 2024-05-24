@@ -1,5 +1,5 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { ReactComponent as PlaceholderIcon } from "../assets/placeholderMovieIcon.svg";
+import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderMovieIcon.svg";
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
   StyledMovieTile,
