@@ -8,7 +8,7 @@ export const MovieDisplay = () => {
   const genres = useSelector((state) => selectGenres(state));
 
   return movies.map((movie) =>
-    movie.results.map((result) => {
+    movie.results.map((result) => (
       <MovieTile
         key={result.id}
         poster={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
@@ -19,7 +19,7 @@ export const MovieDisplay = () => {
         )}
         mark={result.vote_average.toFixed(1)}
         votesNumber={result.vote_count}
-      />;
-    })
+      />
+    ))
   );
 };
