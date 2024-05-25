@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
   font-family: "Poppins", sans-serif;
+  max-width: 1800px; 
+  margin: 0 auto;  
   word-break: break-word;
   background-color: ${({ theme }) => theme.colors.whisper}
   }
