@@ -6,9 +6,9 @@ import {
   selectLoadingStatus,
   selectErrorStatus,
 } from "./moviesSlice";
-import { LoadingPage } from "../../LoadingPage";
-import { ErrorPage } from "../../ErrorPage";
-import { MovieTile } from "../../MovieTile";
+import { LoadingPage } from "../../common/LoadingPage";
+import { ErrorPage } from "../../common/ErrorPage";
+import { MovieTile } from "../../common/MovieTile";
 
 export const MovieList = () => {
   const dispatch = useDispatch();

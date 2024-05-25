@@ -1,4 +1,6 @@
+import { useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
+import { selectMoviesGenres } from "../../features/MovieList/moviesSlice";
 import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderMovieIcon.svg";
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
@@ -24,6 +26,7 @@ export const MovieTile = ({
   vote_count,
 }) => {
   const year = release_date?.split("-")[0];
+  const movieGenres = useSelector(selectMoviesGenres);
 
   return (
     <StyledMovieTile>
@@ -42,9 +45,10 @@ export const MovieTile = ({
         {release_date && <Year>{year}</Year>}
         {genre_ids && (
           <Genres>
-            {genre_ids.map((genre) => (
-              <Genre key={nanoid()}>{genre}</Genre>
-            ))}
+            {genre_ids.map((genre_Id) => {
+              const genre = movieGenres.find((genre) => genre.id === genre_Id);
+              return <Genre key={nanoid()}>{genre.name}</Genre>;
+            })}
           </Genres>
         )}
         <VotesContainer>
