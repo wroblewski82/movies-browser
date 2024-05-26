@@ -10,7 +10,7 @@ export const Header = styled.h1`
   line-height: 43.2px;
   margin: 0 0 120px;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.media.tablet}px) {
     font-weight: 500;
     font-size: 14px;
     line-height: 18.2px;
@@ -25,7 +25,7 @@ export const IconContainer = styled.div`
 export const Icon = styled(LoadingIcon)`
   animation: 2s all linear infinite;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.media.tablet}px) {
     height: 35px;
   }
 

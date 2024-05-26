@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding: 180px 16px 32px;
   text-align: center;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.media.tablet}px) {
     margin: auto;
   }
 `;
