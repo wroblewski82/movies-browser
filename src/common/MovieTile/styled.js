@@ -3,7 +3,6 @@ import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
 export const StyledMovieTile = styled.section`
   display: grid;
-  margin: 24px;
   max-width: 324px;
   min-height: 650px;
   border-radius: 5px;
@@ -16,7 +15,6 @@ export const StyledMovieTile = styled.section`
     min-height: 201px;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    margin: 24px auto;
   }
 `;
 

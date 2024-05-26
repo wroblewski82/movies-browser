@@ -9,6 +9,7 @@ import {
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { MovieTile } from "../../common/MovieTile";
+import { StyledHeader, StyledList, StyledItem } from "./styled";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -29,12 +30,15 @@ export const MovieList = () => {
   }
 
   return (
-    <ul>
-      {moviesList?.map((movie) => (
-        <li key={movie.id}>
-          <MovieTile {...movie} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <StyledHeader>Popular movies</StyledHeader>
+      <StyledList>
+        {moviesList?.map((movie) => (
+          <StyledItem key={movie.id}>
+            <MovieTile {...movie} />
+          </StyledItem>
+        ))}
+      </StyledList>
+    </>
   );
 };
