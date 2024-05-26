@@ -1,3 +1,4 @@
+import { nanoid } from "@reduxjs/toolkit";
 import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderMovieIcon.svg";
 
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
@@ -38,7 +39,7 @@ export const MovieTile = ({
         {genres && (
           <Genres>
             {genres.map((genre) => (
-              <Genre key={genre}>{genre}</Genre>
+              <Genre key={nanoid()}>{genre.name}</Genre>
             ))}
           </Genres>
         )}
