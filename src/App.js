@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Navigation } from "./Navigation";
 import MovieList from "./features/MovieList";
 import PeopleList from "./features/PeopleList";
@@ -9,9 +9,9 @@ const App = () => {
       <HashRouter>
         <Navigation />
         <Routes>
-          <Route path="/movies" Component={MovieList} />
-          <Route path="/people" Component={PeopleList} />
-          <Route exact path="/" render={() => "/movies"} />
+          <Route path="movies" element={<MovieList />} />
+          <Route path="people" element={<PeopleList />} />
+          <Route path="*" element={<Navigate to="/movies" />} />
         </Routes>
       </HashRouter>
     </>
