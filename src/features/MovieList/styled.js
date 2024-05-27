@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const StyledArticle = styled.article`
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+`;
+
 export const StyledHeader = styled.h1`
   font-size: 36px;
   line-height: 43.2px;
