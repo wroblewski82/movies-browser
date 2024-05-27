@@ -10,10 +10,11 @@ import {
 } from "./movieSlice";
 
 function* getGenres() {
-  const fetchedGenres = yield call(
+  const response = yield call(
     getGenresApi,
     "https://api.themoviedb.org/3/genre/movie/list?api_key=ac5371c0e378529d6face3e2fab3b7c1"
   );
+  const fetchedGenres = response?.genres;
   if (fetchedGenres) {
     yield put(fetchGenresSuccess(fetchedGenres));
     yield console.log(fetchedGenres);

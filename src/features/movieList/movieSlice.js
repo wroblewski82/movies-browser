@@ -18,7 +18,7 @@ const movieSlice = createSlice({
     },
 
     fetchGenresSuccess: (state, action) => {
-      state.genres.push(action.payload);
+      state.genres = action.payload;
     },
   },
 });
