@@ -39,7 +39,7 @@ export const MovieTile = ({
         {genres && (
           <Genres>
             {genres.map((genre) => (
-              <Genre key={nanoid()}>{genre.name}</Genre>
+              <Genre key={nanoid()}>{genre?.name}</Genre>
             ))}
           </Genres>
         )}

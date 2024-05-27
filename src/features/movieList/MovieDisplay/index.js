@@ -8,12 +8,11 @@ export const MovieDisplay = () => {
   const movies = useSelector((state) => selectMovies(state));
   const genres = useSelector((state) => selectGenres(state));
 
-  console.log(genres)
   const findGenresById = (ids) => {
     const filtredGenres = ids.map((id) =>
       genres.find((genre) => genre.id === id)
     );
-    console.log(filtredGenres);
+    return filtredGenres;
   };
 
   return (
