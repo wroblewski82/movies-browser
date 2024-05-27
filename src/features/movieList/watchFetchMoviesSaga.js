@@ -17,7 +17,6 @@ function* getGenres() {
   const fetchedGenres = response?.genres;
   if (fetchedGenres) {
     yield put(fetchGenresSuccess(fetchedGenres));
-    yield console.log(fetchedGenres);
   } else return;
 }
 
@@ -29,7 +28,6 @@ function* getMovies() {
 
   if (fetchedMovies) {
     yield put(fetchMoviesSuccess(fetchedMovies));
-    yield console.log(fetchedMovies);
   } else yield put(fetchMoviesError());
 }
 
