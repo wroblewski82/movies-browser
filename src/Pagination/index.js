@@ -1,15 +1,47 @@
-import { Button, PageCounter, Wrapper } from "./style";
+import {
+  Button,
+  ButtonText,
+  NextArrowIcon,
+  PageCounter,
+  PageNumbers,
+  PrevArrowIcon,
+  Wrapper,
+} from "./style";
+import { usePageButton } from "./usePageButton";
 
 export const Pagination = () => {
-  const isFirstPage = 1;
-  const isLastPage = 5;
+  const {
+    actualPage,
+    totalPages,
+    setNextPage,
+    setPreviousPage,
+    setFirstPage,
+    setLastPage,
+  } = usePageButton();
+  const isFirstPage = actualPage === 1;
+  const isLastPage = actualPage === 5;
   return (
     <Wrapper>
-      <Button>First</Button>
-      <Button>Previous</Button>
-      <PageCounter>Page</PageCounter>
-      <Button>Next</Button>
-      <Button>Last</Button>
+      <Button onClick={setFirstPage} disabled={isFirstPage}>
+        <PrevArrowIcon />
+        <ButtonText>First</ButtonText>
+      </Button>
+      <Button onClick={setPreviousPage}>
+        <PrevArrowIcon />
+        <ButtonText>Previous</ButtonText>
+      </Button>
+      <PageCounter>
+        Page <PageNumbers>{actualPage}</PageNumbers> of{" "}
+        <PageNumbers>{totalPages}</PageNumbers>
+      </PageCounter>
+      <Button onClick={setNextPage}>
+        <ButtonText>Next</ButtonText>
+        <NextArrowIcon />
+      </Button>
+      <Button onClick={setLastPage} disabled={isLastPage}>
+        <ButtonText>Last</ButtonText>
+        <NextArrowIcon />
+      </Button>
     </Wrapper>
   );
 };
