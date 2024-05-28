@@ -9,13 +9,13 @@ import {
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { MovieTile } from "../../common/MovieTile";
-import { StyledArticle, StyledHeader, StyledList, StyledItem } from "./styled";
+import { StyledMain, StyledHeader, StyledList, StyledItem } from "./styled";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
-  const moviesList = useSelector(selectMoviesList);
   const loadingState = useSelector(selectLoadingStatus);
   const errorState = useSelector(selectErrorStatus);
+  const moviesList = useSelector(selectMoviesList);
 
   useEffect(() => {
     dispatch(fetchMovieList());
@@ -30,7 +30,7 @@ export const MovieList = () => {
   }
 
   return (
-    <StyledArticle>
+    <StyledMain>
       <StyledHeader>Popular movies</StyledHeader>
       <StyledList>
         {moviesList?.map((movie) => (
@@ -39,6 +39,6 @@ export const MovieList = () => {
           </StyledItem>
         ))}
       </StyledList>
-    </StyledArticle>
+    </StyledMain>
   );
 };

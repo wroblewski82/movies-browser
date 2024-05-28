@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledArticle = styled.article`
+export const StyledMain = styled.main`
   max-width: 1400px;
   margin: 0 auto;
   padding: 16px;
