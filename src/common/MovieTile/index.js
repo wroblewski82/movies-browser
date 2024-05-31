@@ -1,6 +1,4 @@
-import { useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
-import { selectMoviesGenres } from "../../features/MovieList/moviesSlice";
 import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderMovieIcon.svg";
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
@@ -17,24 +15,11 @@ import {
   Mark,
 } from "./styled";
 
-export const MovieTile = ({
-  poster_path,
-  title,
-  release_date,
-  genre_ids,
-  vote_average,
-  vote_count,
-}) => {
-  const year = release_date?.split("-")[0];
-  const movieGenres = useSelector(selectMoviesGenres);
-
+export const MovieTile = ({ poster, title, year, genres, mark, votes }) => {
   return (
     <StyledMovieTile>
-      {poster_path ? (
-        <Image
-          src={`https://image.tmdb.org/t/p/w342/${poster_path}`}
-          alt="Movie Poster"
-        />
+      {poster ? (
+        <Image src={poster} alt="Movie Poster" />
       ) : (
         <ImagePlaceholder>
           <PlaceholderIcon />
@@ -42,19 +27,18 @@ export const MovieTile = ({
       )}
       <Decsription>
         {title && <Title>{title}</Title>}
-        {release_date && <Year>{year}</Year>}
-        {genre_ids && (
+        {year && <Year>{year}</Year>}
+        {genres && (
           <Genres>
-            {genre_ids.map((genre_Id) => {
-              const genre = movieGenres.find((genre) => genre.id === genre_Id);
-              return <Genre key={nanoid()}>{genre.name}</Genre>;
-            })}
+            {genres.map((genre) => (
+              <Genre key={nanoid()}>{genre.name}</Genre>
+            ))}
           </Genres>
         )}
         <VotesContainer>
           <StyledStarIcon />
-          <Mark>{vote_average}</Mark>
-          <VotesNumber>{vote_count} votes</VotesNumber>
+          <Mark>{mark}</Mark>
+          <VotesNumber>{votes} votes</VotesNumber>
         </VotesContainer>
       </Decsription>
     </StyledMovieTile>
