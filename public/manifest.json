@@ -2,7 +2,11 @@
   "short_name": "movies-browser",
   "name": "movies-browser-group-project",
   "icons": [
-    {}
+    {
+      "src": "images/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
   ],
   "start_url": ".",
   "display": "standalone",
