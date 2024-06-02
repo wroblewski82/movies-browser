@@ -8,11 +8,11 @@ export const StyledMain = styled.main`
 
 export const StyledHeader = styled.h1`
   font-size: 36px;
-  line-height: 43.2px;
+  line-height: 1.2;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 18px;
-    line-height: 21.6px;
+    line-height: 1.2;
   }
 `;
 
