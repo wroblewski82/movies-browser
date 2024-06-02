@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchMovieList,
-  selectLoadingStatus,
+  selectFetchDataStatus,
   selectMovieList,
   selectGenreList,
 } from "./moviesSlice";
@@ -13,7 +13,7 @@ import { StyledMain, StyledHeader, StyledList, StyledItem } from "./styled";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
-  const loadingStatus = useSelector(selectLoadingStatus);
+  const fetchDataStatus = useSelector(selectFetchDataStatus);
   const movieList = useSelector(selectMovieList);
   const genreList = useSelector(selectGenreList);
 
@@ -23,9 +23,9 @@ export const MovieList = () => {
 
   return (
     <StyledMain>
-      {loadingStatus === "loading" && <LoadingPage />}
-      {loadingStatus === "error" && <ErrorPage />}
-      {loadingStatus === "success" && (
+      {fetchDataStatus === "loading" && <LoadingPage />}
+      {fetchDataStatus === "error" && <ErrorPage />}
+      {fetchDataStatus === "success" && (
         <>
           <StyledHeader>Popular movies</StyledHeader>
           <StyledList>
