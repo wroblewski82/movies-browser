@@ -1,5 +1,21 @@
-import { MovieList } from "./features/MovieList";
+import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
+import { Navigation } from "./Navigation";
+import MovieList from "./features/MovieList";
+import PeopleList from "./features/PeopleList";
 
-const App = () => <MovieList />;
+const App = () => {
+  return (
+    <>
+      <HashRouter>
+        <Navigation />
+        <Routes>
+          <Route path="movies" element={<MovieList />} />
+          <Route path="people" element={<PeopleList />} />
+          <Route path="*" element={<Navigate to="/movies" />} />
+        </Routes>
+      </HashRouter>
+    </>
+  );
+};
 
 export default App;
