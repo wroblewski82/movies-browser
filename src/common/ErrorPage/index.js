@@ -1,4 +1,4 @@
-import { ReactComponent as DangerIcon } from "../assets/danger.svg";
+import { ReactComponent as DangerIcon } from "../../assets/danger.svg";
 import { Container, StyledHeader, StyledParagraph, StyledLink } from "./styled";
 
 export const ErrorPage = () => (

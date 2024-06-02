@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../assets/starIcon.svg";
 
-export const StyledMovieTile = styled.section`
+export const StyledTile = styled.div`
   display: grid;
   margin: 24px;
   max-width: 324px;
@@ -31,6 +31,21 @@ export const Image = styled.img`
   }
 `;
 
+export const ImagePlaceholder = styled.div`
+  display: flex;
+  width: 292px;
+  height: 434px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.colors.silver};
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    width: 114px;
+    height: 169px;
+  }
+`;
+
 export const Decsription = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -47,9 +62,9 @@ export const Decsription = styled.div`
 
 export const Title = styled.h3`
   margin-top: 16px;
-  font-weight: ${({ theme }) => theme.fontWeights.titleDesktop}px;
-  font-size: ${({ theme }) => theme.fontSizes.titleDesktop}px;
-  line-height: ${({ theme }) => theme.lineHeights.titleDesktop}px;
+  font-weight: 500px;
+  font-size: 22px;
+  line-height: 28.6px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 16px;
@@ -105,6 +120,7 @@ export const VotesContainer = styled.div`
   align-items: center;
   position: relative;
   bottom: 16px;
+
   margin-top: 39px;
   gap: 12px;
 
@@ -123,7 +139,6 @@ export const StyledStarIcon = styled(StarIcon)`
 export const Mark = styled.em`
   font-weight: bold;
   line-height: 24px;
-  font-size: 16px;
   text-decoration: none;
   font-style: normal;
 

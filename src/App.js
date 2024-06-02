@@ -1,6 +1,6 @@
 import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Navigation } from "./Navigation";
-import MovieList from "./features/MovieList";
+import { MovieList } from "./features/MovieList";
 import PeopleList from "./features/PeopleList";
 
 const App = () => {

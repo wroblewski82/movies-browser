@@ -1,30 +1,23 @@
-import { ReactComponent as PlaceholderIcon } from "../assets/placeholderMovieIcon.svg";
+import { ReactComponent as PlaceholderIcon } from "../assets/placeholderIcon.svg";
+import { ReactComponent as StarIcon } from "../assets/starIcon.svg";
 
-import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
-  StyledMovieTile,
+  StyledTile,
   Image,
+  ImagePlaceholder,
   Decsription,
   Title,
   Year,
   Genres,
   Genre,
   VotesContainer,
-  StyledStarIcon,
   VotesNumber,
   Mark,
 } from "./styled";
 
-export const MovieTile = ({
-  poster,
-  title,
-  year,
-  genres,
-  mark,
-  votesNumber,
-}) => {
+export const Tile = ({ poster, title, year, genres, mark, votesNumber }) => {
   return (
-    <StyledMovieTile>
+    <StyledTile>
       {poster ? (
         <Image src={poster} alt="Movie Poster" />
       ) : (
@@ -43,11 +36,11 @@ export const MovieTile = ({
           </Genres>
         )}
         <VotesContainer>
-          <StyledStarIcon />
+          <StarIcon />
           <Mark>{mark}</Mark>
           <VotesNumber>{votesNumber} votes</VotesNumber>
         </VotesContainer>
       </Decsription>
-    </StyledMovieTile>
+    </StyledTile>
   );
 };
