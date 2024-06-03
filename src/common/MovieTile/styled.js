@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
 export const StyledMovieTile = styled.section`
@@ -16,6 +16,17 @@ export const StyledMovieTile = styled.section`
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      max-width: 1368px;
+      max-height: 524px;
+      grid-template-columns: 1fr 2fr;
+      margin: 64px auto;
+      padding: 8px 20px;
+      gap: 30px;
+    `}
 `;
 
 export const Image = styled.img`
@@ -27,9 +38,16 @@ export const Image = styled.img`
     width: 114px;
     height: 169px;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      max-width: 312px;
+      max-height: 464px;
+    `}
 `;
 
-export const Decsription = styled.div`
+export const DataContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
 
@@ -41,18 +59,32 @@ export const Decsription = styled.div`
     flex-direction: column;
     justify-content: top;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      padding: 64px 0;
+    `}
 `;
 
 export const Title = styled.h3`
   margin-top: 16px;
-  font-weight: ${({ theme }) => theme.fontWeights.titleDesktop}px;
-  font-size: ${({ theme }) => theme.fontSizes.titleDesktop}px;
-  line-height: ${({ theme }) => theme.lineHeights.titleDesktop}px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28.6px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 16px;
     line-height: 20.8px;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 43.2px;
+    `}
 `;
 
 export const Year = styled.p`
@@ -65,6 +97,25 @@ export const Year = styled.p`
     font-size: 13px;
     line-height: 16.9px;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      color: ${({ theme }) => theme.colors.black};
+      font-size: 22px;
+      line-height: 26.4px;
+    `}
+`;
+
+export const AdditionalDataName = styled.span`
+  font-size: 22px;
+  line-height: 21.6px;
+  color: ${({ theme }) => theme.colors.stormGray};
+`;
+
+export const AdditionalData = styled.span`
+  font-size: 22px;
+  line-height: 21.6px;
 `;
 
 export const Genres = styled.ul`
@@ -112,6 +163,7 @@ export const VotesContainer = styled.div`
 `;
 
 export const StyledStarIcon = styled(StarIcon)`
+
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 16px;
     height: 15.25px;
@@ -130,6 +182,26 @@ export const Mark = styled.em`
     line-height: 16.9px;
     white-space: nowrap;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-weight: 500;
+      line-height: 28.6px;
+      font-size: 22px;
+    `}
+`;
+
+export const MaxMark = styled.b`
+  display: none;
+  font-size: 14px;
+  line-height: 16.8px;
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      display: block;
+    `};
 `;
 
 export const VotesNumber = styled.b`
@@ -143,4 +215,17 @@ export const VotesNumber = styled.b`
     line-height: 16.9px;
     white-space: nowrap;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      ${({ theme }) => theme.colors.black};
+    `}
+`;
+
+export const Description = styled.p`
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  color: ${({ theme }) => theme.colors.black};
 `;

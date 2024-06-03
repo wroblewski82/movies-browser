@@ -4,30 +4,58 @@ import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
   StyledMovieTile,
   Image,
-  Decsription,
+  DataContainer,
   Title,
   Year,
+  AdditionalDataName,
+  AdditionalData,
   Genres,
   Genre,
   VotesContainer,
   StyledStarIcon,
   VotesNumber,
   Mark,
+  MaxMark,
+  Description,
 } from "./styled";
 
-export const MovieTile = ({ poster, title, year, genres, mark, votes }) => {
+export const MovieTile = ({
+  poster,
+  title,
+  year,
+  productionPlace,
+  releaseDate,
+  genres,
+  mark,
+  votes,
+  description,
+  $main,
+}) => {
   return (
-    <StyledMovieTile>
+    <StyledMovieTile $main={$main}>
       {poster ? (
-        <Image src={poster} alt="Movie Poster" />
+        <Image src={poster} alt="Movie Poster" $main={$main} />
       ) : (
-        <ImagePlaceholder>
+        <ImagePlaceholder $main={$main}>
           <PlaceholderIcon />
         </ImagePlaceholder>
       )}
-      <Decsription>
-        {title && <Title>{title}</Title>}
-        {year && <Year>{year}</Year>}
+      <DataContainer $main={$main}>
+        {title && <Title $main={$main}>{title}</Title>}
+        {year && <Year $main={$main}>{year}</Year>}
+        {productionPlace && (
+          <p>
+            <AdditionalDataName>Production:</AdditionalDataName>{" "}
+            <AdditionalData>{productionPlace}</AdditionalData>
+          </p>
+        )}
+        {releaseDate && (
+          <p>
+            <AdditionalDataName>Release date:</AdditionalDataName>
+            {"  "}
+            <AdditionalData>{releaseDate}</AdditionalData>
+          </p>
+        )}
         {genres && (
           <Genres>
             {genres.map((genre) => (
@@ -37,10 +65,12 @@ export const MovieTile = ({ poster, title, year, genres, mark, votes }) => {
         )}
         <VotesContainer>
           <StyledStarIcon />
-          <Mark>{mark}</Mark>
-          <VotesNumber>{votes} votes</VotesNumber>
+          <Mark $main={$main}>{mark}</Mark>
+          <MaxMark $main={$main}>/10</MaxMark>
+          <VotesNumber $main={$main}>{votes} votes</VotesNumber>
         </VotesContainer>
-      </Decsription>
+        {description && <Description>{description}</Description>}
+      </DataContainer>
     </StyledMovieTile>
   );
 };

@@ -8,17 +8,26 @@ export const ImagePlaceholder = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.silver};
+  margin: auto;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 114px;
     height: 169px;
   }
 
+  ${({ $main }) =>
+    $main &&
+    css`
+      width: 312px;
+      height: 464px;
+    `}
+
   ${({ $actor }) =>
     $actor &&
     css`
       max-width: 208px;
       min-height: 339px;
+
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         max-width: 136px;
         min-height: 245px;
