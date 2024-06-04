@@ -26,6 +26,14 @@ export const StyledMovieTile = styled.section`
       margin: 64px auto;
       padding: 8px 20px;
       gap: 30px;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        max-width: 288px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr;
+        gap: 8px;
+        padding: 16px;
+      }
     `}
 `;
 
@@ -44,6 +52,10 @@ export const Image = styled.img`
     css`
       max-width: 312px;
       max-height: 464px;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        margin: 0;
+      }
     `}
 `;
 
@@ -65,6 +77,10 @@ export const DataContainer = styled.div`
     css`
       padding: 64px 0;
     `}
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    display: block;
+  }
 `;
 
 export const Title = styled.h3`
@@ -84,6 +100,12 @@ export const Title = styled.h3`
       font-weight: 600;
       font-size: 36px;
       line-height: 43.2px;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20.8px;
+      }
     `}
 `;
 
@@ -94,6 +116,7 @@ export const Year = styled.p`
   color: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    margin-top: 16px;
     font-size: 13px;
     line-height: 16.9px;
   }
@@ -104,18 +127,47 @@ export const Year = styled.p`
       color: ${({ theme }) => theme.colors.black};
       font-size: 22px;
       line-height: 26.4px;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        margin-top: -18px;
+        color: ${({ theme }) => theme.colors.waterloo};
+        font-size: 13px;
+        line-height: 16.9px;
+      }
     `}
 `;
 
+export const Container = styled.p`
+  margin: 0 0 16px;
+`;
+
 export const AdditionalDataName = styled.span`
-  font-size: 22px;
-  line-height: 21.6px;
-  color: ${({ theme }) => theme.colors.stormGray};
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-size: 22px;
+      line-height: 21.6px;
+      color: ${({ theme }) => theme.colors.stormGray};
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        display: none;
+      }
+    `}
 `;
 
 export const AdditionalData = styled.span`
-  font-size: 22px;
-  line-height: 21.6px;
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-size: 22px;
+      line-height: 21.6px;
+      font-weight: 400;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        font-size: 12px;
+        line-height: 15.6px;
+      }
+    `}
 `;
 
 export const Genres = styled.ul`
@@ -159,11 +211,24 @@ export const VotesContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     position: static;
+    margin-top: 12px;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-weight: 500;
+      line-height: 28.6px;
+      font-size: 22px;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        position: static;
+        margin-top: 12px;
+      }
+    `}
 `;
 
 export const StyledStarIcon = styled(StarIcon)`
-
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 16px;
     height: 15.25px;
@@ -189,6 +254,13 @@ export const Mark = styled.em`
       font-weight: 500;
       line-height: 28.6px;
       font-size: 22px;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16.9px;
+        white-space: nowrap;
+      }
     `}
 `;
 
@@ -201,6 +273,10 @@ export const MaxMark = styled.b`
     $main &&
     css`
       display: block;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        display: none;
+      }
     `};
 `;
 
@@ -220,12 +296,30 @@ export const VotesNumber = styled.b`
     $main &&
     css`
       ${({ theme }) => theme.colors.black};
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        font-size: 13px;
+        line-height: 16.9px;
+        white-space: nowrap;
+      }
     `}
 `;
 
 export const Description = styled.p`
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 32px;
-  color: ${({ theme }) => theme.colors.black};
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 32px;
+      color: ${({ theme }) => theme.colors.black};
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        width: 100%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22.4px;
+        margin-top: 4px;
+      }
+    `}
 `;

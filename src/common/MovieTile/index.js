@@ -7,6 +7,7 @@ import {
   DataContainer,
   Title,
   Year,
+  Container,
   AdditionalDataName,
   AdditionalData,
   Genres,
@@ -32,45 +33,51 @@ export const MovieTile = ({
   $main,
 }) => {
   return (
-    <StyledMovieTile $main={$main}>
-      {poster ? (
-        <Image src={poster} alt="Movie Poster" $main={$main} />
-      ) : (
-        <ImagePlaceholder $main={$main}>
-          <PlaceholderIcon />
-        </ImagePlaceholder>
-      )}
-      <DataContainer $main={$main}>
-        {title && <Title $main={$main}>{title}</Title>}
-        {year && <Year $main={$main}>{year}</Year>}
-        {productionPlace && (
-          <p>
-            <AdditionalDataName>Production:</AdditionalDataName>{" "}
-            <AdditionalData>{productionPlace}</AdditionalData>
-          </p>
+    <section>
+      <StyledMovieTile $main={$main}>
+        {poster ? (
+          <Image src={poster} alt="Movie Poster" $main={$main} />
+        ) : (
+          <ImagePlaceholder $main={$main}>
+            <PlaceholderIcon />
+          </ImagePlaceholder>
         )}
-        {releaseDate && (
-          <p>
-            <AdditionalDataName>Release date:</AdditionalDataName>
-            {"  "}
-            <AdditionalData>{releaseDate}</AdditionalData>
-          </p>
-        )}
-        {genres && (
-          <Genres>
-            {genres.map((genre) => (
-              <Genre key={nanoid()}>{genre.name}</Genre>
-            ))}
-          </Genres>
-        )}
-        <VotesContainer>
-          <StyledStarIcon />
-          <Mark $main={$main}>{mark}</Mark>
-          <MaxMark $main={$main}>/10</MaxMark>
-          <VotesNumber $main={$main}>{votes} votes</VotesNumber>
-        </VotesContainer>
-        {description && <Description>{description}</Description>}
-      </DataContainer>
-    </StyledMovieTile>
+        <DataContainer $main={$main}>
+          {title && <Title $main={$main}>{title}</Title>}
+          {year && <Year $main={$main}>{year}</Year>}
+          {productionPlace && (
+            <Container>
+              <AdditionalDataName $main={$main}>Production:</AdditionalDataName>{" "}
+              <AdditionalData $main={$main}>{productionPlace}</AdditionalData>
+            </Container>
+          )}
+          {releaseDate && (
+            <Container>
+              <AdditionalDataName $main={$main}>
+                Release date:
+              </AdditionalDataName>
+              {"  "}
+              <AdditionalData $main={$main}>{releaseDate}</AdditionalData>
+            </Container>
+          )}
+          {genres && (
+            <Genres>
+              {genres.map((genre) => (
+                <Genre key={nanoid()}>{genre.name}</Genre>
+              ))}
+            </Genres>
+          )}
+          <VotesContainer>
+            <StyledStarIcon />
+            <Mark $main={$main}>{mark}</Mark>
+            <MaxMark $main={$main}>/10</MaxMark>
+            <VotesNumber $main={$main}>{votes} votes</VotesNumber>
+          </VotesContainer>
+          {description && (
+            <Description $main={$main}>{description}</Description>
+          )}
+        </DataContainer>
+      </StyledMovieTile>
+    </section>
   );
 };
