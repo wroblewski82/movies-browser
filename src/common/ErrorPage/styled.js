@@ -12,14 +12,14 @@ export const Container = styled.div`
 export const StyledHeader = styled.h1`
   font-weight: 600;
   font-size: 36px;
-  line-height: 43.2px;
+  line-height: 1.2;
 `;
 
 export const StyledParagraph = styled.p`
   max-width: 426.53px;
   font-weight: 500;
   font-size: 22px;
-  line-height: 28.6px;
+  line-height: 1.3;
   margin: 0 auto 40px;
 `;
 
@@ -32,6 +32,6 @@ export const StyledLink = styled.a`
   font-weight: 700;
   font-size: 14px;
   text-align: center;
-  line-height: 19px;
+  line-height: 1.36;
   cursor: pointer;
 `;

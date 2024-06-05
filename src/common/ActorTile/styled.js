@@ -27,12 +27,12 @@ export const Image = styled.img`
 `;
 
 export const ActorName = styled.h3`
-  line-height: ${({ theme }) => theme.lineHeights.titleDesktop}px;
-  font-size: ${({ theme }) => theme.fontSizes.titleDesktop}px;
+  line-height: 1.3;
+  font-size: 22px;
   font-weight: 500px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    line-height: 18.2px;
+    line-height: 1.3;
     font-size: 14px;
   }
 `;
