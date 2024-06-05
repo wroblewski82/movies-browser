@@ -7,7 +7,8 @@ import { useQueryParam, useReplaceQueryParam } from "../Navigation/queryParam";
 export const usePageButton = () => {
   const movieData = useSelector(selectMoviesObject);
   const data = movieData;
-  const totalPages = data.total_Pages > 500 ? 500 : data.total_Pages;
+  const totalPages = 500;
+  //const totalPages = data.total_Pages > 500 ? 500 : data.total_Pages;
   const replaceQueryParameter = useReplaceQueryParam();
   const [actualPage, setPage] = useState(
     parseInt(useQueryParam(paginationParamName))
