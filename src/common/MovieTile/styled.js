@@ -1,7 +1,24 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
-export const StyledMovieTile = styled.section`
+export const StyledSection = styled.section`
+  ${({ $main }) =>
+    $main &&
+    css`
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 324px;
+        min-height: 400px;
+        max-height: 650px;
+        background-color: ${({ theme }) => theme.colors.white};
+        margin: 0 auto;
+        padding: 16px;
+      }
+    `}
+`;
+
+export const StyledMovieTile = styled.div`
   display: grid;
   max-width: 324px;
   min-height: 650px;
@@ -15,6 +32,7 @@ export const StyledMovieTile = styled.section`
     min-height: 201px;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    position: relative;
   }
 
   ${({ $main }) =>
@@ -28,11 +46,8 @@ export const StyledMovieTile = styled.section`
       gap: 30px;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        max-width: 288px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto 1fr;
-        gap: 8px;
-        padding: 16px;
+        margin: 0;
+        background-color: transparent;
       }
     `}
 `;
@@ -51,7 +66,7 @@ export const Image = styled.img`
     $main &&
     css`
       max-width: 312px;
-      max-height: 464px;
+      max-height: 264px;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         margin: 0;
@@ -129,10 +144,7 @@ export const Year = styled.p`
       line-height: 26.4px;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        margin-top: -18px;
         color: ${({ theme }) => theme.colors.waterloo};
-        font-size: 13px;
-        line-height: 16.9px;
       }
     `}
 `;
@@ -220,11 +232,6 @@ export const VotesContainer = styled.div`
       font-weight: 500;
       line-height: 28.6px;
       font-size: 22px;
-
-      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        position: static;
-        margin-top: 12px;
-      }
     `}
 `;
 
@@ -257,9 +264,6 @@ export const Mark = styled.em`
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         font-weight: bold;
-        font-size: 13px;
-        line-height: 16.9px;
-        white-space: nowrap;
       }
     `}
 `;
@@ -296,12 +300,6 @@ export const VotesNumber = styled.b`
     $main &&
     css`
       ${({ theme }) => theme.colors.black};
-
-      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        font-size: 13px;
-        line-height: 16.9px;
-        white-space: nowrap;
-      }
     `}
 `;
 
@@ -312,14 +310,30 @@ export const Description = styled.p`
       font-size: 24px;
       font-weight: 400;
       line-height: 32px;
+      text-align: justify;
       color: ${({ theme }) => theme.colors.black};
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        width: 100%;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 22.4px;
-        margin-top: 4px;
+        display: none;
+      }
+    `}
+`;
+
+export const Description2 = styled.p`
+  ${({ $main }) =>
+    $main &&
+    css`
+      color: ${({ theme }) => theme.colors.black};
+      margin: 0 auto;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22.4px;
+      max-width: 288px;
+      padding: 16px 18px;
+      text-align: justify;
+
+      @media (min-width: ${({ theme }) => theme.media.mobile}px) {
+        display: none;
       }
     `}
 `;
