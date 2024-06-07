@@ -24,6 +24,7 @@ export const Image = styled.img`
   width: 292px;
   height: 434px;
   border-radius: 5px;
+  margin: 16px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 114px;
@@ -61,7 +62,7 @@ export const Decsription = styled.div`
 `;
 
 export const Title = styled.h3`
-  margin-top: 16px;
+  margin: 0 0 8px;
   font-weight: 500px;
   font-size: 22px;
   line-height: 28.6px;
@@ -73,7 +74,7 @@ export const Title = styled.h3`
 `;
 
 export const Year = styled.p`
-  margin-top: -18px;
+  margin: 0 0 8px;
   font-size: 16px;
   line-height: 24px;
   color: ${({ theme }) => theme.colors.waterloo};
@@ -85,6 +86,7 @@ export const Year = styled.p`
 `;
 
 export const Genres = styled.ul`
+  margin: 0 0 38px;
   display: flex;
   max-width: 308px;
   flex-direction: row;
@@ -121,7 +123,7 @@ export const VotesContainer = styled.div`
   position: relative;
   bottom: 16px;
 
-  margin-top: 39px;
+  margin: 0;
   gap: 12px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
