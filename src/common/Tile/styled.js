@@ -50,15 +50,6 @@ export const ImagePlaceholder = styled.div`
 export const Decsription = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    display: flex;
-    padding: 0;
-    margin-top: -14px;
-    gap: 4px;
-    flex-direction: column;
-    justify-content: top;
-  }
 `;
 
 export const Title = styled.h3`
@@ -68,6 +59,7 @@ export const Title = styled.h3`
   line-height: 28.6px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    margin: 0 0 4px;
     font-size: 16px;
     line-height: 20.8px;
   }
@@ -98,6 +90,7 @@ export const Genres = styled.ul`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     max-width: 130px;
+    margin: 0 0 8px;
   }
 `;
 
@@ -122,7 +115,6 @@ export const VotesContainer = styled.div`
   align-items: center;
   position: relative;
   bottom: 16px;
-
   margin: 0;
   gap: 12px;
 
