@@ -32,6 +32,7 @@ export const MovieList = () => {
             {movieList.map((movie) => (
               <StyledItem key={movie.id}>
                 <MovieTile
+                  id={movie.id}
                   poster={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
                   title={movie.title}
                   year={movie.release_date.split("-")[0]}
