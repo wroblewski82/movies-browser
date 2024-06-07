@@ -19,14 +19,14 @@ export const Pagination = () => {
     setLastPage,
   } = usePageButton();
   const isFirstPage = actualPage === 1;
-  const isLastPage = actualPage === 5;
+  const isLastPage = actualPage === totalPages;
   return (
     <Wrapper>
       <Button onClick={setFirstPage} disabled={isFirstPage}>
         <PrevArrowIcon />
         <ButtonText>First</ButtonText>
       </Button>
-      <Button onClick={setPreviousPage}>
+      <Button onClick={setPreviousPage} disabled={isFirstPage}>
         <PrevArrowIcon />
         <ButtonText>Previous</ButtonText>
       </Button>
@@ -34,7 +34,7 @@ export const Pagination = () => {
         Page <PageNumbers>{actualPage}</PageNumbers> of{" "}
         <PageNumbers>{totalPages}</PageNumbers>
       </PageCounter>
-      <Button onClick={setNextPage}>
+      <Button onClick={setNextPage} disabled={isLastPage}>
         <ButtonText>Next</ButtonText>
         <NextArrowIcon />
       </Button>
