@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
+
 import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
 export const StyledSection = styled.section`
@@ -13,6 +15,7 @@ export const StyledSection = styled.section`
         max-height: 650px;
         background-color: ${({ theme }) => theme.colors.white};
         margin: 0 auto;
+        gap: 16px;
         padding: 16px;
       }
     `}
@@ -39,7 +42,6 @@ export const StyledMovieTile = styled.div`
     $main &&
     css`
       max-width: 1368px;
-      max-height: 524px;
       grid-template-columns: 1fr 2fr;
       margin: 64px auto;
       padding: 8px 20px;
@@ -65,13 +67,12 @@ export const Image = styled.img`
   ${({ $main }) =>
     $main &&
     css`
-      max-width: 312px;
-      max-height: 264px;
-
-      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        margin: 0;
-      }
+      margin: auto;
     `}
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    margin: 0;
+  }
 `;
 
 export const DataContainer = styled.div`
@@ -91,11 +92,17 @@ export const DataContainer = styled.div`
     $main &&
     css`
       padding: 64px 0;
+      justify-items: top;
     `}
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     display: block;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Title = styled.h3`
@@ -139,12 +146,8 @@ export const Year = styled.p`
   ${({ $main }) =>
     $main &&
     css`
-      color: ${({ theme }) => theme.colors.black};
-      font-size: 22px;
-      line-height: 26.4px;
-
-      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        color: ${({ theme }) => theme.colors.waterloo};
+      @media (min-width: ${({ theme }) => theme.media.mobile}px) {
+        display: none;
       }
     `}
 `;
@@ -177,7 +180,8 @@ export const AdditionalData = styled.span`
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         font-size: 12px;
-        line-height: 15.6px;
+        line-height: 18.6px;
+        font-weight: 400;
       }
     `}
 `;

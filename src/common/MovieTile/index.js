@@ -1,4 +1,5 @@
 import { nanoid } from "@reduxjs/toolkit";
+
 import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderMovieIcon.svg";
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
@@ -6,6 +7,7 @@ import {
   StyledMovieTile,
   Image,
   DataContainer,
+  StyledLink,
   Title,
   Year,
   Container,
@@ -23,10 +25,11 @@ import {
 } from "./styled";
 
 export const MovieTile = ({
+  id,
   poster,
   title,
   year,
-  productionPlace,
+  productionPlaces,
   releaseDate,
   genres,
   mark,
@@ -38,27 +41,33 @@ export const MovieTile = ({
     <StyledSection $main={$main}>
       <StyledMovieTile $main={$main}>
         {poster ? (
-          <Image src={poster} alt="Movie Poster" $main={$main} />
+          <Image $main={$main} src={poster} alt="Movie Poster" />
         ) : (
           <ImagePlaceholder $main={$main}>
             <PlaceholderIcon />
           </ImagePlaceholder>
         )}
         <DataContainer $main={$main}>
-          {title && <Title $main={$main}>{title}</Title>}
+          <StyledLink to={`/movies/${id}`}>
+            {title && <Title $main={$main}>{title}</Title>}{" "}
+          </StyledLink>
           {year && <Year $main={$main}>{year}</Year>}
-          {productionPlace && (
+          {productionPlaces && (
             <Container>
               <AdditionalDataName $main={$main}>Production:</AdditionalDataName>{" "}
-              <AdditionalData $main={$main}>{productionPlace}</AdditionalData>
+              {productionPlaces?.map((productionPlace, index) => (
+                <AdditionalData key={index} $main={$main}>
+                  {productionPlace.name}
+                  {index === productionPlaces.length - 1 ? "." : ", "}
+                </AdditionalData>
+              ))}
             </Container>
           )}
           {releaseDate && (
             <Container>
               <AdditionalDataName $main={$main}>
                 Release date:
-              </AdditionalDataName>
-              {"  "}
+              </AdditionalDataName>{" "}
               <AdditionalData $main={$main}>{releaseDate}</AdditionalData>
             </Container>
           )}
