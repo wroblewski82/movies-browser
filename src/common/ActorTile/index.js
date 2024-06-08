@@ -9,7 +9,7 @@ export const ActorTile = ({ poster, actorName }) => {
       {poster ? (
         <Image src={poster} alt="This actor photo" />
       ) : (
-        <ImagePlaceholder>
+        <ImagePlaceholder actor>
           <PlaceholderIcon />
         </ImagePlaceholder>
       )}
