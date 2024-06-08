@@ -1,4 +1,4 @@
-import { ReactComponent as PlaceholderIcon } from "../assets/placeholderActorIcon.svg";
+import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderActorIcon.svg";
 
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import { StyledActorTile, Image, ActorName } from "./styled";

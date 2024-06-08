@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledMain = styled.main`
   max-width: 1400px;
@@ -24,6 +24,12 @@ export const StyledList = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
   grid-gap: 24px;
+
+  ${({ people }) =>
+    people &&
+    css`
+      grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+    `}
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     grid-gap: 16px 0;
