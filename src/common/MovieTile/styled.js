@@ -109,11 +109,11 @@ export const Title = styled.h3`
   margin-top: 16px;
   font-weight: 500;
   font-size: 22px;
-  line-height: 28.6px;
+  line-height: 1.3;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 16px;
-    line-height: 20.8px;
+    line-height: 1.3;
   }
 
   ${({ $main }) =>
@@ -121,12 +121,12 @@ export const Title = styled.h3`
     css`
       font-weight: 600;
       font-size: 36px;
-      line-height: 43.2px;
+      line-height: 1.2;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         font-size: 16px;
         font-weight: 500;
-        line-height: 20.8px;
+        line-height: 1.3;
       }
     `}
 `;
@@ -134,13 +134,13 @@ export const Title = styled.h3`
 export const Year = styled.p`
   margin-top: -18px;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   color: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     margin-top: 16px;
     font-size: 13px;
-    line-height: 16.9px;
+    line-height: 1.3;
   }
 
   ${({ $main }) =>
@@ -161,7 +161,7 @@ export const AdditionalDataName = styled.span`
     $main &&
     css`
       font-size: 22px;
-      line-height: 21.6px;
+      line-height: 0.9;
       color: ${({ theme }) => theme.colors.stormGray};
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
@@ -175,12 +175,12 @@ export const AdditionalData = styled.span`
     $main &&
     css`
       font-size: 22px;
-      line-height: 21.6px;
+      line-height: 0.9;
       font-weight: 400;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         font-size: 12px;
-        line-height: 18.6px;
+        line-height: 1.5;
         font-weight: 400;
       }
     `}
@@ -213,7 +213,7 @@ export const Genre = styled.li`
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     padding: 4px 8px;
     font-size: 10px;
-    line-height: 11px;
+    line-height: 1.1;
   }
 `;
 
@@ -234,7 +234,7 @@ export const VotesContainer = styled.div`
     $main &&
     css`
       font-weight: 500;
-      line-height: 28.6px;
+      line-height: 1.3;
       font-size: 22px;
     `}
 `;
@@ -248,14 +248,14 @@ export const StyledStarIcon = styled(StarIcon)`
 
 export const Mark = styled.em`
   font-weight: bold;
-  line-height: 24px;
+  line-height: 1.5;
   font-size: 16px;
   text-decoration: none;
   font-style: normal;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
-    line-height: 16.9px;
+    line-height: 1.3;
     white-space: nowrap;
   }
 
@@ -263,7 +263,7 @@ export const Mark = styled.em`
     $main &&
     css`
       font-weight: 500;
-      line-height: 28.6px;
+      line-height: 1.3;
       font-size: 22px;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
@@ -275,7 +275,7 @@ export const Mark = styled.em`
 export const MaxMark = styled.b`
   display: none;
   font-size: 14px;
-  line-height: 16.8px;
+  line-height: 1.2;
 
   ${({ $main }) =>
     $main &&
@@ -291,12 +291,12 @@ export const MaxMark = styled.b`
 export const VotesNumber = styled.b`
   font-weight: normal;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   color: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
-    line-height: 16.9px;
+    line-height: 1.3;
     white-space: nowrap;
   }
 
@@ -313,7 +313,7 @@ export const Description = styled.p`
     css`
       font-size: 24px;
       font-weight: 400;
-      line-height: 32px;
+      line-height: 1.3;
       text-align: justify;
       color: ${({ theme }) => theme.colors.black};
 
@@ -331,7 +331,7 @@ export const Description2 = styled.p`
       margin: 0 auto;
       font-size: 14px;
       font-weight: 400;
-      line-height: 22.4px;
+      line-height: 1.6;
       max-width: 288px;
       padding: 16px 18px;
       text-align: justify;
