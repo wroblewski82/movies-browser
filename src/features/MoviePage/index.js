@@ -3,19 +3,26 @@ import { useState, useEffect } from "react";
 
 import { getDataFromApi } from "../MovieList/getDataFromApi";
 import { MovieTile } from "../../common/MovieTile";
-import { StyledMoviePage } from "./styled";
+import { PersonTile } from "../../common/PersonTile";
+import { StyledMoviePage, Article } from "./styled";
+import { StyledHeader, StyledList } from "../MovieList/styled";
 
 export const MoviePage = () => {
   const [movie, setMovie] = useState(null);
+  const [credits, setCredits] = useState(null);
   const { movieId } = useParams();
 
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const data = await getDataFromApi(
+        const movieData = await getDataFromApi(
           `https://api.themoviedb.org/3/movie/${movieId}?api_key=ac5371c0e378529d6face3e2fab3b7c1`
         );
-        setMovie(data);
+        const creditsData = await getDataFromApi(
+          `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=ac5371c0e378529d6face3e2fab3b7c1`
+        );
+        setMovie(movieData);
+        setCredits(creditsData);
       } catch (error) {
         console.error(error.message);
       }
@@ -24,7 +31,6 @@ export const MoviePage = () => {
     fetchMovie();
   }, [movieId]);
 
-  console.log(movie);
   return (
     <StyledMoviePage $main>
       <MovieTile
@@ -39,6 +45,30 @@ export const MoviePage = () => {
         votes={movie?.vote_count}
         description={movie?.overview}
       />
+
+      <Article>
+        <StyledHeader>Cast</StyledHeader>
+        <StyledList>
+          {credits?.cast?.map((person) => (
+            <PersonTile
+              poster={`https://image.tmdb.org/t/p/w342${person?.profile_path}.jpg`}
+              personName={person.name}
+            />
+          ))}
+        </StyledList>
+      </Article>
+
+      <Article>
+        <StyledHeader>Crew</StyledHeader>
+        <StyledList>
+          {credits?.crew?.map((person) => (
+            <PersonTile
+              poster={`https://image.tmdb.org/t/p/w342${person?.profile_path}.jpg`}
+              personName={person.name}
+            />
+          ))}
+        </StyledList>
+      </Article>
     </StyledMoviePage>
   );
 };
