@@ -3,7 +3,6 @@ import { nanoid } from "@reduxjs/toolkit";
 import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderMovieIcon.svg";
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
-  StyledSection,
   StyledMovieTile,
   Image,
   DataContainer,
@@ -38,7 +37,7 @@ export const MovieTile = ({
   $main,
 }) => {
   return (
-    <StyledSection $main={$main}>
+    <>
       <StyledMovieTile $main={$main}>
         {poster ? (
           <Image $main={$main} src={poster} alt="Movie Poster" />
@@ -90,6 +89,6 @@ export const MovieTile = ({
         </DataContainer>
       </StyledMovieTile>
       {description && <Description2 $main={$main}>{description}</Description2>}
-    </StyledSection>
+    </>
   );
 };

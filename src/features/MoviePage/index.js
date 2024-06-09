@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import { getDataFromApi } from "../MovieList/getDataFromApi";
 import { MovieTile } from "../../common/MovieTile";
+import { StyledMoviePage } from "./styled";
 
 export const MoviePage = () => {
   const [movie, setMovie] = useState(null);
@@ -25,17 +26,19 @@ export const MoviePage = () => {
 
   console.log(movie);
   return (
-    <MovieTile
-      $main
-      poster={`https://image.tmdb.org/t/p/w342${movie?.poster_path}.jpg`}
-      title={movie?.title}
-      year={movie?.release_date.split("-")[0]}
-      productionPlaces={movie?.production_countries}
-      releaseDate={movie?.release_date.split("-").reverse().join(".")}
-      genres={movie?.genres}
-      mark={movie?.vote_average.toFixed(1)}
-      votes={movie?.vote_count}
-      description={movie?.overview}
-    />
+    <StyledMoviePage $main>
+      <MovieTile
+        $main
+        poster={`https://image.tmdb.org/t/p/w342${movie?.poster_path}.jpg`}
+        title={movie?.title}
+        year={movie?.release_date.split("-")[0]}
+        productionPlaces={movie?.production_countries}
+        releaseDate={movie?.release_date.split("-").reverse().join(".")}
+        genres={movie?.genres}
+        mark={movie?.vote_average.toFixed(1)}
+        votes={movie?.vote_count}
+        description={movie?.overview}
+      />
+    </StyledMoviePage>
   );
 };

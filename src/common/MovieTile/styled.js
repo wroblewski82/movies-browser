@@ -3,25 +3,7 @@ import { Link } from "react-router-dom";
 
 import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
-export const StyledSection = styled.section`
-  ${({ $main }) =>
-    $main &&
-    css`
-      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        display: grid;
-        grid-template-columns: 1fr;
-        max-width: 324px;
-        min-height: 400px;
-        max-height: 650px;
-        background-color: ${({ theme }) => theme.colors.white};
-        margin: 0 auto;
-        gap: 16px;
-        padding: 16px;
-      }
-    `}
-`;
-
-export const StyledMovieTile = styled.div`
+export const StyledMovieTile = styled.article`
   display: grid;
   max-width: 324px;
   min-height: 650px;
@@ -35,7 +17,6 @@ export const StyledMovieTile = styled.div`
     min-height: 201px;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    position: relative;
   }
 
   ${({ $main }) =>
@@ -77,7 +58,10 @@ export const Image = styled.img`
 
 export const DataContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
+  align-items: start;
+  grid-template-rows: 1fr 2fr 3fr 1fr;
+  max-width: 292px;
+  max-height: 308px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     display: flex;
@@ -91,8 +75,11 @@ export const DataContainer = styled.div`
   ${({ $main }) =>
     $main &&
     css`
-      padding: 64px 0;
-      justify-items: top;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      max-width: 936px;
+      max-height: auto;
+      padding: 5% 0;
     `}
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
@@ -106,14 +93,13 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Title = styled.h3`
-  margin-top: 16px;
-  font-weight: 500;
+  font-weight: 500px;
   font-size: 22px;
   line-height: 1.3;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 16px;
-    line-height: 1.3;
+    margin-top: 16px;
   }
 
   ${({ $main }) =>
@@ -132,15 +118,14 @@ export const Title = styled.h3`
 `;
 
 export const Year = styled.p`
-  margin-top: -18px;
   font-size: 16px;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    margin-top: 16px;
     font-size: 13px;
     line-height: 1.3;
+    margin-top: -18px;
   }
 
   ${({ $main }) =>
@@ -192,12 +177,12 @@ export const Genres = styled.ul`
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
-  margin: -4px 0 0;
   padding: 0;
   gap: 8px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     max-width: 130px;
+    margin: -4px 0 0;
   }
 `;
 
@@ -311,14 +296,16 @@ export const Description = styled.p`
   ${({ $main }) =>
     $main &&
     css`
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 400;
-      line-height: 1.3;
+      line-height: 1.6;
       text-align: justify;
       color: ${({ theme }) => theme.colors.black};
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         display: none;
+        font-size: 14px;
+        line-height: 1.6;
       }
     `}
 `;
