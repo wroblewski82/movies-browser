@@ -7,13 +7,13 @@ export const PersonTile = ({ poster, personName }) => {
   return (
     <StyledPersonTile>
       {poster ? (
-        <Image src={poster} alt="This actor photo" />
+        <Image src={poster} alt="This person photo" />
       ) : (
         <ImagePlaceholder $forPerson>
           <PlaceholderIcon />
         </ImagePlaceholder>
       )}
-      <PersonName>{actorName}</PersonName>
+      <PersonName>{personName}</PersonName>
     </StyledPersonTile>
   );
 };
