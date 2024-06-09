@@ -3,7 +3,11 @@ import styled, { css } from "styled-components";
 export const StyledMain = styled.main`
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 16px 40px;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    padding-bottom: 32px;
+  }
 `;
 
 export const StyledHeader = styled.h1`
