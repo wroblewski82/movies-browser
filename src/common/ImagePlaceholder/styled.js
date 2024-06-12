@@ -29,8 +29,9 @@ export const ImagePlaceholder = styled.div`
   ${({ $forPerson }) =>
     $forPerson &&
     css`
-      max-width: 208px;
-      min-height: 339px;
+      width: 177px;
+      height: 264px;
+      margin: 0 0 12px;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         max-width: 136px;

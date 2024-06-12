@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledPersonTile = styled.section`
-  max-width: 208px;
+  width: 208px;
   height: 380px;
   margin: 24px;
   padding: 10px 15px 22px;
