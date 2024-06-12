@@ -5,14 +5,14 @@ import { useState, useEffect } from "react";
 import { getDataFromApi } from "../MovieList/getDataFromApi";
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
-import { StyledMoviePage, Article } from "./styled";
+import { TileContainer, StyledMoviePage, Article } from "./styled";
 import { StyledHeader, StyledList } from "../MovieList/styled";
 
 export const MoviePage = () => {
   const [movie, setMovie] = useState(null);
   const [credits, setCredits] = useState(null);
   const { movieId } = useParams();
- 
+
   useEffect(() => {
     const fetchMovie = async () => {
       try {
@@ -34,19 +34,21 @@ export const MoviePage = () => {
 
   return (
     <StyledMoviePage $main>
-      <MovieTile
-        $main
-        key={nanoid()}
-        poster={`https://image.tmdb.org/t/p/w342${movie?.poster_path}.jpg`}
-        title={movie?.title}
-        year={movie?.release_date.split("-")[0]}
-        productionPlaces={movie?.production_countries}
-        releaseDate={movie?.release_date.split("-").reverse().join(".")}
-        genres={movie?.genres}
-        mark={movie?.vote_average.toFixed(1)}
-        votes={movie?.vote_count}
-        description={movie?.overview}
-      />
+      <TileContainer>
+        <MovieTile
+          $main
+          key={nanoid()}
+          poster={`https://image.tmdb.org/t/p/w342${movie?.poster_path}.jpg`}
+          title={movie?.title}
+          year={movie?.release_date.split("-")[0]}
+          productionPlaces={movie?.production_countries}
+          releaseDate={movie?.release_date.split("-").reverse().join(".")}
+          genres={movie?.genres}
+          mark={movie?.vote_average.toFixed(1)}
+          votes={movie?.vote_count}
+          description={movie?.overview}
+        />
+      </TileContainer>
 
       <Article>
         <StyledHeader>Cast</StyledHeader>

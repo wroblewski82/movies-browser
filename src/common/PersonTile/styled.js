@@ -13,7 +13,7 @@ export const StyledPersonTile = styled.section`
     padding: 8px 8px 15px;
     border-radius: 5px;
     max-width: 136px;
-    min-height: 245px;
+    height: 245px;
   }
 `;
 

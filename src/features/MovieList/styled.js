@@ -25,15 +25,19 @@ export const StyledList = styled.ul`
   grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
   grid-gap: 24px;
 
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    grid-gap: 16px 0;
+  }
+
   ${({ $people }) =>
     $people &&
     css`
       grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
-    `}
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    grid-gap: 16px 0;
-  }
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+      }
+    `}
 `;
 
 export const StyledItem = styled.li`

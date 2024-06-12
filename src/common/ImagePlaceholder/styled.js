@@ -34,8 +34,8 @@ export const ImagePlaceholder = styled.div`
       margin: 0 0 12px;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        max-width: 136px;
-        min-height: 245px;
+        max-width: 120px;
+        min-height: 178px;
       }
     `}
 `;
