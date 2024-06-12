@@ -4,7 +4,7 @@ import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
   StyledMovieTile,
   Image,
-  Decsription,
+  Description,
   Title,
   Year,
   Genres,
@@ -25,7 +25,7 @@ export const MovieTile = ({ poster, title, year, genres, mark, votes }) => {
           <PlaceholderIcon />
         </ImagePlaceholder>
       )}
-      <Decsription>
+      <Description>
         {title && <Title>{title}</Title>}
         {year && <Year>{year}</Year>}
         {genres && (
@@ -40,7 +40,7 @@ export const MovieTile = ({ poster, title, year, genres, mark, votes }) => {
           <Mark>{mark}</Mark>
           <VotesNumber>{votes} votes</VotesNumber>
         </VotesContainer>
-      </Decsription>
+      </Description>
     </StyledMovieTile>
   );
 };
