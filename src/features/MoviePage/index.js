@@ -1,3 +1,4 @@
+import { nanoid } from "@reduxjs/toolkit";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 
@@ -11,7 +12,7 @@ export const MoviePage = () => {
   const [movie, setMovie] = useState(null);
   const [credits, setCredits] = useState(null);
   const { movieId } = useParams();
-
+ 
   useEffect(() => {
     const fetchMovie = async () => {
       try {
@@ -35,6 +36,7 @@ export const MoviePage = () => {
     <StyledMoviePage $main>
       <MovieTile
         $main
+        key={nanoid()}
         poster={`https://image.tmdb.org/t/p/w342${movie?.poster_path}.jpg`}
         title={movie?.title}
         year={movie?.release_date.split("-")[0]}
@@ -48,10 +50,13 @@ export const MoviePage = () => {
 
       <Article>
         <StyledHeader>Cast</StyledHeader>
-        <StyledList>
+        <StyledList $people>
           {credits?.cast?.map((person) => (
             <PersonTile
-              poster={`https://image.tmdb.org/t/p/w342${person?.profile_path}.jpg`}
+              key={nanoid()}
+              {...(person.profile_path && {
+                poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
+              })}
               personName={person.name}
             />
           ))}
@@ -60,10 +65,13 @@ export const MoviePage = () => {
 
       <Article>
         <StyledHeader>Crew</StyledHeader>
-        <StyledList>
+        <StyledList $people>
           {credits?.crew?.map((person) => (
             <PersonTile
-              poster={`https://image.tmdb.org/t/p/w342${person?.profile_path}.jpg`}
+              key={nanoid()}
+              {...(person.profile_path && {
+                poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
+              })}
               personName={person.name}
             />
           ))}
