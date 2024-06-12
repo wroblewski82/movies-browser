@@ -25,8 +25,8 @@ export const StyledList = styled.ul`
   grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
   grid-gap: 24px;
 
-  ${({ people }) =>
-    people &&
+  ${({ $people }) =>
+    $people &&
     css`
       grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
     `}
