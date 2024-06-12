@@ -1,4 +1,4 @@
-import { ReactComponent as PlaceholderIcon } from "../assets/placeholderActorIcon.svg";
+import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderActorIcon.svg";
 
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import { StyledActorTile, Image, ActorName } from "./styled";
@@ -9,7 +9,7 @@ export const ActorTile = ({ poster, actorName }) => {
       {poster ? (
         <Image src={poster} alt="This actor photo" />
       ) : (
-        <ImagePlaceholder>
+        <ImagePlaceholder actor>
           <PlaceholderIcon />
         </ImagePlaceholder>
       )}

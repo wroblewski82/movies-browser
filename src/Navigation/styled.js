@@ -104,7 +104,7 @@ export const LogoTyp = styled.span`
   font-weight: 500;
   font-size: 24px;
   color: ${({ theme }) => theme.colors.white};
-  line-height: 40px;
+  line-height: 1.66;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;

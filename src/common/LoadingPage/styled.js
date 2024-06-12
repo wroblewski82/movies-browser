@@ -7,13 +7,13 @@ export const Container = styled.div`
 
 export const Header = styled.h1`
   font-size: 36px;
-  line-height: 43.2px;
+  line-height: 1.2;
   margin: 0 0 120px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-weight: 500;
     font-size: 14px;
-    line-height: 18.2px;
+    line-height: 1.3;
     margin: 0 0 24px;
   }
 `;

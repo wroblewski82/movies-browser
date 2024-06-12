@@ -56,24 +56,24 @@ export const Title = styled.h3`
   margin: 0 0 8px;
   font-weight: 500px;
   font-size: 22px;
-  line-height: 28.6px;
+  line-height: 1.3;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     margin: 0 0 4px;
     font-size: 16px;
-    line-height: 20.8px;
+    line-height: 1.3;
   }
 `;
 
 export const Year = styled.p`
   margin: 0 0 8px;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   color: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
-    line-height: 16.9px;
+    line-height: 1.3;
   }
 `;
 
@@ -106,7 +106,7 @@ export const Genre = styled.li`
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     padding: 4px 8px;
     font-size: 10px;
-    line-height: 11px;
+    line-height: 1.1;
   }
 `;
 
@@ -132,13 +132,13 @@ export const StyledStarIcon = styled(StarIcon)`
 
 export const Mark = styled.em`
   font-weight: bold;
-  line-height: 24px;
+  line-height: 1.5;
   text-decoration: none;
   font-style: normal;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
-    line-height: 16.9px;
+    line-height: 1.3;
     white-space: nowrap;
   }
 `;
@@ -146,12 +146,12 @@ export const Mark = styled.em`
 export const VotesNumber = styled.b`
   font-weight: normal;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   color: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
-    line-height: 16.9px;
+    line-height: 1.3;
     white-space: nowrap;
   }
 `;
