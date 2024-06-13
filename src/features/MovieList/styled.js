@@ -14,6 +14,7 @@ export const StyledHeader = styled.h1`
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 18px;
     line-height: 1.2;
+    margin-top: 24px;
   }
 `;
 
@@ -36,6 +37,7 @@ export const StyledList = styled.ul`
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+        grid-gap: 16px;
       }
     `}
 `;

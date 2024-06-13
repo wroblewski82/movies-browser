@@ -3,13 +3,11 @@ import styled from "styled-components";
 export const StyledPersonTile = styled.section`
   width: 208px;
   height: 380px;
-  margin: 24px;
   padding: 10px 15px 22px;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    margin: 16px;
     padding: 8px 8px 15px;
     border-radius: 5px;
     max-width: 136px;
