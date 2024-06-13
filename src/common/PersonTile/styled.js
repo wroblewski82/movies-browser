@@ -12,6 +12,7 @@ export const StyledPersonTile = styled.section`
     border-radius: 5px;
     max-width: 136px;
     height: 245px;
+    box-shadow: 0 4px 12px #BAC7D5;
   }
 `;
 

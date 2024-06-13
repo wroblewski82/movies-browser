@@ -19,6 +19,7 @@ export const StyledMoviePage = styled.section`
 
 export const TileContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: 0 4px 12px #bac7d5;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     max-width: 288px;
