@@ -51,7 +51,7 @@ export const MoviePage = () => {
       </TileContainer>
 
       <Article>
-        <StyledHeader>Cast</StyledHeader>
+        <StyledHeader as="h2">Cast</StyledHeader>
         <StyledList $people>
           {credits?.cast?.map((person) => (
             <PersonTile
@@ -66,7 +66,7 @@ export const MoviePage = () => {
       </Article>
 
       <Article>
-        <StyledHeader>Crew</StyledHeader>
+        <StyledHeader as="h2">Crew</StyledHeader>
         <StyledList $people>
           {credits?.crew?.map((person) => (
             <PersonTile
