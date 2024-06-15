@@ -5,8 +5,21 @@ import { useState, useEffect } from "react";
 import { getDataFromApi } from "../MovieList/getDataFromApi";
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
-import { TileContainer, StyledMoviePage, Article } from "./styled";
 import { StyledHeader, StyledList } from "../MovieList/styled";
+import {
+  StyledMoviePage,
+  PosterContainer,
+  MovieMainData,
+  MovieTitle,
+  VotesContainer,
+  StyledStarIcon,
+  MarkContainer,
+  Mark,
+  MaxMark,
+  VotesNumber,
+  TileContainer,
+  Article,
+} from "./styled";
 
 export const MoviePage = () => {
   const [movie, setMovie] = useState(null);
@@ -33,7 +46,23 @@ export const MoviePage = () => {
   }, [movieId]);
 
   return (
-    <StyledMoviePage $main>
+    <StyledMoviePage>
+      <PosterContainer
+        backdrop={`https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
+      >
+        <MovieMainData>
+          <MovieTitle>{movie?.original_title}</MovieTitle>
+          <VotesContainer>
+            <StyledStarIcon />
+            <MarkContainer>
+              <Mark>{movie?.vote_average.toFixed(1)}</Mark>
+              <MaxMark>/ 10</MaxMark>
+            </MarkContainer>
+          </VotesContainer>
+          <VotesNumber>{movie?.vote_count} votes</VotesNumber>
+        </MovieMainData>
+      </PosterContainer>
+
       <TileContainer>
         <MovieTile
           $main
