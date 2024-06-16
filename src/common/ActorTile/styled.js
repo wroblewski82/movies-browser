@@ -30,7 +30,7 @@ export const Image = styled.img`
   }
 `;
 
-export const ActorName = styled.h3`
+export const ActorName = styled.h2`
   line-height: 1.3;
   font-size: 22px;
   font-weight: 500;
