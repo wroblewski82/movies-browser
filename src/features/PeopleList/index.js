@@ -8,7 +8,13 @@ import {
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { ActorTile } from "../../common/ActorTile";
-import { StyledMain, StyledHeader, StyledList, StyledItem } from "../styled";
+import {
+  StyledMain,
+  StyledHeader,
+  StyledList,
+  StyledItem,
+  StyledLink,
+} from "../styled";
 
 export const PeopleList = () => {
   const dispatch = useDispatch();
@@ -29,10 +35,12 @@ export const PeopleList = () => {
           <StyledList people>
             {peopleList.map((people) => (
               <StyledItem key={people.id}>
-                <ActorTile
-                  poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}
-                  actorName={people.name}
-                />
+                <StyledLink to={`/people/${people.id}`}>
+                  <ActorTile
+                    poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}
+                    actorName={people.name}
+                  />
+                </StyledLink>
               </StyledItem>
             ))}
           </StyledList>

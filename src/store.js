@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import moviesReducer from "./features/MovieList/moviesSlice";
-import peopleSlice from "./features/PeopleList/peopleSlice";
+import peopleReducer from "./features/PeopleList/peopleSlice";
+import peopleDetailsReducer from "./features/PeopleDetails/peopleDetailsSlice";
 import rootSaga from "./rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
@@ -9,7 +10,8 @@ const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({
   reducer: {
     movies: moviesReducer,
-    people: peopleSlice,
+    people: peopleReducer,
+    peopleDetails: peopleDetailsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sagaMiddleware),

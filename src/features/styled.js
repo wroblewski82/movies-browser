@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledMain = styled.main`
   max-width: 1400px;
@@ -43,4 +44,16 @@ export const StyledList = styled.ul`
 export const StyledItem = styled.li`
   display: flex;
   justify-content: center;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:link {
+    color: ${({ theme }) => theme.colors.black};
+  }
+
+  &:visited {
+    color: ${({ theme }) => theme.colors.black};
+  }
 `;
