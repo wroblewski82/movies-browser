@@ -95,6 +95,7 @@ export const Title = styled.h3`
   font-weight: 500px;
   font-size: 22px;
   line-height: 1.3;
+  color: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 16px;
@@ -133,18 +134,23 @@ export const Year = styled.p`
     css`
       font-size: 22px;
       line-height: 1.2;
-      font-weight: 400px;
+      font-weight: 400;
       color: ${({ theme }) => theme.colors.black};
       margin: 24px 0;
     `}
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    /* display: block; */
+    margin: 4px 0 8px;
+    color: ${({ theme }) => theme.colors.waterloo};
   }
 `;
 
 export const Container = styled.p`
   margin: 0 0 16px;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    margin: 0 0 8px;
+  }
 `;
 
 export const AdditionalDataName = styled.span`
@@ -161,6 +167,7 @@ export const AdditionalData = styled.span`
   font-size: 22px;
   line-height: 0.9;
   font-weight: 400;
+  color: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 12px;
@@ -187,7 +194,7 @@ export const Genres = styled.ul`
     $main &&
     css`
       max-width: 936px;
-      margin: 8px 0 0;
+      margin: 0 0 8px;
     `}
 `;
 
@@ -226,7 +233,7 @@ export const VotesContainer = styled.div`
       font-weight: 500;
       line-height: 1.3;
       font-size: 22px;
-      margin: 24px 0 0;
+      margin: 0;
     `}
 `;
 
