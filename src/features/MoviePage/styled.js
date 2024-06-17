@@ -49,15 +49,24 @@ export const PosterContainer = styled.div`
 export const MovieMainData = styled.div`
   color: ${({ theme }) => theme.colors.white};
   position: absolute;
-  bottom: 56px;
+  bottom: 92px;
   left: 276px;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    bottom: 10px;
+    left: 16px;
+  }
 `;
 
 export const MovieTitle = styled.h2`
-  font-size: 64px;
+  font-size: 44px;
   font-weight: 600px;
   line-height: 1.2;
   margin: 0 0 24px;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    margin: 0 0 4px;
+  }
 `;
 
 export const VotesContainer = styled.p`
@@ -65,6 +74,7 @@ export const VotesContainer = styled.p`
   display: flex;
   align-items: center;
   gap: 12px;
+  position: relative;
 `;
 
 export const StyledStarIcon = styled(StarIcon)`
@@ -97,11 +107,17 @@ export const VotesNumber = styled.b`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
+  position: absolute;
+  top: 56px;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    position: static;
+    align-self: center;
+  }
 `;
 
 export const StyledMoviePage = styled.section`
   padding-bottom: 8px;
-  height: auto;
   margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
@@ -115,18 +131,20 @@ export const TileContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 4px 12px #bac7d5;
   max-width: 1368px;
-  margin: 0 auto;
+  margin: 64px auto;
+  padding: 40px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     max-width: 288px;
-    margin-left: 16px;
+    padding: 16px;
+    margin: 16px auto;
   }
 `;
 
 export const Article = styled.article`
-  margin: 0 auto;
+  margin: 64px auto;
   max-width: 1368px;
-  
+
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     margin: 0;
     padding-left: 16px;

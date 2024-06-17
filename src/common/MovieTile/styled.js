@@ -23,14 +23,14 @@ export const StyledMovieTile = styled.article`
     $main &&
     css`
       max-width: 1368px;
-      grid-template-columns: 1fr 2fr;
-      margin: 64px auto;
-      padding: 8px 20px;
-      gap: 30px;
+      grid-template-columns: 1fr 3fr;
+      gap: 40px;
+      min-height: auto;
+      background-color: transparent;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        margin: 0;
-        background-color: transparent;
+        gap: 16px;
+        padding: 0;
       }
     `}
 `;
@@ -48,7 +48,7 @@ export const Image = styled.img`
   ${({ $main }) =>
     $main &&
     css`
-      margin: auto;
+      margin: 0 auto;
     `}
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
@@ -75,11 +75,10 @@ export const DataContainer = styled.div`
   ${({ $main }) =>
     $main &&
     css`
-      grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr;
+      display: block;
       max-width: 936px;
-      max-height: auto;
-      padding: 5% 0;
+      max-height: none;
+      margin: 0 auto;
     `}
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
@@ -108,6 +107,7 @@ export const Title = styled.h3`
       font-weight: 600;
       font-size: 36px;
       line-height: 1.2;
+      margin-top: 8px;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         font-size: 16px;
@@ -142,33 +142,25 @@ export const Container = styled.p`
 `;
 
 export const AdditionalDataName = styled.span`
-  ${({ $main }) =>
-    $main &&
-    css`
-      font-size: 22px;
-      line-height: 0.9;
-      color: ${({ theme }) => theme.colors.stormGray};
+  font-size: 22px;
+  line-height: 0.9;
+  color: ${({ theme }) => theme.colors.stormGray};
 
-      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        display: none;
-      }
-    `}
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    display: none;
+  }
 `;
 
 export const AdditionalData = styled.span`
-  ${({ $main }) =>
-    $main &&
-    css`
-      font-size: 22px;
-      line-height: 0.9;
-      font-weight: 400;
+  font-size: 22px;
+  line-height: 0.9;
+  font-weight: 400;
 
-      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        font-size: 12px;
-        line-height: 1.5;
-        font-weight: 400;
-      }
-    `}
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
 `;
 
 export const Genres = styled.ul`
@@ -184,6 +176,12 @@ export const Genres = styled.ul`
     max-width: 130px;
     margin: -4px 0 0;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      max-width: 936px;
+    `}
 `;
 
 export const Genre = styled.li`
@@ -259,13 +257,13 @@ export const Mark = styled.em`
 
 export const MaxMark = styled.b`
   display: none;
-  font-size: 14px;
-  line-height: 1.2;
 
   ${({ $main }) =>
     $main &&
     css`
       display: block;
+      font-size: 14px;
+      line-height: 1.2;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         display: none;
@@ -293,38 +291,28 @@ export const VotesNumber = styled.b`
 `;
 
 export const Description = styled.p`
-  ${({ $main }) =>
-    $main &&
-    css`
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 1.6;
-      text-align: justify;
-      color: ${({ theme }) => theme.colors.black};
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: justify;
+  color: ${({ theme }) => theme.colors.black};
 
-      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        display: none;
-        font-size: 14px;
-        line-height: 1.6;
-      }
-    `}
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    display: none;
+    font-size: 14px;
+    line-height: 1.6;
+  }
 `;
 
 export const Description2 = styled.p`
-  ${({ $main }) =>
-    $main &&
-    css`
-      color: ${({ theme }) => theme.colors.black};
-      margin: 0 auto;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 1.6;
-      max-width: 288px;
-      padding: 16px 18px;
-      text-align: justify;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 16px auto 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: justify;
 
-      @media (min-width: ${({ theme }) => theme.media.mobile}px) {
-        display: none;
-      }
-    `}
+  @media (min-width: ${({ theme }) => theme.media.mobile}px) {
+    display: none;
+  }
 `;

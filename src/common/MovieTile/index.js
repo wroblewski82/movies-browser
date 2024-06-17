@@ -53,9 +53,9 @@ export const MovieTile = ({
           {year && <Year $main={$main}>{year}</Year>}
           {productionPlaces && (
             <Container>
-              <AdditionalDataName $main={$main}>Production:</AdditionalDataName>{" "}
+              <AdditionalDataName>Production:</AdditionalDataName>{" "}
               {productionPlaces?.map((productionPlace, index) => (
-                <AdditionalData key={index} $main={$main}>
+                <AdditionalData key={index}>
                   {productionPlace.name}
                   {index === productionPlaces.length - 1 ? "." : ", "}
                 </AdditionalData>
@@ -64,14 +64,12 @@ export const MovieTile = ({
           )}
           {releaseDate && (
             <Container>
-              <AdditionalDataName $main={$main}>
-                Release date:
-              </AdditionalDataName>{" "}
-              <AdditionalData $main={$main}>{releaseDate}</AdditionalData>
+              <AdditionalDataName>Release date:</AdditionalDataName>{" "}
+              <AdditionalData>{releaseDate}</AdditionalData>
             </Container>
           )}
           {genres && (
-            <Genres>
+            <Genres $main={$main}>
               {genres.map((genre) => (
                 <Genre key={nanoid()}>{genre.name}</Genre>
               ))}
@@ -83,12 +81,10 @@ export const MovieTile = ({
             <MaxMark $main={$main}>/10</MaxMark>
             <VotesNumber $main={$main}>{votes} votes</VotesNumber>
           </VotesContainer>
-          {description && (
-            <Description $main={$main}>{description}</Description>
-          )}
+          {description && <Description>{description}</Description>}
         </DataContainer>
       </StyledMovieTile>
-      {description && <Description2 $main={$main}>{description}</Description2>}
+      {description && <Description2>{description}</Description2>}
     </>
   );
 };

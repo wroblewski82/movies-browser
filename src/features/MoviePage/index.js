@@ -58,8 +58,8 @@ export const MoviePage = () => {
               <Mark>{movie?.vote_average.toFixed(1)}</Mark>
               <MaxMark>/ 10</MaxMark>
             </MarkContainer>
+            <VotesNumber>{movie?.vote_count} votes</VotesNumber>
           </VotesContainer>
-          <VotesNumber>{movie?.vote_count} votes</VotesNumber>
         </MovieMainData>
       </PosterContainer>
 
