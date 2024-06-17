@@ -107,7 +107,7 @@ export const Title = styled.h3`
       font-weight: 600;
       font-size: 36px;
       line-height: 1.2;
-      margin-top: 8px;
+      margin: 8px 0 0;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         font-size: 16px;
@@ -131,10 +131,16 @@ export const Year = styled.p`
   ${({ $main }) =>
     $main &&
     css`
-      @media (min-width: ${({ theme }) => theme.media.mobile}px) {
-        display: none;
-      }
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 400px;
+      color: ${({ theme }) => theme.colors.black};
+      margin: 24px 0;
     `}
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    /* display: block; */
+  }
 `;
 
 export const Container = styled.p`
@@ -181,6 +187,7 @@ export const Genres = styled.ul`
     $main &&
     css`
       max-width: 936px;
+      margin: 8px 0 0;
     `}
 `;
 
@@ -219,6 +226,7 @@ export const VotesContainer = styled.div`
       font-weight: 500;
       line-height: 1.3;
       font-size: 22px;
+      margin: 24px 0 0;
     `}
 `;
 
@@ -296,11 +304,10 @@ export const Description = styled.p`
   line-height: 1.6;
   text-align: justify;
   color: ${({ theme }) => theme.colors.black};
+  margin: 24px 0 0;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     display: none;
-    font-size: 14px;
-    line-height: 1.6;
   }
 `;
 
