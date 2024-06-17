@@ -11,6 +11,7 @@ export const StyledMovieTile = styled.article`
   padding: 16px;
   grid-template-columns: 1fr;
   background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: 0px 4px 12px 0px #bac7d580;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     max-width: 288px;
@@ -27,6 +28,7 @@ export const StyledMovieTile = styled.article`
       gap: 40px;
       min-height: auto;
       background-color: transparent;
+      box-shadow: none;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         gap: 16px;
@@ -59,9 +61,9 @@ export const Image = styled.img`
 export const DataContainer = styled.div`
   display: grid;
   align-items: start;
-  grid-template-rows: 1fr 2fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 3fr 1fr;
   max-width: 292px;
-  max-height: 308px;
+  max-height: 270px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     display: flex;
@@ -95,11 +97,11 @@ export const Title = styled.h3`
   font-weight: 500px;
   font-size: 22px;
   line-height: 1.3;
-  color: ${({ theme }) => theme.colors.black};
+  margin: 16px 0 8px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 16px;
-    margin-top: 16px;
+    margin: 16px 0 4px;
   }
 
   ${({ $main }) =>
@@ -122,11 +124,12 @@ export const Year = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.waterloo};
+  margin: 0 0 8px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
     line-height: 1.3;
-    margin-top: -18px;
+    margin: 0 0 8px;
   }
 
   ${({ $main }) =>
@@ -178,16 +181,16 @@ export const AdditionalData = styled.span`
 
 export const Genres = styled.ul`
   display: flex;
-  max-width: 308px;
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
   gap: 8px;
+  margin: 0;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     max-width: 130px;
-    margin: -4px 0 0;
+    margin: 0 0 12px;
   }
 
   ${({ $main }) =>
@@ -224,7 +227,7 @@ export const VotesContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     position: static;
-    margin-top: 12px;
+    margin: 0;
   }
 
   ${({ $main }) =>
@@ -287,10 +290,12 @@ export const MaxMark = styled.b`
 `;
 
 export const VotesNumber = styled.b`
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.waterloo};
+  text-decoration: none;
+  font-style: normal;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
@@ -302,6 +307,10 @@ export const VotesNumber = styled.b`
     $main &&
     css`
       ${({ theme }) => theme.colors.black};
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        color: ${({ theme }) => theme.colors.waterloo};
+      }
     `}
 `;
 
