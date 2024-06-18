@@ -1,17 +1,16 @@
 import { useSelector } from "react-redux";
-import { selectMoviesObject } from "../features/MovieList/moviesSlice";
+import { selectMoviePage } from "../features/MovieList/moviesSlice";
 import { useEffect, useState } from "react";
 import paginationParamName from "./paginationParamName";
 import { useQueryParam, useReplaceQueryParam } from "../Navigation/queryParam";
 
 export const usePageButton = () => {
-  const movieData = useSelector(selectMoviesObject);
+  const movieData = useSelector(selectMoviePage);
   const data = movieData;
-  const totalPages = 500;
-  //const totalPages = data.total_Pages > 500 ? 500 : data.total_Pages;
+  const totalPages = data > 500 ? 500 : data;
   const replaceQueryParameter = useReplaceQueryParam();
   const [actualPage, setPage] = useState(
-    parseInt(useQueryParam(paginationParamName))
+    parseInt(useQueryParam(paginationParamName)) || 1
   );
 
   useEffect(() => {
