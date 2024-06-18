@@ -33,4 +33,11 @@ export const selectMovieList = (state) =>
 export const selectGenreList = (state) =>
   selectMoviesObject(state).genreList?.genres;
 
+export const selectMovieById = (state, movieId) => {
+  if (selectMovieList(state)?.some((movie) => movie.id === movieId)) {
+    selectMovieList(state)?.find((movie) => movie.id === movieId);
+  }
+  return null;
+};
+
 export default moviesSlice.reducer;

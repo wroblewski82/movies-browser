@@ -1,6 +1,7 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
+import { selectMovieList, selectMovieById } from "../MovieList/moviesSlice";
 
 import { getDataFromApi } from "../MovieList/getDataFromApi";
 import { MovieTile } from "../../common/MovieTile";
@@ -20,11 +21,23 @@ import {
   TileContainer,
   Article,
 } from "./styled";
+import { useSelector } from "react-redux";
 
 export const MoviePage = () => {
   const [movie, setMovie] = useState(null);
   const [credits, setCredits] = useState(null);
   const { movieId } = useParams();
+
+  const movieList = useSelector(selectMovieList);
+  console.log(movieList);
+  console.log(movieId);
+
+  console.log(movieList?.some((movie) => movie.id === movieId));
+  const movie2 = useSelector((state) => selectMovieById(state, movieId));
+  console.log(movie2);
+
+  const exsmpleId = 823464;
+  console.log(movieList?.some((movie) => movie.id === exsmpleId));
 
   useEffect(() => {
     const fetchMovie = async () => {
