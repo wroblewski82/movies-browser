@@ -36,8 +36,8 @@ export const MovieTile = ({
   description,
   $main,
 }) => {
-  return (
-    <StyledLink to={`/movies/${id}`}>
+  const content = (
+    <>
       <StyledMovieTile $main={$main}>
         {poster ? (
           <Image $main={$main} src={poster} alt="Movie Poster" />
@@ -47,7 +47,7 @@ export const MovieTile = ({
           </ImagePlaceholder>
         )}
         <DataContainer $main={$main}>
-          {title && <Title $main={$main}>{title}</Title>} {/* </StyledLink> */}
+          {title && <Title $main={$main}>{title}</Title>}
           {year && <Year $main={$main}>{year}</Year>}
           {productionPlaces && (
             <Container>
@@ -83,6 +83,13 @@ export const MovieTile = ({
         </DataContainer>
       </StyledMovieTile>
       {description && <Description2>{description}</Description2>}
+    </>
+  );
+  return $main ? (
+    content
+  ) : (
+    <StyledLink $main={$main} to={`/movies/${id}`}>
+      {content}
     </StyledLink>
   );
 };
