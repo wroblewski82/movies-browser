@@ -66,6 +66,10 @@ export const MovieMainData = styled.div`
   position: absolute;
   bottom: 15%;
   left: 10%;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    bottom: 5%;
+  }
 `;
 
 export const MovieTitle = styled.h2`
@@ -75,6 +79,8 @@ export const MovieTitle = styled.h2`
   margin: 0 0 24px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    font-size: 24px;
+    line-height: 1.2;
     margin: 0 0 4px;
   }
 `;
@@ -90,6 +96,11 @@ export const VotesContainer = styled.p`
 export const StyledStarIcon = styled(StarIcon)`
   width: 40px;
   height: 38.12px;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    width: 16px;
+    height: 15.25px;
+  }
 `;
 
 export const MarkContainer = styled.div`
@@ -103,6 +114,12 @@ export const Mark = styled.em`
   line-height: 0.8;
   text-decoration: none;
   font-style: normal;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
 `;
 
 export const MaxMark = styled.b`
@@ -111,6 +128,10 @@ export const MaxMark = styled.b`
   line-height: 1.2;
   margin-left: 5px;
   align-self: flex-end;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    font-size: 10px;
+  }
 `;
 
 export const VotesNumber = styled.b`
@@ -123,6 +144,7 @@ export const VotesNumber = styled.b`
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     position: static;
     align-self: center;
+    font-size: 10px;
   }
 `;
 
