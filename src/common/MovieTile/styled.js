@@ -11,7 +11,7 @@ export const StyledMovieTile = styled.section`
   background-color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    max-width: 340px;
+    max-width: 350px;
     min-height: 201px;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
