@@ -322,20 +322,31 @@ export const Description = styled.p`
   color: ${({ theme }) => theme.colors.black};
   margin: 24px 0 0;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+  @media (max-width: 380px) {
     display: none;
   }
 `;
 
 export const Description2 = styled.p`
-  color: ${({ theme }) => theme.colors.black};
-  margin: 16px auto 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.6;
-  text-align: justify;
+  @media (max-width: 992px) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: justify;
+    color: ${({ theme }) => theme.colors.black};
+    margin: 24px 0 0;
+  }
 
-  @media (min-width: ${({ theme }) => theme.media.mobile}px) {
+  @media (max-width: 380px) {
+    color: ${({ theme }) => theme.colors.black};
+    margin: 16px auto 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  @media (min-width: 992px) {
     display: none;
   }
 `;
