@@ -26,7 +26,8 @@ export const StyledList = styled.ul`
   grid-gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    grid-gap: 16px 0;
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    grid-gap: 16px;
   }
 `;
 
