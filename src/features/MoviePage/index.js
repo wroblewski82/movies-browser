@@ -1,8 +1,14 @@
 import { nanoid } from "@reduxjs/toolkit";
+import { useEffect } from "react";
 import { useParams } from "react-router";
-import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { getDataFromApi } from "../MovieList/getDataFromApi";
+import {
+  fetchMovieDataFromApi,
+  selectMovie,
+  selectCredits,
+} from "./movieSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
 import { StyledHeader, StyledList } from "../MovieList/styled";
@@ -22,29 +28,16 @@ import {
 } from "./styled";
 
 export const MoviePage = () => {
-  const [movie, setMovie] = useState(null);
-  const [credits, setCredits] = useState(null);
   const { movieId } = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchMovie = async () => {
-      try {
-        const movieData = await getDataFromApi(
-          `https://api.themoviedb.org/3/movie/${movieId}?api_key=ac5371c0e378529d6face3e2fab3b7c1`
-        );
-        const creditsData = await getDataFromApi(
-          `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=ac5371c0e378529d6face3e2fab3b7c1`
-        );
-        setMovie(movieData);
-        setCredits(creditsData);
-      } catch (error) {
-        console.error(error.message);
-      }
-    };
+    dispatch(fetchMovieDataFromApi(movieId));
+  }, [dispatch, movieId]);
 
-    fetchMovie();
-  }, [movieId]);
-
+  const movie = useSelector(selectMovie);
+  const credits = useSelector(selectCredits);
+  
   return (
     <StyledMoviePage>
       <PosterContainer
@@ -55,7 +48,7 @@ export const MoviePage = () => {
           <VotesContainer>
             <StyledStarIcon />
             <MarkContainer>
-              <Mark>{movie?.vote_average.toFixed(1)}</Mark>
+              <Mark>{movie?.vote_average?.toFixed(1)}</Mark>
               <MaxMark>/ 10</MaxMark>
             </MarkContainer>
             <VotesNumber>{movie?.vote_count} votes</VotesNumber>
@@ -69,11 +62,11 @@ export const MoviePage = () => {
           key={nanoid()}
           poster={`https://image.tmdb.org/t/p/w342${movie?.poster_path}.jpg`}
           title={movie?.title}
-          year={movie?.release_date.split("-")[0]}
+          year={movie?.release_date?.split("-")[0]}
           productionPlaces={movie?.production_countries}
-          releaseDate={movie?.release_date.split("-").reverse().join(".")}
+          releaseDate={movie?.release_date?.split("-").reverse().join(".")}
           genres={movie?.genres}
-          mark={movie?.vote_average.toFixed(1)}
+          mark={movie?.vote_average?.toFixed(1)}
           votes={movie?.vote_count}
           description={movie?.overview}
         />
