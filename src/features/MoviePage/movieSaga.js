@@ -5,7 +5,7 @@ import {
   fetchMovieSuccess,
   fetchMovieError,
 } from "./movieSlice";
-import { getDataFromApi } from "../MovieList/getDataFromApi";
+import { getDataFromApi } from "../../utils/getDataFromApi";
 
 function* watchFetchMovieHandler(action) {
   try {
