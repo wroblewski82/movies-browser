@@ -9,7 +9,7 @@ import {
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { MovieTile } from "../../common/MovieTile";
-import { StyledMain, StyledHeader, StyledList, StyledItem } from "./styled";
+import { StyledMain, StyledHeader, StyledList, StyledItem } from "../styled";
 
 export const MovieList = () => {
   const dispatch = useDispatch();

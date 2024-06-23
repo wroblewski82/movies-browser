@@ -1,5 +1,43 @@
-const PeopleList = () => {
-  return <p>People</p>;
-};
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchPeopleList,
+  selectFetchDataStatus,
+  selectPeopleList,
+} from "./peopleSlice";
+import { LoadingPage } from "../../common/LoadingPage";
+import { ErrorPage } from "../../common/ErrorPage";
+import { ActorTile } from "../../common/ActorTile";
+import { StyledMain, StyledHeader, StyledList, StyledItem } from "../styled";
 
-export default PeopleList;
+export const PeopleList = () => {
+  const dispatch = useDispatch();
+  const fetchDataStatus = useSelector(selectFetchDataStatus);
+  const peopleList = useSelector(selectPeopleList);
+
+  useEffect(() => {
+    dispatch(fetchPeopleList());
+  }, [dispatch]);
+
+  return (
+    <StyledMain>
+      {fetchDataStatus === "loading" && <LoadingPage />}
+      {fetchDataStatus === "error" && <ErrorPage />}
+      {fetchDataStatus === "success" && (
+        <>
+          <StyledHeader>Popular people</StyledHeader>
+          <StyledList people>
+            {peopleList.map((people) => (
+              <StyledItem key={people.id}>
+                <ActorTile
+                  poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}
+                  actorName={people.name}
+                />
+              </StyledItem>
+            ))}
+          </StyledList>
+        </>
+      )}
+    </StyledMain>
+  );
+};

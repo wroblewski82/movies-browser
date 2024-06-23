@@ -14,14 +14,16 @@ export const ImagePlaceholder = styled.div`
     height: 169px;
   }
 
-  ${({ $actor }) =>
-    $actor &&
+  ${({ actor }) =>
+    actor &&
     css`
-      max-width: 208px;
-      min-height: 339px;
+      width: 176px;
+      height: 231px;
+      margin-bottom: 12px;
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        max-width: 136px;
-        min-height: 245px;
+        width: 120px;
+        height: 178px;
+        margin-bottom: 8px;
       }
     `}
 `;

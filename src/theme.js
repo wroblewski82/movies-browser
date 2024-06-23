@@ -8,5 +8,6 @@ export const theme = {
     cornflowerBlue: "#0044CC",
     mystic: "#E4E6F0",
     black: "#18181B",
+    heather: "#BAC7D580",
   },
 };
