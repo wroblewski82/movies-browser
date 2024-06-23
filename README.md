@@ -2,7 +2,63 @@
 
 ## Demo
 
-https://wroblewski82.github.io/movies-browser/
+[Link to the main page of Tasks List](https://wroblewski82.github.io/movies-browser/)
+
+## Description
+
+Our **Movies Browser** offers access to _500 pages of popular movies and people_, with 20 movie/person tiles on each page.
+Each **Movie tile** _links to a movie page_.
+**The movie pages** _include comprehensive information about movies_ such as production location, release date, vote count, rating out of 10, and a description. Additionally, there are sections for the cast and crew, each composed of **tiles** that _link to individual person pages_.
+**The person pages** include information about the date and place of birth, a short autobiography, a list of films in which the person has appeared either in the cast or as part of the crew.
+We also have on our page a **list of persons** related to cinematography, also composed of **tiles** that _link to individual person pages_.
+A top-level **navigation menu** enables users to _switch between the movie list and the person list_.
+A dedicated **search engine** to _search for movies on the movie list movies on the movie list page and persons on the person list page_.
+A bottom-level **pagination** enables _moving between pages of movie list or person list_.
+
+## Technologies
+
+### HTML
+
+- HTML5: Leveraging the latest HTML standards for structure and semantics.
+- Accessibility: Implementing ARIA roles and semantic HTML to enhance accessibility.
+- Open Graph Protocol
+- Google Fonts
+
+### JavaScript & Frameworks
+
+_Core Technologies_
+
+- **React** - for building the user interface, emphasizing reusable components
+- **ReactDOM** - for rendering of React components in the DOM
+- **Webpack** - for compiling and bundling JavaScript modules
+- **Babel** - for transforming ES6+ JavaScript into a backwards-compatible version
+- **PostCSS** - for transforming CSS with JavaScript plugins
+
+_State Management_
+
+- **Redux Toolkit** - for efficient Redux development with optimized state management
+- createSlice
+- configureStore
+- **React-Redux** - for integrating Redux with React to manage application state.
+- Provider
+- useSelector
+- useDispatch
+
+_Utilities and Hooks_
+
+- **fetch** with **async/await** and **Error Handling** - for asyncronious data fetching
+- **nanoid** - for generating unique identifiers
+- **useEffect** Hook - for performing side effects in functional components
+- **URLSearchParams** - for manipulating URL parameters
+
+_Routing_
+
+- **react-router-dom** - for handling routing
+- Hashrouter
+- Route
+- Link, Navlink
+- route params
+- useNavigate, useParams, useLocation
 
 ## Additional information
 
