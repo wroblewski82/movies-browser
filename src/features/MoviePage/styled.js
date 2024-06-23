@@ -72,7 +72,7 @@ export const MovieMainData = styled.div`
   }
 `;
 
-export const MovieTitle = styled.h2`
+export const MovieTitle = styled.h1`
   font-size: 44px;
   font-weight: 600px;
   line-height: 1.2;

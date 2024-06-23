@@ -93,7 +93,7 @@ export const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.colors.black};
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   font-weight: 500px;
   font-size: 22px;
   line-height: 1.3;
