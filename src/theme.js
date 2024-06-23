@@ -1,5 +1,5 @@
 export const theme = {
-  media: { mobile: 767 },
+  media: { mobile: 767, forPoster: { tablet: 1199, mobile: 1039.98 } },
   fontSizes: { titleDesktop: 22 },
   lineHeights: { titleDesktop: 28.6 },
   fontWeights: { titleDesktop: 500 },

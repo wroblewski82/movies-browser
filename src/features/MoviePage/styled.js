@@ -47,17 +47,17 @@ export const PosterContainer = styled.div`
   background-repeat: no-repeat;
   background-position: top center;
 
-  @media (max-width: 1039.98px) {
+  @media (max-width: ${({ theme }) => theme.media.forPoster.tablet}px) {
+    background-size: 1366px 525px, 1366px 525px, 1366px 525px, 1366px 525px,
+      1024px 525px;
+    height: 525px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.forPoster.mobile}px) {
     background-size: 1040px 400px, 1040px 400px, 1040px 400px, 1040px 400px,
       776px 400px;
     background-position: center top;
     height: 400px;
-  }
-
-  @media (max-width: 1199px) {
-    background-size: 1366px 525px, 1366px 525px, 1366px 525px, 1366px 525px,
-      1024px 525px;
-    height: 525px;
   }
 `;
 
