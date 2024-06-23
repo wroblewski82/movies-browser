@@ -12,6 +12,7 @@ export const theme = {
     mystic: "#E4E6F0",
     stormGray: "#74788B",
     codGray: "#18181B",
+    darkRGB: "0, 0, 0",
     black: "#000000",
   },
 };
