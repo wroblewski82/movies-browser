@@ -3,16 +3,16 @@ import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
 export const StyledMovieTile = styled.section`
   display: grid;
-  max-width: 324px;
+  width: 100%;
+  padding: 16px;
   min-height: 650px;
   border-radius: 5px;
-  padding: 16px;
   grid-template-columns: 1fr;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px 0px #BAC7D580;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    max-width: 288px;
+    max-width: 350px;
     min-height: 201px;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -20,9 +20,9 @@ export const StyledMovieTile = styled.section`
 `;
 
 export const Image = styled.img`
-  width: 292px;
-  height: 434px;
+  width: 100%;
   border-radius: 5px;
+  margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 114px;
