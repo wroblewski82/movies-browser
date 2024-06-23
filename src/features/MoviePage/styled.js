@@ -74,7 +74,7 @@ export const MovieMainData = styled.div`
 
 export const MovieTitle = styled.h1`
   font-size: 44px;
-  font-weight: 600px;
+  font-weight: 600;
   line-height: 1.2;
   margin: 0 0 24px;
 

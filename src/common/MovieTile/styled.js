@@ -248,7 +248,7 @@ export const StyledStarIcon = styled(StarIcon)`
 `;
 
 export const Mark = styled.em`
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.5;
   font-size: 16px;
   text-decoration: none;
@@ -268,7 +268,7 @@ export const Mark = styled.em`
       font-size: 22px;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        font-weight: bold;
+        font-weight: 600;
       }
     `}
 `;
