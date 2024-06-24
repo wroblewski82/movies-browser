@@ -55,7 +55,7 @@ export const MoviePage = () => {
               <VotesContainer>
                 <StyledStarIcon />
                 <MarkContainer>
-                  <Mark>{movie?.vote_average?.toFixed(1)}</Mark>
+                  <Mark>{movie.vote_average?.toFixed(1)}</Mark>
                   <MaxMark>/ 10</MaxMark>
                 </MarkContainer>
                 <VotesNumber>{movie?.vote_count} votes</VotesNumber>
@@ -69,9 +69,9 @@ export const MoviePage = () => {
               key={nanoid()}
               poster={`https://image.tmdb.org/t/p/w342${movie?.poster_path}.jpg`}
               title={movie?.title}
-              year={movie?.release_date?.split("-")[0]}
+              year={movie.release_date?.split("-")[0]}
               productionPlaces={movie?.production_countries}
-              releaseDate={movie?.release_date?.split("-").reverse().join(".")}
+              releaseDate={movie.release_date?.split("-").reverse().join(".")}
               genres={movie?.genres}
               mark={movie?.vote_average?.toFixed(1)}
               votes={movie?.vote_count}
@@ -82,7 +82,7 @@ export const MoviePage = () => {
           <Article>
             <StyledHeader as="h2">Cast</StyledHeader>
             <StyledList $people>
-              {credits?.cast?.map((person) => (
+              {credits.cast?.map((person) => (
                 <PersonTile
                   key={nanoid()}
                   {...(person.profile_path && {
@@ -97,7 +97,7 @@ export const MoviePage = () => {
           <Article>
             <StyledHeader as="h2">Crew</StyledHeader>
             <StyledList $people>
-              {credits?.crew?.map((person) => (
+              {credits.crew?.map((person) => (
                 <PersonTile
                   key={nanoid()}
                   {...(person.profile_path && {
