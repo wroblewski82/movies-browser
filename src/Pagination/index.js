@@ -11,15 +11,15 @@ import { usePageButton } from "./usePageButton";
 
 export const Pagination = () => {
   const {
-    actualPage,
+    page,
     totalPages,
     setNextPage,
     setPreviousPage,
     setFirstPage,
     setLastPage,
   } = usePageButton();
-  const isFirstPage = actualPage === 1;
-  const isLastPage = actualPage === totalPages;
+  const isFirstPage = page === 1;
+  const isLastPage = page === totalPages;
   return (
     <Wrapper>
       <Button onClick={setFirstPage} disabled={isFirstPage}>
@@ -31,7 +31,7 @@ export const Pagination = () => {
         <ButtonText>Previous</ButtonText>
       </Button>
       <PageCounter>
-        Page <PageNumbers>{actualPage}</PageNumbers> of{" "}
+        Page <PageNumbers>{page}</PageNumbers> of{" "}
         <PageNumbers>{totalPages}</PageNumbers>
       </PageCounter>
       <Button onClick={setNextPage} disabled={isLastPage}>
