@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledActorTile = styled.section`
   width: 100%;
+  height: 100%;
   padding: 16px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.colors.heather};
