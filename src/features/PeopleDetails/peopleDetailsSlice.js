@@ -35,6 +35,19 @@ export const {
 
 export const selectPeopleDetailsState = (state) => state.peopleDetails;
 export const selectFetchDataStatus = (state) =>
-  selectPeopleDetailsState(state)?.fetchDataStatus;
+  selectPeopleDetailsState(state).fetchDataStatus;
+
+export const selectPeopleDetailsObject = (state) =>
+  selectPeopleDetailsState(state).details;
+export const selectPersonDetails = (state) =>
+  selectPeopleDetailsObject(state).personDetails;
+
+export const selectPersonMovieCast = (state) =>
+  selectPeopleDetailsObject(state).personMovieCredits?.cast;
+export const selectPersonMovieCrew = (state) =>
+  selectPeopleDetailsObject(state).personMovieCredits?.crew;
+
+export const selectGenreList = (state) =>
+  selectPeopleDetailsObject(state).genreList?.genres;
 
 export default peopleDetailsSlice.reducer;

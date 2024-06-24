@@ -26,4 +26,15 @@ export const ImagePlaceholder = styled.div`
         margin-bottom: 8px;
       }
     `}
+
+  ${({ actorProfile }) =>
+    actorProfile &&
+    css`
+      width: 399px;
+      height: 564px;
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        width: 116px;
+        height: 163px;
+      }
+    `}
 `;
