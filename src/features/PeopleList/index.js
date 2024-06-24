@@ -26,7 +26,7 @@ export const PeopleList = () => {
       {fetchDataStatus === "success" && (
         <>
           <StyledHeader>Popular people</StyledHeader>
-          <StyledList people>
+          <StyledList $people>
             {peopleList.map((people) => (
               <StyledItem key={people.id}>
                 <ActorTile
