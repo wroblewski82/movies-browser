@@ -5,4 +5,9 @@ export const StyledHeader = styled.p`
   font-weight: 600;
   line-height: 1.2;
   margin: 64px 0 24px;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    font-size: 20px;
+    margin: 24px 0 16px;
+  }
 `;
