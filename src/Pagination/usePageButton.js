@@ -9,17 +9,17 @@ export const usePageButton = () => {
   const data = movieData;
   const totalPages = data > 500 ? 500 : data;
   const replaceQueryParameter = useReplaceQueryParam();
-  const [actualPage, setPage] = useState(
+  const [page, setPage] = useState(
     parseInt(useQueryParam(paginationParamName)) || 1
   );
 
   useEffect(() => {
-    if (actualPage !== 1) {
-      replaceQueryParameter({ key: paginationParamName, value: actualPage });
+    if (page !== 1) {
+      replaceQueryParameter({ key: paginationParamName, value: page });
     } else {
       replaceQueryParameter({ key: paginationParamName });
     }
-  }, [actualPage]);
+  }, [page]);
 
   const setFirstPage = () => {
     setPage(1);
@@ -30,15 +30,15 @@ export const usePageButton = () => {
   };
 
   const setNextPage = () => {
-    setPage((actualPage) => (actualPage += 1));
+    setPage((page) => (page += 1));
   };
 
   const setPreviousPage = () => {
-    setPage((actualPage) => (actualPage -= 1));
+    setPage((page) => (page -= 1));
   };
 
   return {
-    actualPage,
+    page,
     totalPages,
     setNextPage,
     setPreviousPage,
