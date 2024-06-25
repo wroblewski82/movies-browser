@@ -29,13 +29,14 @@ export const ImagePlaceholder = styled.div`
   ${({ $forPerson }) =>
     $forPerson &&
     css`
-      width: 177px;
-      height: 264px;
-      margin: 0 0 12px;
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        max-width: 120px;
-        min-height: 178px;
+        width: 100%;
+        height: 100%;
       }
     `}
 `;

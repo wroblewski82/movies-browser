@@ -34,6 +34,7 @@ export const StyledList = styled.ul`
     $people &&
     css`
       grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+      grid-auto-rows: minmax(208px, 1fr);
       align-items: center;
       justify-items: center;
 

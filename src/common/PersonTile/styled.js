@@ -1,43 +1,32 @@
 import styled from "styled-components";
 
 export const StyledPersonTile = styled.section`
-  width: 208px;
-  height: 380px;
-  padding: 10px 15px 22px;
-  text-align: center;
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
   background-color: ${({ theme }) => theme.colors.white};
+  text-align: center;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    padding: 8px 8px 15px;
+    padding: 8px;
     border-radius: 5px;
-    max-width: 136px;
-    height: 245px;
-    box-shadow: 0 4px 12px #BAC7D5;
   }
 `;
 
 export const Image = styled.img`
   border-radius: 5px;
-  width: 177px;
-  height: 264px;
-  margin: 0 0 12px;
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    width: 120px;
-    height: 178px;
-  }
-`;
-
-export const ImagePlaceholder = styled.div`
-  max-width: 177px;
-  height: 264px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const PersonName = styled.h3`
   line-height: 1.3;
   font-size: 22px;
-  font-weight: 500px;
-  margin: 0 0 22px;
+  font-weight: 500;
+  margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     line-height: 1.3;
