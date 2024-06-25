@@ -7,8 +7,8 @@ import {
 } from "./peopleSlice";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
-import { ActorTile } from "../../common/ActorTile";
-import { StyledMain, StyledHeader, StyledList, StyledItem } from "../styled";
+import { PersonTile } from "../../common/PersonTile";
+import { StyledMain, StyledHeader, StyledList } from "../styled";
 
 export const PeopleList = () => {
   const dispatch = useDispatch();
@@ -28,12 +28,12 @@ export const PeopleList = () => {
           <StyledHeader>Popular people</StyledHeader>
           <StyledList $people>
             {peopleList.map((people) => (
-              <StyledItem key={people.id}>
-                <ActorTile
+              <li key={people.id}>
+                <PersonTile
                   poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}
                   actorName={people.name}
                 />
-              </StyledItem>
+              </li>
             ))}
           </StyledList>
         </>

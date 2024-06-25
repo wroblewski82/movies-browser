@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
-export const StyledActorTile = styled.section`
+export const StyledPersonTile = styled.section`
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  gap: 12px;
   width: 100%;
   height: 100%;
   padding: 16px;
   background-color: ${({ theme }) => theme.colors.white};
-  box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.colors.heather};
   text-align: center;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
@@ -16,15 +18,11 @@ export const StyledActorTile = styled.section`
 
 export const Image = styled.img`
   border-radius: 5px;
-  margin: 0 auto 12px;
   width: 100%;
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    margin: 0 auto 8px;
-  }
+  height: 100%;
 `;
 
-export const ActorName = styled.h3`
+export const PersonName = styled.h3`
   line-height: 1.3;
   font-size: 22px;
   font-weight: 500;

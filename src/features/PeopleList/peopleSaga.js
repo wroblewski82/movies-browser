@@ -1,5 +1,5 @@
 import { takeEvery, delay, put, call } from "redux-saga/effects";
-import { getDataFromApi } from "../getDataFromApi";
+import { getDataFromApi } from "../../utils/getDataFromApi";
 import {
   fetchPeopleList,
   fetchPeopleListSuccess,
