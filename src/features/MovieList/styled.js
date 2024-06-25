@@ -27,7 +27,8 @@ export const StyledList = styled.ul`
   grid-gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    grid-gap: 16px 0;
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
   }
 
   ${({ $people }) =>
@@ -43,9 +44,4 @@ export const StyledList = styled.ul`
         grid-gap: 16px;
       }
     `}
-`;
-
-export const StyledItem = styled.li`
-  display: flex;
-  justify-content: center;
 `;

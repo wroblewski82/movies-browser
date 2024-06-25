@@ -5,19 +5,18 @@ import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
 export const StyledMovieTile = styled.article`
   display: grid;
-  max-width: 324px;
-  min-height: 650px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   padding: 16px;
-  grid-template-columns: 1fr;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px 0px #bac7d580;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    max-width: 288px;
-    min-height: 201px;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    max-width: 350px;
   }
 
   ${({ $main }) =>
@@ -26,7 +25,7 @@ export const StyledMovieTile = styled.article`
       max-width: 1368px;
       grid-template-columns: 1fr 3fr;
       gap: 40px;
-      min-height: auto;
+      height: auto;
       background-color: transparent;
       box-shadow: none;
 
@@ -38,9 +37,10 @@ export const StyledMovieTile = styled.article`
 `;
 
 export const Image = styled.img`
-  width: 292px;
-  height: 434px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
+  margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 114px;
@@ -50,6 +50,8 @@ export const Image = styled.img`
   ${({ $main }) =>
     $main &&
     css`
+      width: 292px;
+      height: 434px;
       margin: 0 auto;
     `}
 
@@ -62,7 +64,6 @@ export const DataContainer = styled.div`
   display: grid;
   align-items: start;
   grid-template-rows: 1fr 1fr 3fr 1fr;
-  max-width: 292px;
   max-height: 270px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
