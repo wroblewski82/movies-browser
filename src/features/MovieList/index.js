@@ -22,8 +22,8 @@ export const MovieList = () => {
   const page = useQueryParam(paginationParamName) || 1;
 
   useEffect(() => {
-    dispatch(fetchMovieList());
-  }, [dispatch]);
+    dispatch(fetchMovieList(page));
+  }, [page, dispatch]);
 
   return (
     <>
