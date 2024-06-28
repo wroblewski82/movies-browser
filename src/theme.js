@@ -10,6 +10,7 @@ export const theme = {
     silver: "#C4C4C4",
     cornflowerBlue: "#0044CC",
     mystic: "#E4E6F0",
+    heather: "#BAC7D580",
     stormGray: "#74788B",
     codGray: "#18181B",
     darkRGB: "0, 0, 0",

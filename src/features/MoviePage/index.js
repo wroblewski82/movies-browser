@@ -14,7 +14,7 @@ import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
 import { ErrorPage } from "../../common/ErrorPage";
 
-import { StyledHeader, StyledList } from "../MovieList/styled";
+import { StyledHeader, StyledList } from "../styled";
 import {
   StyledMoviePage,
   PosterContainer,
