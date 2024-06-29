@@ -1,8 +1,8 @@
 import { ReactComponent as PlaceholderIcon } from "../../../assets/placeholderActorIcon.svg";
 import { ImagePlaceholder } from "../../../common/ImagePlaceholder/styled";
 import {
-  StyledActorProfile,
-  StyledDiv,
+  StyledPersonPage,
+  StyledDataContainer,
   StyledImage,
   StyledHeader,
   StyledDetails,
@@ -11,7 +11,7 @@ import {
   StyledDescriptionsMobile,
 } from "./styled";
 
-export const ActorProfile = ({
+export const PersonPage = ({
   poster,
   name,
   birthDate,
@@ -19,12 +19,12 @@ export const ActorProfile = ({
   biography,
 }) => {
   return (
-    <StyledActorProfile>
-      <StyledDiv>
+    <StyledPersonPage>
+      <StyledDataContainer>
         {poster !== "https://image.tmdb.org/t/p/h632/null" ? (
           <StyledImage width={399} src={poster} alt="Selected actor" />
         ) : (
-          <ImagePlaceholder actorProfile>
+          <ImagePlaceholder personPage>
             <PlaceholderIcon />
           </ImagePlaceholder>
         )}
@@ -47,10 +47,10 @@ export const ActorProfile = ({
             <StyledDescriptionsDesktop>{biography}</StyledDescriptionsDesktop>
           )}
         </div>
-      </StyledDiv>
+      </StyledDataContainer>
       {biography && (
         <StyledDescriptionsMobile>{biography}</StyledDescriptionsMobile>
       )}
-    </StyledActorProfile>
+    </StyledPersonPage>
   );
 };

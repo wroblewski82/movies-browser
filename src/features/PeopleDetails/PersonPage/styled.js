@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const StyledActorProfile = styled.section`
+export const StyledPersonPage = styled.section`
   margin-top: 56px;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
@@ -12,7 +12,7 @@ export const StyledActorProfile = styled.section`
   }
 `;
 
-export const StyledDiv = styled.div`
+export const StyledDataContainer = styled.div`
   display: grid;
   grid-template-columns: 399px 1fr;
   grid-gap: 40px;
