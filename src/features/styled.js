@@ -20,6 +20,18 @@ export const StyledHeader = styled.h1`
     font-size: 18px;
     line-height: 1.2;
   }
+
+  ${({ paragraph }) =>
+    paragraph &&
+    css`
+      font-weight: 600;
+      margin: 64px 0 24px;
+    `}
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    font-size: 20px;
+    margin: 24px 0 16px;
+  }
 `;
 
 export const StyledList = styled.ul`
