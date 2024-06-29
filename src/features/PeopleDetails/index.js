@@ -11,7 +11,7 @@ import {
 } from "./peopleDetailsSlice";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
-import { ActorProfile } from "./ActorProfile";
+import { PersonPage } from "./PersonPage";
 import { MoviesList } from "./MoviesList";
 import { StyledMain } from "../styled";
 
@@ -40,7 +40,7 @@ export const PeopleDetails = () => {
       {fetchDataStatus === "error" && <ErrorPage />}
       {fetchDataStatus === "success" && (
         <>
-          <ActorProfile
+          <PersonPage
             poster={`https://image.tmdb.org/t/p/h632/${personDetails.profile_path}`}
             name={personDetails.name}
             birthDate={formatDate(personDetails.birthday)}
