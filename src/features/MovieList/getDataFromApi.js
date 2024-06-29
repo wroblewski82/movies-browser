@@ -4,7 +4,7 @@ export const getDataFromApi = async (page) => {
   );
 
   if (!response.ok) {
-    new Error(response.statusText);
+    throw new Error(response.statusText);
   }
 
   return await response.json();

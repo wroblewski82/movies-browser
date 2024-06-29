@@ -12,7 +12,7 @@ const genreListApi =
 
 function* fetchMovieListHandler({ payload: page }) {
   try {
-    yield delay(1000);
+    yield delay(600);
     const movieList = yield call(getDataFromApi, page);
     const genreList = yield call(getGenresFromApi, genreListApi);
     yield put(fetchMovieListSuccess({ movieList, genreList }));
