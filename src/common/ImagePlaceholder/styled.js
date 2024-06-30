@@ -14,8 +14,8 @@ export const ImagePlaceholder = styled.div`
     height: 169px;
   }
 
-  ${({ actor }) =>
-    actor &&
+  ${({ $actor }) =>
+    $actor &&
     css`
       width: 176px;
       height: 231px;
@@ -27,8 +27,8 @@ export const ImagePlaceholder = styled.div`
       }
     `}
 
-  ${({ personPage }) =>
-    personPage &&
+  ${({ $personPage }) =>
+    $personPage &&
     css`
       width: 399px;
       height: 564px;

@@ -24,7 +24,7 @@ export const PersonPage = ({
         {poster !== "https://image.tmdb.org/t/p/h632/null" ? (
           <StyledImage width={399} src={poster} alt="Selected actor" />
         ) : (
-          <ImagePlaceholder personPage>
+          <ImagePlaceholder $personPage>
             <PlaceholderIcon />
           </ImagePlaceholder>
         )}
@@ -32,8 +32,8 @@ export const PersonPage = ({
           {name && <StyledHeader>{name}</StyledHeader>}
           {birthDate && (
             <StyledDetails>
-              <StyledDetailsSpan desktop>Date of birth: </StyledDetailsSpan>
-              <StyledDetailsSpan mobile>Birth: </StyledDetailsSpan>
+              <StyledDetailsSpan $desktop>Date of birth: </StyledDetailsSpan>
+              <StyledDetailsSpan $mobile>Birth: </StyledDetailsSpan>
               {birthDate}
             </StyledDetails>
           )}

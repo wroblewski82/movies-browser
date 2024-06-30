@@ -21,8 +21,8 @@ export const StyledHeader = styled.h1`
     line-height: 1.2;
   }
 
-  ${({ paragraph }) =>
-    paragraph &&
+  ${({ $paragraph }) =>
+    $paragraph &&
     css`
       font-weight: 600;
       margin: 64px 0 24px;
@@ -42,8 +42,8 @@ export const StyledList = styled.ul`
   grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
   grid-gap: 24px;
 
-  ${({ people }) =>
-    people &&
+  ${({ $people }) =>
+    $people &&
     css`
       grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
     `}

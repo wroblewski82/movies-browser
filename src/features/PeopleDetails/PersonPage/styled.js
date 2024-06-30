@@ -60,16 +60,16 @@ export const StyledDetails = styled.p`
 export const StyledDetailsSpan = styled.span`
   color: ${({ theme }) => theme.colors.stormGray};
 
-  ${({ desktop }) =>
-    desktop &&
+  ${({ $desktop }) =>
+    $desktop &&
     css`
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         display: none;
       }
     `}
 
-  ${({ mobile }) =>
-    mobile &&
+  ${({ $mobile }) =>
+    $mobile &&
     css`
       @media (min-width: ${({ theme }) => theme.media.mobile}px) {
         display: none;

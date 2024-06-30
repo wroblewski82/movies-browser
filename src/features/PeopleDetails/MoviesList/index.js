@@ -5,7 +5,7 @@ export const MoviesList = ({ header, moviesList, genreList }) => {
   return (
     <>
       {moviesList.length !== 0 && (
-        <StyledHeader paragraph as="p">
+        <StyledHeader $paragraph as="p">
           {header} ({moviesList.length})
         </StyledHeader>
       )}
