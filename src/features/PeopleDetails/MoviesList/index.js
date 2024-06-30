@@ -1,3 +1,4 @@
+import { nanoid } from "@reduxjs/toolkit";
 import { MovieTile } from "../../../common/MovieTile";
 import { StyledHeader, StyledList, StyledItem } from "../../styled";
 
@@ -11,7 +12,7 @@ export const MoviesList = ({ header, moviesList, genreList }) => {
       )}
       <StyledList>
         {moviesList.map((movie) => (
-          <StyledItem key={movie.id}>
+          <StyledItem key={nanoid()}>
             <MovieTile
               poster={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
               title={movie.title}

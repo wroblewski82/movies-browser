@@ -1,3 +1,4 @@
+import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -34,7 +35,7 @@ export const PeopleList = () => {
           <StyledHeader>Popular people</StyledHeader>
           <StyledList $people>
             {peopleList.map((people) => (
-              <StyledItem key={people.id}>
+              <StyledItem key={nanoid()}>
                 <StyledLink to={`/people/${people.id}`}>
                   <ActorTile
                     poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}
