@@ -3,22 +3,23 @@ import { selectMoviePage } from "../features/MovieList/moviesSlice";
 import { useEffect, useState } from "react";
 import paginationParamName from "./paginationParamName";
 import { useQueryParam, useReplaceQueryParam } from "../Navigation/queryParam";
+import { useLocation } from "react-router";
 
 export const usePageButton = () => {
-  const movieData = useSelector(selectMoviePage);
-  const data = movieData;
-  const totalPages = data > 500 ? 500 : data;
+  const location = useLocation();
+  const moviePageFromStore = useSelector(selectMoviePage);
+  const peoplePageFormStore = 500;
+  const totalPagesFromStore = location.pathname.startsWith("/movies")
+    ? moviePageFromStore
+    : peoplePageFormStore;
+  const totalPages = totalPagesFromStore > 500 ? 500 : totalPagesFromStore;
   const replaceQueryParameter = useReplaceQueryParam();
   const [page, setPage] = useState(
     parseInt(useQueryParam(paginationParamName)) || 1
   );
 
   useEffect(() => {
-    if (page !== 1) {
-      replaceQueryParameter({ key: paginationParamName, value: page });
-    } else {
-      replaceQueryParameter({ key: paginationParamName });
-    }
+    replaceQueryParameter({ key: paginationParamName, value: page });
   }, [page]);
 
   const setFirstPage = () => {

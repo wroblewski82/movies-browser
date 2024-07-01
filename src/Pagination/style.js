@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as prevArrow } from "../assets/prevArrow.svg";
 import { ReactComponent as nextArrow } from "../assets/nextArrow.svg";
 
@@ -39,7 +39,11 @@ export const Button = styled.button`
 
 export const PrevArrowIcon = styled(prevArrow)`
   margin: 0 4px 0 4px;
-  color: ${({ theme }) => theme.colors.scienceBlue};
+  color: ${({ theme }) => theme.colors.cornflowerBlue};
+
+  *:disabled & {
+    color: ${({ theme }) => theme.colors.waterloo};
+  }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     display: block;
@@ -48,7 +52,11 @@ export const PrevArrowIcon = styled(prevArrow)`
 
 export const NextArrowIcon = styled(nextArrow)`
   margin: 0 4px 0 4px;
-  color: ${({ theme }) => theme.colors.scienceBlue};
+  color: ${({ theme }) => theme.colors.cornflowerBlue};
+
+  *:disabled & {
+    color: ${({ theme }) => theme.colors.waterloo};
+  }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     display: block;

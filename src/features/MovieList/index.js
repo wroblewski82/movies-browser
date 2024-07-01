@@ -62,10 +62,10 @@ export const MovieList = () => {
                 </StyledItem>
               ))}
             </StyledList>
+            <Pagination />
           </>
         )}
       </StyledMain>
-      <Pagination />
     </>
   );
 };
