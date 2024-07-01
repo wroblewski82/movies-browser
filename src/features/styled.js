@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledMain = styled.main`
   max-width: 1400px;
@@ -15,6 +16,18 @@ export const StyledHeader = styled.h1`
     font-size: 18px;
     line-height: 1.2;
     margin-top: 24px;
+  }
+
+  ${({ $paragraph }) =>
+    $paragraph &&
+    css`
+      font-weight: 600;
+      margin: 64px 0 24px;
+    `}
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    font-size: 20px;
+    margin: 24px 0 16px;
   }
 `;
 
@@ -44,4 +57,25 @@ export const StyledList = styled.ul`
         grid-gap: 16px;
       }
     `}
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    grid-gap: 16px 0;
+  }
+`;
+
+export const StyledItem = styled.li`
+  display: flex;
+  justify-content: center;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:link {
+    color: ${({ theme }) => theme.colors.black};
+  }
+
+  &:visited {
+    color: ${({ theme }) => theme.colors.black};
+  }
 `;

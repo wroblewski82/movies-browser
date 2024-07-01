@@ -1,3 +1,4 @@
+import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -8,7 +9,13 @@ import {
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { PersonTile } from "../../common/PersonTile";
-import { StyledMain, StyledHeader, StyledList } from "../styled";
+import {
+  StyledMain,
+  StyledHeader,
+  StyledList,
+  StyledItem,
+  StyledLink,
+} from "../styled";
 
 export const PeopleList = () => {
   const dispatch = useDispatch();
@@ -28,12 +35,14 @@ export const PeopleList = () => {
           <StyledHeader>Popular people</StyledHeader>
           <StyledList $people>
             {peopleList.map((people) => (
-              <li key={people.id}>
-                <PersonTile
-                  poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}
-                  actorName={people.name}
-                />
-              </li>
+              <StyledItem key={nanoid()}>
+                <StyledLink to={`/people/${people.id}`}>
+                  <PersonTile
+                    poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}
+                    personName={people.name}
+                  />
+                </StyledLink>
+              </StyledItem>
             ))}
           </StyledList>
         </>
