@@ -5,7 +5,7 @@ const moviesSlice = createSlice({
   initialState: {
     movies: [],
     genres: [],
-    fetchDataStatus: "loading",
+    fetchDataStatus: undefined,
   },
   reducers: {
     fetchMovieList: (state) => {
