@@ -8,7 +8,7 @@ import {
 } from "./peopleSlice";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
-import { ActorTile } from "../../common/ActorTile";
+import { PersonTile } from "../../common/PersonTile";
 import {
   StyledMain,
   StyledHeader,
@@ -34,13 +34,12 @@ export const PeopleList = () => {
         <>
           <StyledHeader>Popular people</StyledHeader>
           <StyledList $people>
-          <StyledList $people>
             {peopleList.map((people) => (
               <StyledItem key={nanoid()}>
                 <StyledLink to={`/people/${people.id}`}>
-                  <ActorTile
+                  <PersonTile
                     poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}
-                    actorName={people.name}
+                    personName={people.name}
                   />
                 </StyledLink>
               </StyledItem>
