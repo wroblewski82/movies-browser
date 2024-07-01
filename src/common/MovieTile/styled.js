@@ -1,40 +1,69 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
+
 import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
-export const StyledMovieTile = styled.section`
+export const StyledMovieTile = styled.article`
   display: grid;
-  max-width: 324px;
-  min-height: 650px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   padding: 16px;
-  grid-template-columns: 1fr;
   background-color: ${({ theme }) => theme.colors.white};
-  box-shadow: 0px 4px 12px 0px #BAC7D580;
+  box-shadow: 0px 4px 12px 0px #bac7d580;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    max-width: 288px;
-    min-height: 201px;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    max-width: 350px;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      max-width: 1368px;
+      grid-template-columns: 1fr 3fr;
+      gap: 40px;
+      height: auto;
+      background-color: transparent;
+      box-shadow: none;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        gap: 16px;
+        padding: 0;
+      }
+    `}
 `;
 
 export const Image = styled.img`
-  width: 292px;
-  height: 434px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
+  margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     width: 114px;
     height: 169px;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      width: 292px;
+      height: 434px;
+      margin: 0 auto;
+    `}
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    margin: 0;
+  }
 `;
 
-export const Description = styled.div`
+export const DataContainer = styled.div`
   display: grid;
   align-items: start;
   grid-template-rows: 1fr 1fr 3fr 1fr;
-  max-width: 292px;
   max-height: 270px;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
@@ -45,9 +74,27 @@ export const Description = styled.div`
     flex-direction: column;
     justify-content: top;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      display: block;
+      max-width: 936px;
+      max-height: none;
+      margin: 0 auto;
+    `}
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    display: block;
+  }
 `;
 
-export const Title = styled.h3`
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+`;
+
+export const Title = styled.h2`
   font-weight: 500px;
   font-size: 22px;
   line-height: 1.3;
@@ -57,6 +104,21 @@ export const Title = styled.h3`
     font-size: 16px;
     margin: 16px 0 4px;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 1.2;
+      margin: 8px 0 0;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.3;
+      }
+    `}
 `;
 
 export const Year = styled.p`
@@ -69,6 +131,52 @@ export const Year = styled.p`
     font-size: 13px;
     line-height: 1.3;
     margin: 0 0 8px;
+  }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: ${({ theme }) => theme.colors.black};
+      margin: 24px 0;
+    `}
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    margin: 4px 0 8px;
+    color: ${({ theme }) => theme.colors.waterloo};
+  }
+`;
+
+export const Container = styled.p`
+  margin: 0 0 16px;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    margin: 0 0 8px;
+  }
+`;
+
+export const AdditionalDataName = styled.span`
+  font-size: 22px;
+  line-height: 0.9;
+  color: ${({ theme }) => theme.colors.stormGray};
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    display: none;
+  }
+`;
+
+export const AdditionalData = styled.span`
+  font-size: 22px;
+  line-height: 0.9;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
   }
 `;
 
@@ -85,6 +193,13 @@ export const Genres = styled.ul`
     max-width: 130px;
     margin: 0 0 12px;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      max-width: 936px;
+      margin: 0 0 8px;
+    `}
 `;
 
 export const Genre = styled.li`
@@ -115,6 +230,15 @@ export const VotesContainer = styled.div`
     position: static;
     margin: 0;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-weight: 500;
+      line-height: 1.3;
+      font-size: 22px;
+      margin: 0;
+    `}
 `;
 
 export const StyledStarIcon = styled(StarIcon)`
@@ -125,7 +249,7 @@ export const StyledStarIcon = styled(StarIcon)`
 `;
 
 export const Mark = styled.em`
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.5;
   font-size: 16px;
   text-decoration: none;
@@ -136,17 +260,93 @@ export const Mark = styled.em`
     line-height: 1.3;
     white-space: nowrap;
   }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      font-weight: 500;
+      line-height: 1.3;
+      font-size: 22px;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        font-weight: 600;
+      }
+    `}
+`;
+
+export const MaxMark = styled.b`
+  display: none;
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      display: block;
+      font-size: 14px;
+      line-height: 1.2;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        display: none;
+      }
+    `};
 `;
 
 export const VotesNumber = styled.b`
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.waterloo};
+  text-decoration: none;
+  font-style: normal;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 13px;
     line-height: 1.3;
     white-space: nowrap;
+  }
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      ${({ theme }) => theme.colors.black};
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        color: ${({ theme }) => theme.colors.waterloo};
+      }
+    `}
+`;
+
+export const Description = styled.p`
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: justify;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 24px 0 0;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+`;
+
+export const Description2 = styled.p`
+  @media (max-width: 992px) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: justify;
+    color: ${({ theme }) => theme.colors.black};
+    margin: 24px 0 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    color: ${({ theme }) => theme.colors.black};
+    margin: 16px auto 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  @media (min-width: 992px) {
+    display: none;
   }
 `;

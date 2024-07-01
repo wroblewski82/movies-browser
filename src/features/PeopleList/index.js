@@ -34,6 +34,7 @@ export const PeopleList = () => {
         <>
           <StyledHeader>Popular people</StyledHeader>
           <StyledList $people>
+          <StyledList $people>
             {peopleList.map((people) => (
               <StyledItem key={nanoid()}>
                 <StyledLink to={`/people/${people.id}`}>

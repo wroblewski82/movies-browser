@@ -17,13 +17,24 @@ export const ImagePlaceholder = styled.div`
   ${({ $actor }) =>
     $actor &&
     css`
-      width: 176px;
-      height: 231px;
-      margin-bottom: 12px;
+      width: 312px;
+      height: 464px;
+      margin: auto;
+
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        width: 120px;
-        height: 178px;
-        margin-bottom: 8px;
+        margin: 0;
+      }
+    `}
+
+  ${({ $main }) =>
+    $main &&
+    css`
+      width: 312px;
+      height: 464px;
+      margin: auto;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        margin: 0;
       }
     `}
 
@@ -36,6 +47,20 @@ export const ImagePlaceholder = styled.div`
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         width: 116px;
         height: 163px;
+      }
+    `}
+
+  ${({ $forPerson }) =>
+    $forPerson &&
+    css`
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+
+      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+        width: 100%;
+        height: 100%;
       }
     `}
 `;
