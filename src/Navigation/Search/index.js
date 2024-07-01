@@ -17,7 +17,7 @@ export const Search = ({ placeholder }) => {
   const onInputChange = ({ target }) => {
     replaceQueryParameter({
       key: searchQueryName,
-      value: target.value.trim() !== "" ? target.value : undefined,
+      value: target.value.trim() !== "" ? target.value : "",
     });
   };
 
@@ -35,7 +35,7 @@ export const Search = ({ placeholder }) => {
     } else if (location.pathname.startsWith("/people/")) {
       history("/people");
     } else {
-      setFirstPage();
+      setPageToFirst();
     }
   };
 

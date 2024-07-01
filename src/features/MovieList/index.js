@@ -21,6 +21,7 @@ export const MovieList = () => {
   const fetchDataStatus = useSelector(selectFetchDataStatus);
   const movieList = useSelector(selectMovieList);
   const genreList = useSelector(selectGenreList);
+  // const totalResult = movieList.total_results;
   const page = useQueryParam(paginationParamName) || 1;
   const query = useQueryParam(searchQueryName);
 
@@ -30,7 +31,6 @@ export const MovieList = () => {
       page: page,
       type: "movie",
     };
-
     if (query) {
       dispatch(fetchMovieSearch(options));
     } else {

@@ -1,9 +1,10 @@
-import { takeEvery, delay, put, call } from "redux-saga/effects";
+import { takeEvery, delay, put, call, takeLatest } from "redux-saga/effects";
 import { getDataFromApi } from "./getDataFromApi";
 import {
   fetchMovieList,
   fetchMovieListSuccess,
   fetchMovieListError,
+  fetchMovieSearch,
 } from "./moviesSlice";
 import { getGenresFromApi } from "./getGenresFromApi";
 import { getSearchData } from "../../Navigation/Search/getSearchData";
@@ -40,4 +41,5 @@ function* fetchMovieSearchHandler({ payload: options }) {
 
 export function* moviesSaga() {
   yield takeEvery(fetchMovieList.type, fetchMovieListHandler);
+  yield takeLatest(fetchMovieSearch.type, fetchMovieSearchHandler);
 }
