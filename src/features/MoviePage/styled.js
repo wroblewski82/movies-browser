@@ -85,7 +85,7 @@ export const MovieTitle = styled.h1`
   }
 `;
 
-export const VotesContainer = styled.p`
+export const VotesContainer = styled.div`
   margin: 0 0 16px;
   display: flex;
   align-items: center;
