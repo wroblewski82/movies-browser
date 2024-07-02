@@ -5,7 +5,6 @@ import {
   selectFetchDataStatus,
   selectMovieList,
   selectGenreList,
-  fetchMovieSearch,
 } from "./moviesSlice";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
@@ -14,20 +13,17 @@ import { StyledMain, StyledHeader, StyledList, StyledItem } from "../styled";
 import { Pagination } from "../../Pagination";
 import { useQueryParam } from "../../Navigation/queryParam";
 import paginationParamName from "../../Pagination/paginationParamName";
-import searchQueryName from "../../Navigation/searchQueryName";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
   const fetchDataStatus = useSelector(selectFetchDataStatus);
   const movieList = useSelector(selectMovieList);
   const genreList = useSelector(selectGenreList);
-  // const totalResult = movieList.total_results;
   const page = useQueryParam(paginationParamName) || 1;
-  const query = useQueryParam(searchQueryName);
 
   useEffect(() => {
     dispatch(fetchMovieList(page));
-  }, [page, dispatch, query]);
+  }, [page, dispatch]);
 
   return (
     <>
