@@ -16,6 +16,7 @@ import {
   StyledItem,
   StyledLink,
 } from "../styled";
+import { Pagination } from "../../Pagination";
 
 export const PeopleList = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,7 @@ export const PeopleList = () => {
               </StyledItem>
             ))}
           </StyledList>
+          <Pagination />
         </>
       )}
     </StyledMain>

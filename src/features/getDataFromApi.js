@@ -1,7 +1,5 @@
-export const getDataFromApi = async (page) => {
-  const response = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?page=${page}&api_key=5808b0503fd4aaf8a5636df1649fe0dc`
-  );
+export const getDataFromApi = async (api) => {
+  const response = await fetch(api);
 
   if (!response.ok) {
     throw new Error(response.statusText);
