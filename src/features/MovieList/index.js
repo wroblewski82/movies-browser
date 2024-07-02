@@ -10,6 +10,7 @@ import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { MovieTile } from "../../common/MovieTile";
 import { StyledMain, StyledHeader, StyledList } from "../styled";
+import { Pagination } from "../../Pagination";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,7 @@ export const MovieList = () => {
               </li>
             ))}
           </StyledList>
+          <Pagination />
         </>
       )}
     </StyledMain>
