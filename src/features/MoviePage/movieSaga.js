@@ -1,4 +1,4 @@
-import { takeEvery, call, put } from "redux-saga/effects";
+import { takeEvery, call, put, delay } from "redux-saga/effects";
 
 import {
   fetchMovieDataFromApi,
@@ -9,6 +9,7 @@ import { getDataFromApi } from "../../utils/getDataFromApi";
 
 function* watchFetchMovieHandler(action) {
   try {
+    yield delay(3000);
     const movieId = action.payload;
     const movieApiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=ac5371c0e378529d6face3e2fab3b7c1`;
     const creditsApiUrl = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=ac5371c0e378529d6face3e2fab3b7c1`;

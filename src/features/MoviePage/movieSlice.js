@@ -4,7 +4,9 @@ const movieSlice = createSlice({
   name: "movie",
   initialState: { movie: null, credits: null, fetchMovieStatus: undefined },
   reducers: {
-    fetchMovieDataFromApi: () => {},
+    fetchMovieDataFromApi: (state) => {
+      state.fetchMovieStatus = "loading";
+    },
 
     fetchMovieSuccess: (state, action) => {
       const { movieData, creditsData } = action.payload;
