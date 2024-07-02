@@ -11,16 +11,19 @@ import { ErrorPage } from "../../common/ErrorPage";
 import { MovieTile } from "../../common/MovieTile";
 import { StyledMain, StyledHeader, StyledList } from "../styled";
 import { Pagination } from "../../Pagination";
+import { useQueryParam } from "../../Navigation/queryParam";
+import paginationParamName from "../../Pagination/paginationParamName";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
   const fetchDataStatus = useSelector(selectFetchDataStatus);
   const movieList = useSelector(selectMovieList);
   const genreList = useSelector(selectGenreList);
+  const page = useQueryParam(paginationParamName) || 1;
 
   useEffect(() => {
-    dispatch(fetchMovieList());
-  }, [dispatch]);
+    dispatch(fetchMovieList(page));
+  }, [page, dispatch]);
 
   return (
     <StyledMain>
