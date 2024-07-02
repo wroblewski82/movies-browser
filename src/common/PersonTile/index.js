@@ -1,9 +1,12 @@
 import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderActorIcon.svg";
 
+import { useRole } from "./useRole";
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
-import { StyledPersonTile, Image, PersonName } from "./styled";
+import { StyledPersonTile, Image, PersonName, Role } from "./styled";
 
-export const PersonTile = ({ poster, personName }) => {
+export const PersonTile = ({ poster, personName, creditId }) => {
+  const { role } = useRole(creditId);
+
   return (
     <StyledPersonTile>
       {poster ? (
@@ -13,7 +16,9 @@ export const PersonTile = ({ poster, personName }) => {
           <PlaceholderIcon />
         </ImagePlaceholder>
       )}
+
       <PersonName>{personName}</PersonName>
+      {role && <Role>{role}</Role>}
     </StyledPersonTile>
   );
 };

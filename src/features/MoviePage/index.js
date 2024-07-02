@@ -91,6 +91,7 @@ export const MoviePage = () => {
                     poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
                   })}
                   personName={person.name}
+                  creditId={person.credit_id}
                 />
               ))}
             </StyledList>
@@ -106,6 +107,7 @@ export const MoviePage = () => {
                     poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
                   })}
                   personName={person.name}
+                  creditId={person.credit_id}
                 />
               ))}
             </StyledList>
