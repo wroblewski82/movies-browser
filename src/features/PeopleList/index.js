@@ -16,15 +16,19 @@ import {
   StyledItem,
   StyledLink,
 } from "../styled";
+import { Pagination } from "../../Pagination";
+import { useQueryParam } from "../../Navigation/queryParam";
+import paginationParamName from "../../Pagination/paginationParamName";
 
 export const PeopleList = () => {
   const dispatch = useDispatch();
   const fetchDataStatus = useSelector(selectFetchDataStatus);
   const peopleList = useSelector(selectPeopleList);
+  const page = useQueryParam(paginationParamName) || 1;
 
   useEffect(() => {
-    dispatch(fetchPeopleList());
-  }, [dispatch]);
+    dispatch(fetchPeopleList(page));
+  }, [page, dispatch]);
 
   return (
     <StyledMain>
@@ -45,6 +49,7 @@ export const PeopleList = () => {
               </StyledItem>
             ))}
           </StyledList>
+          <Pagination />
         </>
       )}
     </StyledMain>
