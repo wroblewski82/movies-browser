@@ -14,18 +14,6 @@ export const ImagePlaceholder = styled.div`
     height: 169px;
   }
 
-  ${({ $actor }) =>
-    $actor &&
-    css`
-      width: 312px;
-      height: 464px;
-      margin: auto;
-
-      @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-        margin: 0;
-      }
-    `}
-
   ${({ $main }) =>
     $main &&
     css`

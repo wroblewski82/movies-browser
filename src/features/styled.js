@@ -48,9 +48,6 @@ export const StyledList = styled.ul`
     $people &&
     css`
       grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
-      grid-auto-rows: minmax(208px, 1fr);
-      align-items: center;
-      justify-items: center;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
