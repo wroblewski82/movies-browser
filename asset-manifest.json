@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.js": "/movies-browser/static/js/main.ea263305.js",
+    "main.js": "/movies-browser/static/js/main.a6fed7c9.js",
     "static/js/453.4f8818d1.chunk.js": "/movies-browser/static/js/453.4f8818d1.chunk.js",
     "index.html": "/movies-browser/index.html",
     "static/media/starIcon.svg": "/movies-browser/static/media/starIcon.8663155c38d2739a01d98dddbf5d2ae1.svg",
     "static/media/placeholderActorIcon.svg": "/movies-browser/static/media/placeholderActorIcon.76db5cf35f8e9194d9a3354742efc948.svg",
     "static/media/danger.svg": "/movies-browser/static/media/danger.a514e9c64a76d5cf149bdd7443857605.svg",
+    "static/media/nextArrow.svg": "/movies-browser/static/media/nextArrow.03630d1f3e585815baa9f8c442b5bb7a.svg",
     "static/media/Logo.svg": "/movies-browser/static/media/Logo.64519bacc48e8f0f2a39675e55643d9b.svg",
+    "static/media/prevArrow.svg": "/movies-browser/static/media/prevArrow.213447d6519e0a69870a45f7e61c9e7b.svg",
     "static/media/placeholderMovieIcon.svg": "/movies-browser/static/media/placeholderMovieIcon.0d167e4e17cdf83e6fd05446cc6403f3.svg",
     "static/media/loadingIcon.svg": "/movies-browser/static/media/loadingIcon.c5f29646f52eed97faa98a9f6f43ce08.svg",
     "static/media/Search.svg": "/movies-browser/static/media/Search.6c9b7fea663747479f165be2c181742b.svg",
-    "main.ea263305.js.map": "/movies-browser/static/js/main.ea263305.js.map",
+    "main.a6fed7c9.js.map": "/movies-browser/static/js/main.a6fed7c9.js.map",
     "453.4f8818d1.chunk.js.map": "/movies-browser/static/js/453.4f8818d1.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ea263305.js"
+    "static/js/main.a6fed7c9.js"
   ]
 }
