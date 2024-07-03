@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPeopleList,
+  fetchPeopleSearch,
   selectFetchDataStatus,
   selectPeopleList,
 } from "./peopleSlice";
@@ -19,16 +20,27 @@ import {
 import { Pagination } from "../../Pagination";
 import { useQueryParam } from "../../Navigation/queryParam";
 import paginationParamName from "../../Pagination/paginationParamName";
+import searchQueryName from "../../Navigation/searchQueryName";
 
 export const PeopleList = () => {
   const dispatch = useDispatch();
   const fetchDataStatus = useSelector(selectFetchDataStatus);
   const peopleList = useSelector(selectPeopleList);
   const page = useQueryParam(paginationParamName) || 1;
+  const query = useQueryParam(searchQueryName);
 
   useEffect(() => {
-    dispatch(fetchPeopleList(page));
-  }, [page, dispatch]);
+    const options = {
+      query: query,
+      page: page,
+      type: "person",
+    };
+    if (query) {
+      dispatch(fetchPeopleSearch(options));
+    } else {
+      dispatch(fetchPeopleList(page));
+    }
+  }, [page, dispatch, query]);
 
   return (
     <StyledMain>

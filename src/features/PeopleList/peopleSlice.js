@@ -17,11 +17,18 @@ const peopleSlice = createSlice({
     fetchPeopleListError: (state) => {
       state.fetchDataStatus = "error";
     },
+    fetchPeopleSearch: (state) => {
+      state.fetchDataStatus = "loading";
+    },
   },
 });
 
-export const { fetchPeopleList, fetchPeopleListSuccess, fetchPeopleListError } =
-  peopleSlice.actions;
+export const {
+  fetchPeopleList,
+  fetchPeopleListSuccess,
+  fetchPeopleListError,
+  fetchPeopleSearch,
+} = peopleSlice.actions;
 
 export const selectPeopleState = (state) => state.people;
 export const selectPeopleObject = (state) => selectPeopleState(state).people;
