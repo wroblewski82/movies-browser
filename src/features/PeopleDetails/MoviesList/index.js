@@ -1,6 +1,6 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { MovieTile } from "../../../common/MovieTile";
-import { StyledHeader, StyledList, StyledItem } from "../../styled";
+import { StyledHeader, StyledList } from "../../styled";
 
 export const MoviesList = ({ header, moviesList, genreList }) => {
   return (
@@ -12,7 +12,7 @@ export const MoviesList = ({ header, moviesList, genreList }) => {
       )}
       <StyledList>
         {moviesList.map((movie) => (
-          <StyledItem key={nanoid()}>
+          <li key={nanoid()}>
             <MovieTile
               poster={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
               title={movie.title}
@@ -23,7 +23,7 @@ export const MoviesList = ({ header, moviesList, genreList }) => {
               mark={movie.vote_average?.toFixed(1)}
               votes={movie.vote_count}
             />
-          </StyledItem>
+          </li>
         ))}
       </StyledList>
     </>

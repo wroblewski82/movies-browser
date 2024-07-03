@@ -4,6 +4,7 @@ export const StyledPersonTile = styled.section`
   display: grid;
   grid-template-rows: 4fr 1fr;
   gap: 12px;
+  max-width: 208px;
   width: 100%;
   height: 100%;
   padding: 16px;

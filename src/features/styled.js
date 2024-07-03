@@ -57,15 +57,6 @@ export const StyledList = styled.ul`
         grid-gap: 16px;
       }
     `}
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    grid-gap: 16px 0;
-  }
-`;
-
-export const StyledItem = styled.li`
-  display: flex;
-  justify-content: center;
 `;
 
 export const StyledLink = styled(Link)`
