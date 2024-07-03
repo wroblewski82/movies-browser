@@ -6,6 +6,7 @@ import {
   fetchPeopleSearch,
   selectFetchDataStatus,
   selectPeopleList,
+  selectPeopleResult,
 } from "./peopleSlice";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
@@ -27,7 +28,12 @@ export const PeopleList = () => {
   const fetchDataStatus = useSelector(selectFetchDataStatus);
   const peopleList = useSelector(selectPeopleList);
   const page = useQueryParam(paginationParamName) || 1;
-  const query = useQueryParam(searchQueryName);
+  const query = useQueryParam(searchQueryName) || "";
+  const totalResult = useSelector(selectPeopleResult);
+  const title =
+    query !== ""
+      ? `Search results for "${query}" (${totalResult})`
+      : "Popular people";
 
   useEffect(() => {
     const options = {
@@ -48,7 +54,7 @@ export const PeopleList = () => {
       {fetchDataStatus === "error" && <ErrorPage />}
       {fetchDataStatus === "success" && (
         <>
-          <StyledHeader>Popular people</StyledHeader>
+          <StyledHeader>{title}</StyledHeader>
           <StyledList $people>
             {peopleList.map((people) => (
               <StyledItem key={nanoid()}>

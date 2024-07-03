@@ -39,4 +39,7 @@ export const selectPeopleList = (state) => selectPeopleObject(state).results;
 export const selectPeoplePage = (state) =>
   selectPeopleState(state).people.total_pages;
 
+export const selectPeopleResult = (state) =>
+  selectPeopleState(state).people.total_results;
+
 export default peopleSlice.reducer;

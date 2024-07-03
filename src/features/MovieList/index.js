@@ -6,6 +6,7 @@ import {
   selectMovieList,
   selectGenreList,
   fetchMovieSearch,
+  selectMovieResult,
 } from "./moviesSlice";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
@@ -22,7 +23,12 @@ export const MovieList = () => {
   const movieList = useSelector(selectMovieList);
   const genreList = useSelector(selectGenreList);
   const page = useQueryParam(paginationParamName) || 1;
-  const query = useQueryParam(searchQueryName);
+  const query = useQueryParam(searchQueryName) || "";
+  const totalResult = useSelector(selectMovieResult);
+  const title =
+    query !== ""
+      ? `Search results for "${query}" (${totalResult})`
+      : "Popular movies";
 
   useEffect(() => {
     const options = {
@@ -43,7 +49,7 @@ export const MovieList = () => {
       {fetchDataStatus === "error" && <ErrorPage />}
       {fetchDataStatus === "success" && (
         <>
-          <StyledHeader>Popular movies</StyledHeader>
+          <StyledHeader>{title}</StyledHeader>
           <StyledList>
             {movieList.map((movie) => (
               <li key={movie.id}>
