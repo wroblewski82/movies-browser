@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import paginationParamName from "./paginationParamName";
 import { useQueryParam, useReplaceQueryParam } from "../Navigation/queryParam";
 import { useLocation } from "react-router";
+import { selectPeoplePage } from "../features/PeopleList/peopleSlice";
 
 export const usePageButton = () => {
   const location = useLocation();
   const moviePageFromStore = useSelector(selectMoviePage);
-  const peoplePageFormStore = 500;
+  const peoplePageFormStore = useSelector(selectPeoplePage);
   const totalPagesFromStore = location.pathname.startsWith("/movies")
     ? moviePageFromStore
     : peoplePageFormStore;
