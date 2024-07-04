@@ -51,7 +51,7 @@ export const PeopleList = () => {
 
   return (
     <StyledMain>
-      {fetchDataStatus === "loading" && <LoadingPage />}
+      {fetchDataStatus === "loading" && <LoadingPage title={query} />}
       {totalResult === 0 && query !== "" && <NoResultsPage title={query} />}
       {fetchDataStatus === "error" && <ErrorPage />}
       {fetchDataStatus === "success" && totalResult !== 0 && (
