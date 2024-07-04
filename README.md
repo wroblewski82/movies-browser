@@ -15,6 +15,15 @@ A top-level **navigation menu** enables users to _switch between the movie list 
 A dedicated **search engine** to _search for movies on the movie list movies on the movie list page and persons on the person list page_.
 A bottom-level **pagination** enables _moving between pages of movie list or person list_.
 
+## Key Features in Action
+
+![Movie List](src/assets/movieList.gif)
+![People List](src/assets/peopleList.gif)
+![Movie Page](src/assets/moviePage.gif)
+![Person Page](src/assets/personPage.gif)
+![Navigation](src/assets/navigation.gif)
+![Pagintion](src/assets/pagination.gif)
+
 ## Technologies
 
 ### HTML
