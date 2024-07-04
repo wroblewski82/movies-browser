@@ -22,6 +22,7 @@ import { Pagination } from "../../Pagination";
 import { useQueryParam } from "../../Navigation/queryParam";
 import paginationParamName from "../../Pagination/paginationParamName";
 import searchQueryName from "../../Navigation/searchQueryName";
+import { NoResultsPage } from "../../common/NoResultsPage";
 
 export const PeopleList = () => {
   const dispatch = useDispatch();
@@ -51,8 +52,9 @@ export const PeopleList = () => {
   return (
     <StyledMain>
       {fetchDataStatus === "loading" && <LoadingPage />}
+      {totalResult === 0 && query !== "" && <NoResultsPage title={query} />}
       {fetchDataStatus === "error" && <ErrorPage />}
-      {fetchDataStatus === "success" && (
+      {fetchDataStatus === "success" && totalResult !== 0 && (
         <>
           <StyledHeader>{title}</StyledHeader>
           <StyledList $people>
