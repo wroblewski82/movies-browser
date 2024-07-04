@@ -49,7 +49,7 @@ export const MovieList = () => {
       {fetchDataStatus === "loading" && <LoadingPage />}
       {totalResult === 0 && query !== "" && <NoResultsPage title={query} />}
       {fetchDataStatus === "error" && <ErrorPage />}
-      {fetchDataStatus === "success" && totalResult != 0 && (
+      {fetchDataStatus === "success" && totalResult !== 0 && (
         <>
           <StyledHeader>{title}</StyledHeader>
           <StyledList>
