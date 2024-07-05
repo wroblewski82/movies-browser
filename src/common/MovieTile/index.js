@@ -1,12 +1,10 @@
 import { nanoid } from "@reduxjs/toolkit";
-
 import { ReactComponent as PlaceholderIcon } from "../../assets/placeholderMovieIcon.svg";
 import { ImagePlaceholder } from "../ImagePlaceholder/styled";
 import {
   StyledMovieTile,
   Image,
   DataContainer,
-  StyledLink,
   Title,
   Year,
   Container,
@@ -24,7 +22,6 @@ import {
 } from "./styled";
 
 export const MovieTile = ({
-  id,
   poster,
   title,
   year,
@@ -85,11 +82,5 @@ export const MovieTile = ({
       {description && <Description2>{description}</Description2>}
     </>
   );
-  return $main ? (
-    content
-  ) : (
-    <StyledLink $main={$main} to={`/movies/${id}`}>
-      {content}
-    </StyledLink>
-  );
+  return content;
 };

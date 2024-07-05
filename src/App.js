@@ -11,11 +11,11 @@ const App = () => {
       <HashRouter>
         <Navigation />
         <Routes>
+          <Route path="movies/:id" element={<MoviePage />} />
           <Route path="people/:id" element={<PeopleDetails />} />
           <Route path="movies" element={<MovieList />} />
           <Route path="people" element={<PeopleList />} />
           <Route path="*" element={<Navigate to="/movies" />} />
-          <Route path="/movies/:movieId" element={<MoviePage />} />
         </Routes>
       </HashRouter>
     </>
