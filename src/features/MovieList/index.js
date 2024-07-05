@@ -9,7 +9,7 @@ import {
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { MovieTile } from "../../common/MovieTile";
-import { StyledMain, StyledHeader, StyledList } from "../styled";
+import { StyledMain, StyledHeader, StyledList, StyledLink } from "../styled";
 import { Pagination } from "../../Pagination";
 import { useQueryParam } from "../../Navigation/queryParam";
 import paginationParamName from "../../Pagination/paginationParamName";
@@ -34,19 +34,20 @@ export const MovieList = () => {
           <StyledHeader>Popular movies</StyledHeader>
           <StyledList>
             {movieList.map((movie) => (
-              <li key={movie.id}>
-                <MovieTile
-                  id={movie.id}
-                  poster={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
-                  title={movie.title}
-                  year={movie.release_date.split("-")[0]}
-                  genres={movie.genre_ids.map((id) =>
-                    genreList.find((genre) => genre.id === id)
-                  )}
-                  mark={movie.vote_average.toFixed(1)}
-                  votes={movie.vote_count}
-                />
-              </li>
+              <StyledLink to={`/movies/${movie.id}`}>
+                <li key={movie.id}>
+                  <MovieTile
+                    poster={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+                    title={movie.title}
+                    year={movie.release_date.split("-")[0]}
+                    genres={movie.genre_ids.map((id) =>
+                      genreList.find((genre) => genre.id === id)
+                    )}
+                    mark={movie.vote_average.toFixed(1)}
+                    votes={movie.vote_count}
+                  />
+                </li>
+              </StyledLink>
             ))}
           </StyledList>
           <Pagination />

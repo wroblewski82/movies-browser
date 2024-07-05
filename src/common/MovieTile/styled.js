@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
 
 import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
@@ -87,11 +86,6 @@ export const DataContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     display: block;
   }
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Title = styled.h2`

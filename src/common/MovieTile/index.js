@@ -6,7 +6,6 @@ import {
   StyledMovieTile,
   Image,
   DataContainer,
-  StyledLink,
   Title,
   Year,
   Container,
@@ -24,7 +23,6 @@ import {
 } from "./styled";
 
 export const MovieTile = ({
-  id,
   poster,
   title,
   year,
@@ -35,61 +33,52 @@ export const MovieTile = ({
   votes,
   description,
   $main,
-}) => {
-  const content = (
-    <>
-      <StyledMovieTile $main={$main}>
-        {poster ? (
-          <Image $main={$main} src={poster} alt="Movie Poster" />
-        ) : (
-          <ImagePlaceholder $main={$main}>
-            <PlaceholderIcon />
-          </ImagePlaceholder>
+}) => (
+  <>
+    <StyledMovieTile $main={$main}>
+      {poster ? (
+        <Image $main={$main} src={poster} alt="Movie Poster" />
+      ) : (
+        <ImagePlaceholder $main={$main}>
+          <PlaceholderIcon />
+        </ImagePlaceholder>
+      )}
+      <DataContainer $main={$main}>
+        {title && <Title $main={$main}>{title}</Title>}
+        {year && <Year $main={$main}>{year}</Year>}
+        {productionPlaces && (
+          <Container>
+            <AdditionalDataName>Production:</AdditionalDataName>{" "}
+            {productionPlaces?.map((productionPlace, index) => (
+              <AdditionalData key={index}>
+                {productionPlace.name}
+                {index === productionPlaces.length - 1 ? "." : ", "}
+              </AdditionalData>
+            ))}
+          </Container>
         )}
-        <DataContainer $main={$main}>
-          {title && <Title $main={$main}>{title}</Title>}
-          {year && <Year $main={$main}>{year}</Year>}
-          {productionPlaces && (
-            <Container>
-              <AdditionalDataName>Production:</AdditionalDataName>{" "}
-              {productionPlaces?.map((productionPlace, index) => (
-                <AdditionalData key={index}>
-                  {productionPlace.name}
-                  {index === productionPlaces.length - 1 ? "." : ", "}
-                </AdditionalData>
-              ))}
-            </Container>
-          )}
-          {releaseDate && (
-            <Container>
-              <AdditionalDataName>Release date:</AdditionalDataName>{" "}
-              <AdditionalData>{releaseDate}</AdditionalData>
-            </Container>
-          )}
-          {genres && (
-            <Genres $main={$main}>
-              {genres.map((genre) => (
-                <Genre key={nanoid()}>{genre.name}</Genre>
-              ))}
-            </Genres>
-          )}
-          <VotesContainer>
-            <StyledStarIcon />
-            <Mark $main={$main}>{mark}</Mark>
-            <MaxMark $main={$main}>/10</MaxMark>
-            <VotesNumber $main={$main}>{votes} votes</VotesNumber>
-          </VotesContainer>
-          {description && <Description>{description}</Description>}
-        </DataContainer>
-      </StyledMovieTile>
-      {description && <Description2>{description}</Description2>}
-    </>
-  );
-  return $main ? (
-    content
-  ) : (
-    <StyledLink $main={$main} to={`/movies/${id}`}>
-      {content}
-    </StyledLink>
-  );
-};
+        {releaseDate && (
+          <Container>
+            <AdditionalDataName>Release date:</AdditionalDataName>{" "}
+            <AdditionalData>{releaseDate}</AdditionalData>
+          </Container>
+        )}
+        {genres && (
+          <Genres $main={$main}>
+            {genres.map((genre) => (
+              <Genre key={nanoid()}>{genre.name}</Genre>
+            ))}
+          </Genres>
+        )}
+        <VotesContainer>
+          <StyledStarIcon />
+          <Mark $main={$main}>{mark}</Mark>
+          <MaxMark $main={$main}>/10</MaxMark>
+          <VotesNumber $main={$main}>{votes} votes</VotesNumber>
+        </VotesContainer>
+        {description && <Description>{description}</Description>}
+      </DataContainer>
+    </StyledMovieTile>
+    {description && <Description2>{description}</Description2>}
+  </>
+);
