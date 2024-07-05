@@ -29,5 +29,7 @@ export const selectFetchDataStatus = (state) =>
   selectPeopleState(state).fetchDataStatus;
 
 export const selectPeopleList = (state) => selectPeopleObject(state).results;
+export const selectPeoplePage = (state) =>
+  selectPeopleState(state).people.total_pages;
 
 export default peopleSlice.reducer;
