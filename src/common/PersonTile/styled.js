@@ -33,3 +33,11 @@ export const PersonName = styled.h3`
     font-size: 14px;
   }
 `;
+
+export const Role = styled.p`
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: ${({ theme }) => theme.colors.waterloo};
+  margin: 8px auto 16px;
+`;

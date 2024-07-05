@@ -12,6 +12,7 @@ import {
 } from "./movieSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
+import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 
 import { StyledHeader, StyledList } from "../styled";
@@ -44,6 +45,7 @@ export const MoviePage = () => {
 
   return (
     <>
+      {fetchMovieStatus === "loading" && <LoadingPage />}
       {fetchMovieStatus === "error" && <ErrorPage />}
       {fetchMovieStatus === "success" && (
         <StyledMoviePage>
@@ -89,6 +91,7 @@ export const MoviePage = () => {
                     poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
                   })}
                   personName={person.name}
+                  creditId={person.credit_id}
                 />
               ))}
             </StyledList>
@@ -104,6 +107,7 @@ export const MoviePage = () => {
                     poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
                   })}
                   personName={person.name}
+                  creditId={person.credit_id}
                 />
               ))}
             </StyledList>

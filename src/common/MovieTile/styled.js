@@ -158,8 +158,9 @@ export const Container = styled.p`
 `;
 
 export const AdditionalDataName = styled.span`
-  font-size: 22px;
-  line-height: 0.9;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
   color: ${({ theme }) => theme.colors.stormGray};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
