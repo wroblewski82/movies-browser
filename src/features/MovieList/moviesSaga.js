@@ -7,8 +7,6 @@ import {
 } from "./moviesSlice";
 import { getMovieListFromApi } from "./getMovieListFromApi";
 
-const movieListApi =
-  "https://api.themoviedb.org/3/movie/popular?api_key=5808b0503fd4aaf8a5636df1649fe0dc";
 const genreListApi =
   "https://api.themoviedb.org/3/genre/movie/list?api_key=5808b0503fd4aaf8a5636df1649fe0dc";
 

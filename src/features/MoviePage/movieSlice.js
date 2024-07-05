@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { selectMoviesState } from "../MovieList/moviesSlice";
 
 const movieSlice = createSlice({
   name: "movie",
