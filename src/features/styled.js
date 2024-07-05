@@ -48,24 +48,12 @@ export const StyledList = styled.ul`
     $people &&
     css`
       grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
-      grid-auto-rows: minmax(208px, 1fr);
-      align-items: center;
-      justify-items: center;
 
       @media (max-width: ${({ theme }) => theme.media.mobile}px) {
         grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
         grid-gap: 16px;
       }
     `}
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    grid-gap: 16px 0;
-  }
-`;
-
-export const StyledItem = styled.li`
-  display: flex;
-  justify-content: center;
 `;
 
 export const StyledLink = styled(Link)`
