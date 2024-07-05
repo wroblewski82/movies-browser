@@ -23,6 +23,7 @@ A bottom-level **pagination** enables _moving between pages of movie list or per
 ![Person Page](src/assets/personPage.gif)
 ![Navigation](src/assets/navigation.gif)
 ![Pagintion](src/assets/pagination.gif)
+![Search](src/assets/search.gif)
 
 ## Technologies
 
