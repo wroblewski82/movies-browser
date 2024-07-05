@@ -1,16 +1,14 @@
-import { takeEvery, delay, put, call } from "redux-saga/effects";
-import { getDataFromApi } from "../../utils/getDataFromApi";
+import { takeEvery, delay, put, call, takeLatest } from "redux-saga/effects";
 import {
   fetchPeopleList,
   fetchPeopleListSuccess,
   fetchPeopleListError,
+  fetchPeopleSearch,
 } from "./peopleSlice";
 import { getPeopleListFromApi } from "./getPeopleListFromApi";
+import { getSearchData } from "../../Navigation/Search/getSearchData";
 
-const peopleListApi =
-  "https://api.themoviedb.org/3/person/popular?api_key=5808b0503fd4aaf8a5636df1649fe0dc";
-
-function* fetchMovieListHandler({ payload: page }) {
+function* fetchPeopleListHandler({ payload: page }) {
   try {
     yield delay(1000);
     const peopleList = yield call(getPeopleListFromApi, page);
@@ -20,6 +18,22 @@ function* fetchMovieListHandler({ payload: page }) {
   }
 }
 
+function* fetchPeopleSearchHandler({ payload: options }) {
+  try {
+    yield delay(1000);
+    const peopleList = yield call(
+      getSearchData,
+      options.query,
+      options.page,
+      options.type
+    );
+    yield put(fetchPeopleListSuccess(peopleList));
+  } catch (error) {
+    yield put(fetchPeopleListError());
+  }
+}
+
 export function* peopleSaga() {
-  yield takeEvery(fetchPeopleList.type, fetchMovieListHandler);
+  yield takeEvery(fetchPeopleList.type, fetchPeopleListHandler);
+  yield takeLatest(fetchPeopleSearch.type, fetchPeopleSearchHandler);
 }

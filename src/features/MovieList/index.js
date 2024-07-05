@@ -5,6 +5,8 @@ import {
   selectFetchDataStatus,
   selectMovieList,
   selectGenreList,
+  fetchMovieSearch,
+  selectMovieResult,
 } from "./moviesSlice";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
@@ -13,6 +15,8 @@ import { StyledMain, StyledHeader, StyledList } from "../styled";
 import { Pagination } from "../../Pagination";
 import { useQueryParam } from "../../Navigation/queryParam";
 import paginationParamName from "../../Pagination/paginationParamName";
+import searchQueryName from "../../Navigation/searchQueryName";
+import { NoResultsPage } from "../../common/NoResultsPage";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -20,18 +24,34 @@ export const MovieList = () => {
   const movieList = useSelector(selectMovieList);
   const genreList = useSelector(selectGenreList);
   const page = useQueryParam(paginationParamName) || 1;
+  const query = useQueryParam(searchQueryName) || "";
+  const totalResult = useSelector(selectMovieResult);
+  const title =
+    query !== ""
+      ? `Search results for "${query}" (${totalResult})`
+      : "Popular movies";
 
   useEffect(() => {
-    dispatch(fetchMovieList(page));
-  }, [page, dispatch]);
+    const options = {
+      query: query,
+      page: page,
+      type: "movie",
+    };
+    if (query) {
+      dispatch(fetchMovieSearch(options));
+    } else {
+      dispatch(fetchMovieList(page));
+    }
+  }, [page, dispatch, query]);
 
   return (
     <StyledMain>
-      {fetchDataStatus === "loading" && <LoadingPage />}
+      {fetchDataStatus === "loading" && <LoadingPage title={query} />}
+      {totalResult === 0 && query !== "" && <NoResultsPage title={query} />}
       {fetchDataStatus === "error" && <ErrorPage />}
-      {fetchDataStatus === "success" && (
+      {fetchDataStatus === "success" && totalResult !== 0 && (
         <>
-          <StyledHeader>Popular movies</StyledHeader>
+          <StyledHeader>{title}</StyledHeader>
           <StyledList>
             {movieList.map((movie) => (
               <li key={movie.id}>
