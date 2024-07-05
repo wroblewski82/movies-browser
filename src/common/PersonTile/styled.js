@@ -6,12 +6,13 @@ export const StyledPersonTile = styled.section`
   gap: 1px;
   width: 100%;
   height: 100%;
-  padding: 16px 16px 0;
+  padding: 16px 16px 0 16px;
   background-color: ${({ theme }) => theme.colors.white};
   text-align: center;
+  align-items: center;
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    padding: 8px 8px 8px 0;
+    padding: 8px 8px 0 8px ;
     border-radius: 5px;
   }
 `;
