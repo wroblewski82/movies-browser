@@ -30,6 +30,7 @@ import {
   TileContainer,
   Article,
 } from "./styled";
+import { Item } from "../styled";
 
 export const MoviePage = () => {
   const { movieId } = useParams();
@@ -86,14 +87,16 @@ export const MoviePage = () => {
             <StyledList $people>
               {credits.cast?.map((person) => (
                 <StyledLink to={`/people/${person?.credit_id}`}>
-                  <PersonTile
-                    key={nanoid()}
-                    {...(person.profile_path && {
-                      poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
-                    })}
-                    personName={person.name}
-                    creditId={person.credit_id}
-                  />
+                  <Item key={nanoid()}>
+                    <PersonTile
+                      key={nanoid()}
+                      {...(person.profile_path && {
+                        poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
+                      })}
+                      personName={person.name}
+                      creditId={person.credit_id}
+                    />
+                  </Item>
                 </StyledLink>
               ))}
             </StyledList>
@@ -104,14 +107,16 @@ export const MoviePage = () => {
             <StyledList $people>
               {credits.crew?.map((person) => (
                 <StyledLink to={`/people/${person?.credit_id}`}>
-                  <PersonTile
-                    key={nanoid()}
-                    {...(person.profile_path && {
-                      poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
-                    })}
-                    personName={person.name}
-                    creditId={person.credit_id}
-                  />
+                  <Item key={nanoid()}>
+                    <PersonTile
+                      key={nanoid()}
+                      {...(person.profile_path && {
+                        poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
+                      })}
+                      personName={person.name}
+                      creditId={person.credit_id}
+                    />
+                  </Item>
                 </StyledLink>
               ))}
             </StyledList>
