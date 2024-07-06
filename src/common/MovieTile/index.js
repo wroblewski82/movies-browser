@@ -6,7 +6,7 @@ import {
   Image,
   DataContainer,
   Title,
-  Year,
+  StyledInfo,
   Container,
   AdditionalDataName,
   AdditionalData,
@@ -31,6 +31,8 @@ export const MovieTile = ({
   mark,
   votes,
   description,
+  character,
+  job,
   $main,
 }) => (
   <>
@@ -44,7 +46,15 @@ export const MovieTile = ({
       )}
       <DataContainer $main={$main}>
         {title && <Title $main={$main}>{title}</Title>}
-        {year && <Year $main={$main}>{year}</Year>}
+        {character || job ? (
+          <StyledInfo>
+            {character && <span>{character}</span>}
+            {job && <span>{job}</span>}
+            {year && <span> ({year})</span>}
+          </StyledInfo>
+        ) : (
+          year && <StyledInfo $main={$main}>{year}</StyledInfo>
+        )}
         {productionPlaces && (
           <Container>
             <AdditionalDataName>Production:</AdditionalDataName>{" "}

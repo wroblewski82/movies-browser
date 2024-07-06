@@ -23,6 +23,8 @@ export const MoviesList = ({ header, moviesList, genreList }) => {
                 )}
                 mark={movie.vote_average?.toFixed(1)}
                 votes={movie.vote_count}
+                character={movie.character}
+                job={movie.job}
               />
             </StyledLink>
           </li>

@@ -121,7 +121,7 @@ export const Title = styled.h2`
     `}
 `;
 
-export const Year = styled.p`
+export const StyledInfo = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.waterloo};
