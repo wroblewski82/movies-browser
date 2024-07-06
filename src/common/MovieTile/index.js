@@ -35,7 +35,7 @@ export const MovieTile = ({
 }) => (
   <>
     <StyledMovieTile $main={$main}>
-      {poster ? (
+      {poster !== "https://image.tmdb.org/t/p/w342/null" ? (
         <Image $main={$main} src={poster} alt="Movie Poster" />
       ) : (
         <ImagePlaceholder $main={$main}>
