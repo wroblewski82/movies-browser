@@ -15,7 +15,7 @@ import { PersonTile } from "../../common/PersonTile";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 
-import { StyledHeader, StyledList, StyledLink } from "../styled";
+import { StyledHeader, StyledList, StyledLink, Item } from "../styled";
 import {
   StyledMoviePage,
   PosterContainer,
@@ -86,14 +86,15 @@ export const MoviePage = () => {
             <StyledList $people>
               {credits.cast?.map((person) => (
                 <StyledLink to={`/people/${person.id}`}>
-                  <PersonTile
-                    key={nanoid()}
-                    {...(person.profile_path && {
-                      poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
-                    })}
-                    personName={person.name}
-                    creditId={person.credit_id}
-                  />
+                  <Item key={nanoid()}>
+                    <PersonTile
+                      {...(person.profile_path && {
+                        poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
+                      })}
+                      personName={person.name}
+                      creditId={person.credit_id}
+                    />
+                  </Item>
                 </StyledLink>
               ))}
             </StyledList>
@@ -104,14 +105,16 @@ export const MoviePage = () => {
             <StyledList $people>
               {credits.crew?.map((person) => (
                 <StyledLink to={`/people/${person.id}`}>
-                  <PersonTile
-                    key={nanoid()}
-                    {...(person.profile_path && {
-                      poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
-                    })}
-                    personName={person.name}
-                    creditId={person.credit_id}
-                  />
+                  <Item key={nanoid()}>
+                    <PersonTile
+                      key={nanoid()}
+                      {...(person.profile_path && {
+                        poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
+                      })}
+                      personName={person.name}
+                      creditId={person.credit_id}
+                    />
+                  </Item>
                 </StyledLink>
               ))}
             </StyledList>
