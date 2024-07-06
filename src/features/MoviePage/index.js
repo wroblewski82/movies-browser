@@ -18,7 +18,8 @@ import { ErrorPage } from "../../common/ErrorPage";
 import { StyledHeader, StyledList, StyledLink, Item } from "../styled";
 import {
   StyledMoviePage,
-  PosterContainer,
+  PosterBackground,
+  Poster,
   MovieMainData,
   MovieTitle,
   VotesContainer,
@@ -49,7 +50,8 @@ export const MoviePage = () => {
       {fetchMovieStatus === "error" && <ErrorPage />}
       {fetchMovieStatus === "success" && (
         <StyledMoviePage>
-          <PosterContainer
+          <PosterBackground/>
+          <Poster
             backdrop={`https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
           >
             <MovieMainData>
@@ -63,7 +65,7 @@ export const MoviePage = () => {
                 <VotesNumber>{movie?.vote_count} votes</VotesNumber>
               </VotesContainer>
             </MovieMainData>
-          </PosterContainer>
+          </Poster>
 
           <TileContainer>
             <MovieTile

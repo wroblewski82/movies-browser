@@ -2,11 +2,41 @@ import styled from "styled-components";
 
 import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
-export const PosterContainer = styled.div`
+export const StyledMoviePage = styled.section`
+  padding-bottom: 8px;
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+`;
+
+export const PosterBackground = styled.div`
+  width: 100%;
+  margin: 0;
+  background-color: ${({ theme }) => theme.colors.black};
+  height: 770px;
+  position: absolute;
+  top: 0;
+
+  @media (max-width: ${({ theme }) => theme.media.forPoster.tablet}px) {
+    height: 525px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.forPoster.mobile}px) {
+    height: 400px;
+  }
+`;
+
+export const Poster = styled.div`
   width: 100%;
   display: inline-block;
   height: 770px;
   position: relative;
+  top: 0;
   background-image: linear-gradient(
       270deg,
       rgba(${({ theme }) => theme.colors.darkRGB}) 14.11%,
@@ -17,30 +47,30 @@ export const PosterContainer = styled.div`
       rgba(${({ theme }) => theme.colors.darkRGB}, 0) 25.68%
     ),
     linear-gradient(
-        90deg,
-        rgba(${({ theme }) => theme.colors.darkRGB}) 13.6%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.984) 14.58%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.97) 15.44%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.867) 16.3%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.23) 22.87%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0) 26.64%
-      ),
+      90deg,
+      rgba(${({ theme }) => theme.colors.darkRGB}) 13.6%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.984) 14.58%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.97) 15.44%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.867) 16.3%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.23) 22.87%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0) 26.64%
+    ),
     linear-gradient(
-        rgba(${({ theme }) => theme.colors.darkRGB}) 0%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.69) 4.66%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.44) 9.34%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.208) 15.16%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0) 24.22%
-      ),
+      rgba(${({ theme }) => theme.colors.darkRGB}) 0%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.69) 4.66%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.44) 9.34%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.208) 15.16%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0) 24.22%
+    ),
     linear-gradient(
-        180deg,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0) 58.48%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.106) 63.17%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.235) 68.85%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.494) 78.08%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 0.74) 85.86%,
-        rgba(${({ theme }) => theme.colors.darkRGB}, 1) 92.87%
-      ),
+      180deg,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0) 58.48%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.106) 63.17%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.235) 68.85%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.494) 78.08%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 0.74) 85.86%,
+      rgba(${({ theme }) => theme.colors.darkRGB}, 1) 92.87%
+    ),
     url(${({ backdrop }) => backdrop});
   background-size: 1920px 770px, 1920px 770px, 1920px 770px, 1920px 770px,
     1368px 769px;
@@ -145,17 +175,6 @@ export const VotesNumber = styled.b`
     position: static;
     align-self: center;
     font-size: 10px;
-  }
-`;
-
-export const StyledMoviePage = styled.section`
-  padding-bottom: 8px;
-  margin: 0 auto;
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
   }
 `;
 
