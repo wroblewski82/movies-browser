@@ -9,6 +9,7 @@ export const StyledPersonTile = styled.section`
   padding: 16px;
   background-color: ${({ theme }) => theme.colors.white};
   text-align: center;
+  box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.colors.heather};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     padding: 8px;

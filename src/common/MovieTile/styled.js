@@ -11,7 +11,7 @@ export const StyledMovieTile = styled.article`
   border-radius: 5px;
   padding: 16px;
   background-color: ${({ theme }) => theme.colors.white};
-  box-shadow: 0px 4px 12px 0px #bac7d580;
+  box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.colors.heather};
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     grid-template-columns: repeat(2, 1fr);
