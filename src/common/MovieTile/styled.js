@@ -5,6 +5,7 @@ import { ReactComponent as StarIcon } from "../../assets/starIcon.svg";
 
 export const StyledMovieTile = styled.article`
   display: grid;
+  grid-template-rows: 1.6fr 1fr;
   margin: 0 auto;
   width: 100%;
   height: 100%;
@@ -24,6 +25,7 @@ export const StyledMovieTile = styled.article`
     css`
       max-width: 1368px;
       grid-template-columns: 1fr 3fr;
+      grid-template-rows: 1fr;
       gap: 40px;
       height: auto;
       background-color: transparent;

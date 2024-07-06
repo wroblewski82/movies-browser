@@ -2,8 +2,8 @@ import styled, { css } from "styled-components";
 
 export const ImagePlaceholder = styled.div`
   display: flex;
-  width: 292px;
-  height: 434px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
