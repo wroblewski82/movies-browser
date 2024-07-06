@@ -8,12 +8,6 @@ export const ErrorPage = () => (
     <StyledParagraph>
       Please check your network connection and try again
     </StyledParagraph>
-    <StyledLink
-      href="/movies"
-      rel="noreferrer noopener"
-      title="Movies Browser Home Page"
-    >
-      Back to home page
-    </StyledLink>
+    <StyledLink to="/movies">Back to home page</StyledLink>
   </Container>
 );

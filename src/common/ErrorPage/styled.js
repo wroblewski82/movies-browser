@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   padding: 180px 16px 32px;
@@ -23,7 +24,7 @@ export const StyledParagraph = styled.p`
   margin: 0 auto 40px;
 `;
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   background-color: ${({ theme }) => theme.colors.cornflowerBlue};
   color: ${({ theme }) => theme.colors.white};
