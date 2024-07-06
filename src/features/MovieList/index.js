@@ -56,7 +56,7 @@ export const MovieList = () => {
           <StyledList>
             {movieList.map((movie) => (
               <Item key={nanoid()}>
-                <StyledLink to={`/movies/${movie.id}`}>
+                <StyledLink to={`/movies/${movie.id}`} key={nanoid()}>
                   <MovieTile
                     poster={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
                     title={movie.title}

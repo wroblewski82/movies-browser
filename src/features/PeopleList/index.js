@@ -59,7 +59,7 @@ export const PeopleList = () => {
           <StyledHeader>{title}</StyledHeader>
           <StyledList $people>
             {peopleList.map((people) => (
-              <StyledLink to={`/people/${people.id}`}>
+              <StyledLink to={`/people/${people.id}`} key={nanoid()}>
                 <Item key={nanoid()}>
                   <PersonTile
                     poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}

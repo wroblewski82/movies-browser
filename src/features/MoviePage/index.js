@@ -91,7 +91,7 @@ export const MoviePage = () => {
             <StyledHeader as="h2">Cast</StyledHeader>
             <StyledList $people>
               {credits.cast?.map((person) => (
-                <StyledLink to={`/people/${person.id}`}>
+                <StyledLink to={`/people/${person.id}`} key={nanoid()}>
                   <Item key={nanoid()}>
                     <PersonTile
                       {...(person.profile_path && {
@@ -110,7 +110,7 @@ export const MoviePage = () => {
             <StyledHeader as="h2">Crew</StyledHeader>
             <StyledList $people>
               {credits.crew?.map((person) => (
-                <StyledLink to={`/people/${person.id}`}>
+                <StyledLink to={`/people/${person.id}`} key={nanoid()}>
                   <Item key={nanoid()}>
                     <PersonTile
                       key={nanoid()}
