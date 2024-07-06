@@ -15,10 +15,11 @@ import { PersonTile } from "../../common/PersonTile";
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 
-import { StyledHeader, StyledList, StyledLink } from "../styled";
+import { StyledHeader, StyledList, StyledLink, Item } from "../styled";
 import {
   StyledMoviePage,
-  PosterContainer,
+  PosterBackground,
+  Poster,
   MovieMainData,
   MovieTitle,
   VotesContainer,
@@ -49,21 +50,26 @@ export const MoviePage = () => {
       {fetchMovieStatus === "error" && <ErrorPage />}
       {fetchMovieStatus === "success" && (
         <StyledMoviePage>
-          <PosterContainer
-            backdrop={`https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
-          >
-            <MovieMainData>
-              <MovieTitle>{movie?.original_title}</MovieTitle>
-              <VotesContainer>
-                <StyledStarIcon />
-                <MarkContainer>
-                  <Mark>{movie.vote_average?.toFixed(1)}</Mark>
-                  <MaxMark>/ 10</MaxMark>
-                </MarkContainer>
-                <VotesNumber>{movie?.vote_count} votes</VotesNumber>
-              </VotesContainer>
-            </MovieMainData>
-          </PosterContainer>
+          {movie?.backdrop_path && (
+            <>
+              <PosterBackground />
+              <Poster
+                backdrop={`https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
+              >
+                <MovieMainData>
+                  <MovieTitle>{movie?.original_title}</MovieTitle>
+                  <VotesContainer>
+                    <StyledStarIcon />
+                    <MarkContainer>
+                      <Mark>{movie.vote_average?.toFixed(1)}</Mark>
+                      <MaxMark>/ 10</MaxMark>
+                    </MarkContainer>
+                    <VotesNumber>{movie?.vote_count} votes</VotesNumber>
+                  </VotesContainer>
+                </MovieMainData>
+              </Poster>
+            </>
+          )}
 
           <TileContainer>
             <MovieTile
@@ -86,14 +92,15 @@ export const MoviePage = () => {
             <StyledList $people>
               {credits.cast?.map((person) => (
                 <StyledLink to={`/people/${person.id}`}>
-                  <PersonTile
-                    key={nanoid()}
-                    {...(person.profile_path && {
-                      poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
-                    })}
-                    personName={person.name}
-                    creditId={person.credit_id}
-                  />
+                  <Item key={nanoid()}>
+                    <PersonTile
+                      {...(person.profile_path && {
+                        poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
+                      })}
+                      personName={person.name}
+                      creditId={person.credit_id}
+                    />
+                  </Item>
                 </StyledLink>
               ))}
             </StyledList>
@@ -104,14 +111,16 @@ export const MoviePage = () => {
             <StyledList $people>
               {credits.crew?.map((person) => (
                 <StyledLink to={`/people/${person.id}`}>
-                  <PersonTile
-                    key={nanoid()}
-                    {...(person.profile_path && {
-                      poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
-                    })}
-                    personName={person.name}
-                    creditId={person.credit_id}
-                  />
+                  <Item key={nanoid()}>
+                    <PersonTile
+                      key={nanoid()}
+                      {...(person.profile_path && {
+                        poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
+                      })}
+                      personName={person.name}
+                      creditId={person.credit_id}
+                    />
+                  </Item>
                 </StyledLink>
               ))}
             </StyledList>

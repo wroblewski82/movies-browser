@@ -11,7 +11,13 @@ import {
 import { LoadingPage } from "../../common/LoadingPage";
 import { ErrorPage } from "../../common/ErrorPage";
 import { PersonTile } from "../../common/PersonTile";
-import { StyledMain, StyledHeader, StyledList, StyledLink } from "../styled";
+import {
+  StyledMain,
+  StyledHeader,
+  StyledList,
+  StyledLink,
+  Item,
+} from "../styled";
 import { Pagination } from "../../Pagination";
 import { useQueryParam } from "../../Navigation/queryParam";
 import paginationParamName from "../../Pagination/paginationParamName";
@@ -53,14 +59,14 @@ export const PeopleList = () => {
           <StyledHeader>{title}</StyledHeader>
           <StyledList $people>
             {peopleList.map((people) => (
-              <li key={nanoid()}>
-                <StyledLink to={`/people/${people.id}`}>
+              <StyledLink to={`/people/${people.id}`}>
+                <Item key={nanoid()}>
                   <PersonTile
                     poster={`https://image.tmdb.org/t/p/w185/${people.profile_path}`}
                     personName={people.name}
                   />
-                </StyledLink>
-              </li>
+                </Item>
+              </StyledLink>
             ))}
           </StyledList>
           <Pagination />

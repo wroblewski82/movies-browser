@@ -67,3 +67,8 @@ export const StyledLink = styled(Link)`
     color: ${({ theme }) => theme.colors.black};
   }
 `;
+
+export const Item = styled.li`
+  width: 100%;
+  height: 100%;
+`;
