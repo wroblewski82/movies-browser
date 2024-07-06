@@ -16,31 +16,34 @@ export const PosterContainer = styled.div`
       rgba(${({ theme }) => theme.colors.darkRGB}, 0.16) 21.88%,
       rgba(${({ theme }) => theme.colors.darkRGB}, 0) 25.68%
     ),
+    //bikow pravo
     linear-gradient(
-      90deg,
-      rgba(${({ theme }) => theme.colors.darkRGB}) 13.6%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.984) 14.58%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.97) 15.44%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.867) 16.3%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.23) 22.87%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0) 26.64%
-    ),
+        90deg,
+        rgba(${({ theme }) => theme.colors.darkRGB}) 13.6%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.984) 14.58%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.97) 15.44%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.867) 16.3%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.23) 22.87%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0) 26.64%
+      ),
+    //bikow levo
     linear-gradient(
-      rgba(${({ theme }) => theme.colors.darkRGB}) 0%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.69) 4.66%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.44) 9.34%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.208) 15.16%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0) 24.22%
-    ),
+        rgba(${({ theme }) => theme.colors.darkRGB}) 0%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.69) 4.66%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.44) 9.34%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.208) 15.16%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0) 24.22%
+      ),
+    //gora
     linear-gradient(
-      189.44deg,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0) 58.48%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.106) 63.17%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.235) 68.85%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.494) 78.08%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 0.74) 85.86%,
-      rgba(${({ theme }) => theme.colors.darkRGB}, 1) 92.87%
-    ),
+        180deg,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0) 58.48%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.106) 63.17%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.235) 68.85%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.494) 78.08%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 0.74) 85.86%,
+        rgba(${({ theme }) => theme.colors.darkRGB}, 1) 92.87%
+      ),
     url(${({ backdrop }) => backdrop});
   background-size: 1920px 770px, 1920px 770px, 1920px 770px, 1920px 770px,
     1368px 769px;
