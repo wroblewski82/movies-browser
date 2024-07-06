@@ -16,7 +16,6 @@ export const PosterContainer = styled.div`
       rgba(${({ theme }) => theme.colors.darkRGB}, 0.16) 21.88%,
       rgba(${({ theme }) => theme.colors.darkRGB}, 0) 25.68%
     ),
-    //bikow pravo
     linear-gradient(
         90deg,
         rgba(${({ theme }) => theme.colors.darkRGB}) 13.6%,
@@ -26,7 +25,6 @@ export const PosterContainer = styled.div`
         rgba(${({ theme }) => theme.colors.darkRGB}, 0.23) 22.87%,
         rgba(${({ theme }) => theme.colors.darkRGB}, 0) 26.64%
       ),
-    //bikow levo
     linear-gradient(
         rgba(${({ theme }) => theme.colors.darkRGB}) 0%,
         rgba(${({ theme }) => theme.colors.darkRGB}, 0.69) 4.66%,
@@ -34,7 +32,6 @@ export const PosterContainer = styled.div`
         rgba(${({ theme }) => theme.colors.darkRGB}, 0.208) 15.16%,
         rgba(${({ theme }) => theme.colors.darkRGB}, 0) 24.22%
       ),
-    //gora
     linear-gradient(
         180deg,
         rgba(${({ theme }) => theme.colors.darkRGB}, 0) 58.48%,
