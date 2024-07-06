@@ -50,22 +50,26 @@ export const MoviePage = () => {
       {fetchMovieStatus === "error" && <ErrorPage />}
       {fetchMovieStatus === "success" && (
         <StyledMoviePage>
-          <PosterBackground/>
-          <Poster
-            backdrop={`https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
-          >
-            <MovieMainData>
-              <MovieTitle>{movie?.original_title}</MovieTitle>
-              <VotesContainer>
-                <StyledStarIcon />
-                <MarkContainer>
-                  <Mark>{movie.vote_average?.toFixed(1)}</Mark>
-                  <MaxMark>/ 10</MaxMark>
-                </MarkContainer>
-                <VotesNumber>{movie?.vote_count} votes</VotesNumber>
-              </VotesContainer>
-            </MovieMainData>
-          </Poster>
+          {movie?.backdrop_path && (
+            <>
+              <PosterBackground />
+              <Poster
+                backdrop={`https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
+              >
+                <MovieMainData>
+                  <MovieTitle>{movie?.original_title}</MovieTitle>
+                  <VotesContainer>
+                    <StyledStarIcon />
+                    <MarkContainer>
+                      <Mark>{movie.vote_average?.toFixed(1)}</Mark>
+                      <MaxMark>/ 10</MaxMark>
+                    </MarkContainer>
+                    <VotesNumber>{movie?.vote_count} votes</VotesNumber>
+                  </VotesContainer>
+                </MovieMainData>
+              </Poster>
+            </>
+          )}
 
           <TileContainer>
             <MovieTile
