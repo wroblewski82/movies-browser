@@ -24,6 +24,7 @@ export const StyledParagraph = styled.p`
 `;
 
 export const StyledLink = styled.a`
+  text-decoration: none;
   background-color: ${({ theme }) => theme.colors.cornflowerBlue};
   color: ${({ theme }) => theme.colors.white};
   border-radius: 5px;
