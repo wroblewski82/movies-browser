@@ -1,6 +1,6 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { MovieTile } from "../../../common/MovieTile";
-import { StyledHeader, StyledList } from "../../styled";
+import { StyledHeader, StyledList, StyledLink } from "../../styled";
 
 export const MoviesList = ({ header, moviesList, genreList }) => {
   return (
@@ -13,16 +13,18 @@ export const MoviesList = ({ header, moviesList, genreList }) => {
       <StyledList>
         {moviesList.map((movie) => (
           <li key={nanoid()}>
-            <MovieTile
-              poster={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
-              title={movie.title}
-              year={movie.release_date?.split("-")[0]}
-              genres={movie.genre_ids?.map((id) =>
-                genreList?.find((genre) => genre.id === id)
-              )}
-              mark={movie.vote_average?.toFixed(1)}
-              votes={movie.vote_count}
-            />
+            <StyledLink to={`/movies/${movie.id}`}>
+              <MovieTile
+                poster={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+                title={movie.title}
+                year={movie.release_date?.split("-")[0]}
+                genres={movie.genre_ids?.map((id) =>
+                  genreList?.find((genre) => genre.id === id)
+                )}
+                mark={movie.vote_average?.toFixed(1)}
+                votes={movie.vote_count}
+              />
+            </StyledLink>
           </li>
         ))}
       </StyledList>
