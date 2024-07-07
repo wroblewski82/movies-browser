@@ -16,6 +16,7 @@ export const StyledMovieTile = styled.article`
 
   @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
     gap: 16px;
     max-width: 350px;
   }
