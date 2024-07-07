@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as prevArrow } from "../assets/prevArrow.svg";
 import { ReactComponent as nextArrow } from "../assets/nextArrow.svg";
 
@@ -32,33 +32,44 @@ export const Button = styled.button`
     cursor: not-allowed;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     margin-right: 8px;
   }
 `;
 
 export const PrevArrowIcon = styled(prevArrow)`
-  margin: 0 4px 0 4px;
+  margin: 0 2px 0 4px;
   color: ${({ theme }) => theme.colors.cornflowerBlue};
+  ${({ ismobile }) =>
+    ismobile &&
+    css`
+      display: none;
+    `};
 
   *:disabled & {
     color: ${({ theme }) => theme.colors.waterloo};
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     display: block;
   }
 `;
 
 export const NextArrowIcon = styled(nextArrow)`
-  margin: 0 4px 0 4px;
+  margin: 0 2px 0 4px;
   color: ${({ theme }) => theme.colors.cornflowerBlue};
+
+  ${({ ismobile }) =>
+    ismobile &&
+    css`
+      display: none;
+    `};
 
   *:disabled & {
     color: ${({ theme }) => theme.colors.waterloo};
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     display: block;
   }
 `;
@@ -66,7 +77,7 @@ export const NextArrowIcon = styled(nextArrow)`
 export const ButtonText = styled.p`
   margin: 0 4px 0 4px;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     display: none;
   }
 `;
@@ -77,7 +88,7 @@ export const PageCounter = styled.div`
   font-size: 16px;
   line-height: 150%;
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}px) {
     font-size: 10px;
     line-height: 24px;
     margin: 0 8px 0 8px;

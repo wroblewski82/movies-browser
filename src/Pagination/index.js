@@ -23,6 +23,7 @@ export const Pagination = () => {
   return (
     <Wrapper>
       <Button onClick={setFirstPage} disabled={isFirstPage}>
+        <PrevArrowIcon ismobile="true" disabled={isFirstPage} />
         <PrevArrowIcon disabled={isFirstPage} />
         <ButtonText>First</ButtonText>
       </Button>
@@ -41,6 +42,7 @@ export const Pagination = () => {
       <Button onClick={setLastPage} disabled={isLastPage}>
         <ButtonText>Last</ButtonText>
         <NextArrowIcon disabled={isLastPage} />
+        <NextArrowIcon ismobile="true" disabled={isLastPage} />
       </Button>
     </Wrapper>
   );
