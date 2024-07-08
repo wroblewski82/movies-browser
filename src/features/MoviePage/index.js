@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-
 import {
   fetchMovieDataFromApi,
   selectMovie,
@@ -98,7 +97,7 @@ export const MoviePage = () => {
                         poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
                       })}
                       personName={person.name}
-                      creditId={person.credit_id}
+                      role={person.character}
                     />
                   </Item>
                 </StyledLink>
@@ -118,7 +117,7 @@ export const MoviePage = () => {
                         poster: `https://image.tmdb.org/t/p/w342${person.profile_path}.jpg`,
                       })}
                       personName={person.name}
-                      creditId={person.credit_id}
+                      role={person.job}
                     />
                   </Item>
                 </StyledLink>
